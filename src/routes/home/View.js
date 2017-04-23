@@ -311,10 +311,10 @@ class Home extends React.Component {
             <div className="row">
               <div className="col-sm-9 content-row">
                 <div className="row">
-                  <div style={{background: 'red', height: 9, margin: '0 15px 15px 15px', position: 'relative'}}>
+                  <div style={{background: '#F37B24', height: 9, margin: '0 15px 15px 15px', position: 'relative'}}>
                     <header
                       style={{fontSize: 14, display: 'inline-block', background: 'rgb(243, 243, 243)', marginLeft: 25, padding: '0 15px', position: 'absolute', top: '-7px'}}>
-                      <h2 style={{color: 'red', fontWeight: 'bold' ,fontSize: 14, margin: '0 !important', display: 'inline-block'}}>CĂN HỘ TIMES CITY MỚI CẬP NHẬT</h2>
+                      <h2 style={{color: '#F37B24', fontWeight: 'bold' ,fontSize: 14, margin: '0 !important', display: 'inline-block'}}>CĂN HỘ TIMES CITY MỚI CẬP NHẬT</h2>
                     </header>
                   </div>
                 </div>
@@ -877,10 +877,10 @@ class Home extends React.Component {
           <div className="row">
             {/*TIn tuc*/}
             <div className="row mar-top">
-              <div style={{background: 'red', height: 9, margin: '0 15px 15px 15px', position: 'relative'}}>
+              <div style={{background: '#57badf', height: 9, margin: '0 15px 15px 15px', position: 'relative'}}>
                 <header
                   style={{fontSize: 14, display: 'inline-block', background: 'rgb(243, 243, 243)', marginLeft: 25, padding: '0 15px', position: 'absolute', top: '-7px'}}>
-                  <h2 style={{color: 'red', fontWeight: 'bold' ,fontSize: 14, margin: '0 !important', display: 'inline-block'}}>THÔNG TIN CẦN BIẾT</h2>
+                  <h2 style={{color: '#57badf', fontWeight: 'bold' ,fontSize: 14, margin: '0 !important', display: 'inline-block'}}>THÔNG TIN CẦN BIẾT</h2>
                 </header>
               </div>
             </div>

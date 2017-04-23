@@ -33,8 +33,8 @@ class Layout extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-12 text-center">
-                <h2 className="section-heading">Contact Us</h2>
-                <h3 className="section-subheading text-muted">1225 Howard St, San Francisco, 91222, CA.</h3>
+                <h2 className="section-heading">Liên hệ với chúng tôi</h2>
+                <h3 className="section-subheading text-muted">Địa chỉ ...</h3>
                 <a href="#" className="btn btn-lg btn-raised ripple-effect btn-danger ">Send Message <i className="fa fa-chevron-right" /></a>
               </div>
             </div>
@@ -67,18 +67,10 @@ class Layout extends React.Component {
         <Modal />
 
         <div id="mapvinhome" className="modal fade" role="dialog">
-          <div className="close"
-            onClick={() => {
-              $('#mapvinhome').modal('close');
-            }}
-          >
-            <img src="/imgs/close.png" alt=""/>
-          </div>
           <div className="map">
             <img src="/imgs/map.jpg" alt="Ban do vinhomes"/>
           </div>
         </div>
-
 
       </div>
     );

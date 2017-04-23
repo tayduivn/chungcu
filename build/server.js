@@ -1074,12 +1074,12 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h2',
                 { className: 'section-heading' },
-                'Contact Us'
+                'Li\xEAn h\u1EC7 v\u1EDBi ch\xFAng t\xF4i'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h3',
                 { className: 'section-subheading text-muted' },
-                '1225 Howard St, San Francisco, 91222, CA.'
+                '\u0110\u1ECBa ch\u1EC9 ...'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'a',
@@ -1132,15 +1132,6 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { id: 'mapvinhome', className: 'modal fade', role: 'dialog' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'close',
-            onClick: () => {
-              $('#mapvinhome').modal('close');
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/close.png', alt: '' })
-        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'map' },
@@ -10308,14 +10299,14 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 { className: "row" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   "div",
-                  { style: { background: 'red', height: 9, margin: '0 15px 15px 15px', position: 'relative' } },
+                  { style: { background: '#F37B24', height: 9, margin: '0 15px 15px 15px', position: 'relative' } },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "header",
                     {
                       style: { fontSize: 14, display: 'inline-block', background: 'rgb(243, 243, 243)', marginLeft: 25, padding: '0 15px', position: 'absolute', top: '-7px' } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       "h2",
-                      { style: { color: 'red', fontWeight: 'bold', fontSize: 14, margin: '0 !important', display: 'inline-block' } },
+                      { style: { color: '#F37B24', fontWeight: 'bold', fontSize: 14, margin: '0 !important', display: 'inline-block' } },
                       "C\u0102N H\u1ED8 TIMES CITY M\u1EDAI C\u1EACP NH\u1EACT"
                     )
                   )
@@ -12004,14 +11995,14 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             { className: "row mar-top" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               "div",
-              { style: { background: 'red', height: 9, margin: '0 15px 15px 15px', position: 'relative' } },
+              { style: { background: '#57badf', height: 9, margin: '0 15px 15px 15px', position: 'relative' } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "header",
                 {
                   style: { fontSize: 14, display: 'inline-block', background: 'rgb(243, 243, 243)', marginLeft: 25, padding: '0 15px', position: 'absolute', top: '-7px' } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   "h2",
-                  { style: { color: 'red', fontWeight: 'bold', fontSize: 14, margin: '0 !important', display: 'inline-block' } },
+                  { style: { color: '#57badf', fontWeight: 'bold', fontSize: 14, margin: '0 !important', display: 'inline-block' } },
                   "TH\xD4NG TIN C\u1EA6N BI\u1EBET"
                 )
               )
