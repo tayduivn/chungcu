@@ -9,12 +9,12 @@
 
 /* eslint-disable max-len */
 
-export const port = process.env.PORT || 3998;
+export const port = process.env.PORT || 3999;
 export const host = process.env.WEBSITE_HOSTNAME || `localhost:${port}`;
 
 export const databaseUrl = process.env.DATABASE_URL || 'sqlite:database.sqlite';
 
-export const mongoDBURL = 'mongodb://localhost/comhoavang'
+export const mongoDBURL = 'mongodb://localhost/chungcu'
 
 export const analytics = {
 

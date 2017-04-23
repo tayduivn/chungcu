@@ -1,82 +1,188 @@
 import React from 'react'
-import Link from '../Link'
 
 class Footer extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
   render () {
     return (
-      <div id="footer">
-        <div className="footer-wrapper">
+      <footer id="footer">
+        <div className="container">
+          <div className="col-sm-3">
+            <img src="/assets/images/logo-1.png" alt="#" className="img-responsive logo" />
+            <p>
+              Lux Realty,property theme &amp; publishing,with minimal design. We provide you with the latest fresh inspiration straight from the industrie.
+            </p>
+          </div>
+          <div className="col-sm-3">
+            <h5>
+              COMMON TAGS
+            </h5>
+            <ul className="tags">
+              <li>
+                <a href="#" className="tag">
+                  For Rent
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tag">
+                  For Sale
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tag">
+                  Sumbit property
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tag">
+                  Auctions
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tag">
+                  Find agent
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tag">
+                  Find agency
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-sm-2">
+            <h5>
+              CATEGORIES
+            </h5>
+            <ul className="list-unstyled">
+              <li>
+                <a href="#">
+                  For Rent
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  For Sale
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Sumbit listing
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Auctions
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Find agent
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Find agency
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-sm-2">
+            <h5>
+              ABOUT US
+            </h5>
+            <ul className="list-unstyled">
+              <li>
+                Available Jobs
+              </li>
+              <li>
+                Sumbit property
+              </li>
+              <li>
+                Contact Us
+              </li>
+              <li>
+                History
+              </li>
+              <li>
+                Impressium
+              </li>
+            </ul>
+          </div>
+          <div className="col-sm-2">
+            <h5>
+              ABOUT US
+            </h5>
+            <ul className="list-unstyled">
+              <li>
+                Available Jobs
+              </li>
+              <li>
+                Contact Us
+              </li>
+              <li>
+                History
+              </li>
+              <li>
+                Impressium
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="btmFooter">
           <div className="container">
-
-            <div className="footer-box mobi480h">
-              <div className="dangky">
-                <a href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=27183" target="_blank"><img src="/assets/images/dangky.png" alt="img" /></a></div>
+            <div className="col-sm-7">
+              <p>
+                <strong>
+                  Copyright 2015
+                </strong> LuxRealty- real estate template made with
+                <i className="ti-heart">
+                </i>
+                <strong>
+                  by Codenpixel
+                </strong>
+              </p>
             </div>
-
-            <div className="footer-right">
-              <div className="row">
-                <div className="col-md-4 col-sm-6 col-xs-12">
-                  <h2>
-                    MÓN NGON TỪ CỐM </h2>
-                  <ul className="list-footer">
-                    <li><Link to={'/bai-viet/cach-lam-che-com-thom-mat'}>
-                      Chè cốm
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/bai-viet/cach-lam-cha-com-ngon-tai-nha'}>
-                      Chả cốm
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/bai-viet/com-xao---mon-an-binh-di-goi-nho-mua-thu'}>
-                      Cốm xào
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/bai-viet/tom-chien-com-xanh-don-gian-la-mieng'}>
-                      Tôm chiên cốm
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/bai-viet/mon-trung-ran-com-ngon-cho-ban-vung-ve'}>
-                      Trứng cốm
-                      <span className="icona-left icon-chevron-right" /></Link></li>
-                  </ul>
-                </div>
-                <div className="col-md-4 col-sm-6 col-xs-12">
-                  <h2>
-                    THÔNG TIN WEBSITE</h2>
-                  <ul className="list-footer">
-                    <li><Link to={'/lien-he-dat-hang'}>
-                        Hình thức thanh toán
-                      <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/lien-he-dat-hang'}>
-                      Chính sách vận chuyển, giao nhận
-                      <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/lien-he-dat-hang'}>
-                      Liên hệ đặt hàng
-                      <span className="icona-left icon-chevron-right" /></Link></li>
-                  </ul>
-                </div>
-                <div className="col-md-4 col-sm-12 col-xs-12">
-                  <h2>CƠ SỞ SẢN XUẤT CỐM MỄ TRÌ</h2>
-                  <ul className="address-box list-footer">
-                    <li className="add-1"><span>Địa chỉ : 128 – chợ Mễ Trì hạ, quận Nam Từ Liêm, TP.Hà Nội</span></li>
-                    <li className="add-2"><span>Điện thoại : 097 331 8868</span></li>
-                    <li className="add-5"><span>Email: <a href="mailto:commetri295@gmail.com">commetri295@gmail.com</a></span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="footer-box mobi480s">
-
-              <div className="dangky">
-                <a href="http://online.gov.vn/CustomWebsiteDisplay.aspx" target="_blank"><img src="/assets/images/dangky.png" alt="img" /></a></div>
+            <div className="col-sm-5">
+              <ul className="pay-opt pull-right list-inline list-unstyled">
+                <li>
+                  <a href="#" title="#">
+                    <img src="/assets/images/amz-icon.png" className="img-responsive" alt />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="#">
+                    <img src="/assets/images/paypal-icon.png" className="img-responsive" alt />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="#">
+                    <img src="/assets/images/ax-icon.png" className="img-responsive" alt />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="#">
+                    <img src="/assets/images/mb-icon.png" className="img-responsive" alt />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="#">
+                    <img src="/assets/images/mst-icon.png" className="img-responsive" alt />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="#">
+                    <img src="/assets/images/mstr-icon.png" className="img-responsive" alt />
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className="copyright">
-          <div className="container">
-            <div className="col-md-6">
-              © 2017 COMHOAVANG. All rights reserved | <a href="http://vnguy.com/" target="_blank">
-                Thiet Ke Web</a> <a href="http://vnguy.com/" target="_blank">VnGuy.Com</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </footer>
+
     )
   }
 }

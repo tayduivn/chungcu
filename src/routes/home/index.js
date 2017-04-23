@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './Home';
+import View from './View';
 import fetch from '../../core/fetch';
 import needFetch from '../../core/needFetch';
 import Layout from '../../components/Layout';
@@ -36,7 +36,7 @@ export default {
       title: seo.title || 'Trang chủ',
       description: seo.description || '',
       seo: seo,
-      component: <Layout><Home data={store.getState().data} /></Layout>,
+      component: <Layout><View data={store.getState().data} /></Layout>,
     };
   },
 

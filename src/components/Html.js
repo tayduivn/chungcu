@@ -53,13 +53,24 @@ class Html extends React.Component {
             {seo && seo.og_image && <meta property="og:image" content={seo.og_image} />}
             {/**/}
 
-            <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />
-            <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+            {/*Theme head source*/}
+            <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+            <link href="/assets/css/bootstrap-extra-modal.css" rel="stylesheet" />
+            <link href="/assets/css/plugins.css" rel="stylesheet" />
 
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-            <link href={"/assets/styles/style.min.css?v=" + v} rel="stylesheet" />
+            <link href="/assets/css/themify-icons.css" rel="stylesheet" />
+            <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,500,700,900' rel='stylesheet' type='text/css' />
+            <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,300,500,600,700,800,900,200' rel='stylesheet' type='text/css' />
+
+
+            <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css" />
+
+            <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css" />
+            <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css" />
+            <link href="/assets/css/style.css" rel="stylesheet" />
+            {/**/}
+
             <link rel="stylesheet" type="text/css"  href={"/css/app.css?v=" +v }/>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js" />
             <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
@@ -84,20 +95,12 @@ class Html extends React.Component {
           {/*{scripts.map(script => <script key={script} src={script} />)}*/}
           <script
             dangerouslySetInnerHTML={{ __html:
-                `head.load("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")`
-                + `.js("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" )`
-                + `.js("/assets/js/jquery.ui.datepicker-vi-VN.js?v=${v}")`
-                + `.js("/assets/js/jquery.easing.1.3.js?v=${v}")`
-                + `.js("/assets/js/jquery.mb.browser.min.js?v=${v}")`
-                + `.js("/assets/js/jquery.textheight.js?v=${v}")`
-                + `.js("/assets/js/hoverIntent.js?v=${v}")`
-                + `.js("/assets/js/imagesloaded.pkgd.min.js?v=${v}")`
-                + `.js("/assets/js/bootstrap.min.js?v=${v}")`
-                + `.js("/assets/js/jquery.uniform.min.js?v=${v}")`
-                + `.js("/assets/js/isotope.pkgd.min.js")`
-                + `.js("/assets/js/slick.min.js")`
-                + `.js("/assets/js/jquery.panel.mobile.js?v=${v}")`
-                + `.js("/assets/js/jquery.main.js?v=${v}")`
+                `head.load("/assets/js/jquery.js")`
+                + `.js("/assets/js/bootstrap.min.js" )`
+                + `.js("/assets/js/scripts.js" )`
+                + `.js("/assets/revolution/js/jquery.themepunch.tools.min.js")`
+                + `.js("/assets/revolution/js/jquery.themepunch.revolution.min.js")`
+                + `.js("/assets/js/init.js")`
                 +  `.js("${scripts[0]}?v=${v}")`
                 +  `.js("${scripts[1]}?v=${v}")`}}
           >
