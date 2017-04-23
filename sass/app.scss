@@ -1,0 +1,83 @@
+@import './frontEnd/landing';
+.lineh {
+  .title-2 {
+    line-height: 40px !important;
+    max-height: 40px;
+  }
+}
+
+.post-body {
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  figcaption {
+    background: rgba(100, 100, 100, 0.08);
+    text-align: center;
+    padding: 5px 3px;
+  }
+}
+@media (max-width: 639px){
+
+  .details-img {
+    float: none !important;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .details-content2 {
+    width: 100%;
+    float: none !important;
+    margin: 0 auto;
+    border: 1px solid #014987;
+  }
+  h1 {
+    text-align: center;
+    border-bottom: 1px solid #014987;
+  }
+}
+
+.title-2 {
+  background: #014987;
+}
+
+.col-w230 {
+  display: inline-block;
+  float: none;
+}
+
+.price-product {
+  //border-bottom: 1px solid #0a66b7;
+  display: block;
+  padding: 0;
+  margin: 5px auto 0 auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+.centerText {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.blink_me {
+  animation: blinker 0.7s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.85 }
+}
+
+.blink_me2 {
+  animation: blinker2 0.3s linear infinite;
+}
+
+@keyframes blinker2 {
+  50% { opacity: 0.6 }
+}
+
+.modal-backdrop {
+  display: none;
+}
