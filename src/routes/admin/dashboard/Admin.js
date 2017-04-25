@@ -10,6 +10,7 @@
 import React, { PropTypes } from 'react';
 import { Button, DatePicker, Table, Timeline, Icon, Row, Col} from 'antd';
 import moment from 'moment'
+
 class Admin extends React.Component {
   constructor(props){
     super(props)
@@ -22,9 +23,9 @@ class Admin extends React.Component {
     return (
         <div>
           <Row className="padding-5">
-            <Table
-              style={{minWidth: 1100, background: 'white'}}
-              columns={columns} rowKey={record => record.created_at} dataSource={this.state.orders} />
+            {/*<Table*/}
+              {/*style={{minWidth: 1100, background: 'white'}}*/}
+              {/*columns={columns} rowKey={record => record.created_at} dataSource={this.state.orders} />*/}
             {/*<Timeline pending={<a href="#">Xem thêm</a>}>*/}
               {/*{this.state.orders.map((el, index) => {*/}
                 {/*if(el.done){*/}

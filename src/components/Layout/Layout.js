@@ -17,7 +17,7 @@ class Layout extends React.Component {
 
   componentDidMount(){
     if(process.env.BROWSER) {
-      $('#mapvinhome').modal('show');
+      // $('#mapvinhome').modal('show');
     }
   }
 

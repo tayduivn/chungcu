@@ -77,7 +77,7 @@ class Html extends React.Component {
             <script dangerouslySetInnerHTML={{ __html: this.props.scriptTop }} />
         </head>
 
-        <body>
+        <body className="clearfix">
 
           <div
             id="app"

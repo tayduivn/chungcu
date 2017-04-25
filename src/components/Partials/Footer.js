@@ -7,182 +7,114 @@ class Footer extends React.Component {
 
   render () {
     return (
-      <footer id="footer">
-        <div className="container">
-          <div className="col-sm-3">
-            <img src="/assets/images/logo-1.png" alt="#" className="img-responsive logo" />
-            <p>
-              Lux Realty,property theme &amp; publishing,with minimal design. We provide you with the latest fresh inspiration straight from the industrie.
-            </p>
-          </div>
-          <div className="col-sm-3">
-            <h5>
-              COMMON TAGS
-            </h5>
-            <ul className="tags">
-              <li>
-                <a href="#" className="tag">
-                  For Rent
-                </a>
-              </li>
-              <li>
-                <a href="#" className="tag">
-                  For Sale
-                </a>
-              </li>
-              <li>
-                <a href="#" className="tag">
-                  Sumbit property
-                </a>
-              </li>
-              <li>
-                <a href="#" className="tag">
-                  Auctions
-                </a>
-              </li>
-              <li>
-                <a href="#" className="tag">
-                  Find agent
-                </a>
-              </li>
-              <li>
-                <a href="#" className="tag">
-                  Find agency
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-sm-2">
-            <h5>
-              CATEGORIES
-            </h5>
-            <ul className="list-unstyled">
-              <li>
-                <a href="#">
-                  For Rent
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  For Sale
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Sumbit listing
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Auctions
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Find agent
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Find agency
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-sm-2">
-            <h5>
-              ABOUT US
-            </h5>
-            <ul className="list-unstyled">
-              <li>
-                Available Jobs
-              </li>
-              <li>
-                Sumbit property
-              </li>
-              <li>
-                Contact Us
-              </li>
-              <li>
-                History
-              </li>
-              <li>
-                Impressium
-              </li>
-            </ul>
-          </div>
-          <div className="col-sm-2">
-            <h5>
-              ABOUT US
-            </h5>
-            <ul className="list-unstyled">
-              <li>
-                Available Jobs
-              </li>
-              <li>
-                Contact Us
-              </li>
-              <li>
-                History
-              </li>
-              <li>
-                Impressium
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="btmFooter">
+      <div className="footer">
+        <div className="footer-body">
           <div className="container">
-            <div className="col-sm-7">
-              <p>
-                <strong>
-                  Copyright 2015
-                </strong> LuxRealty- real estate template made with
-                <i className="ti-heart">
-                </i>
-                <strong>
-                  by Codenpixel
-                </strong>
-              </p>
-            </div>
-            <div className="col-sm-5">
-              <ul className="pay-opt pull-right list-inline list-unstyled">
-                <li>
-                  <a href="#" title="#">
-                    <img src="/assets/images/amz-icon.png" className="img-responsive" alt />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="#">
-                    <img src="/assets/images/paypal-icon.png" className="img-responsive" alt />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="#">
-                    <img src="/assets/images/ax-icon.png" className="img-responsive" alt />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="#">
-                    <img src="/assets/images/mb-icon.png" className="img-responsive" alt />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="#">
-                    <img src="/assets/images/mst-icon.png" className="img-responsive" alt />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="#">
-                    <img src="/assets/images/mstr-icon.png" className="img-responsive" alt />
-                  </a>
-                </li>
-              </ul>
+            <div className="row">
+              <div className="col-md-6">
+                <div className="footer-contact-info">
+                  <h4>thông tin liên hệ</h4>
+                  <ul className="contact-items ng-scope" >
+                    <li className="clearfix item ng-scope">
+                      <div className="label ng-binding">Hotline</div>
+                      <div className="text">
+                        <a  className="ng-binding ng-scope" href="tel://18001221">1800 1221</a>
+                      </div>
+                    </li>
+                    <li className="clearfix item ng-scope" >
+                      <div className="label ng-binding">Địa chỉ dự án</div>
+                      <div className="text">
+                       <span  className="ng-binding ng-scope">Phường Phúc Đồng và phường Việt Hưng, Quận Long Biên, Hà Nội</span>
+                      </div>
+                    </li>
+                    <li className="clearfix item ng-scope" >
+                      <div className="label ng-binding">Địa chỉ giao dịch</div>
+                      <div className="text">
+                        <span className="ng-binding ng-scope">Sàn Giao dịch Bất động sản Vinhomes, tầng 1, Vincom Plaza Long Biên, KĐT Sinh thái Vinhomes Riverside, Việt Hưng, Long Biên, Hà Nội</span>
+                      </div>
+                    </li>
+                    <li className="clearfix item ng-scope" >
+                      <div className="label ng-binding">Email</div>
+                      <div className="text">
+                        <a className="ng-binding ng-scope" href="mailto://info-vhrtheharmony@vinhomes.vn">info-vhrtheharmony@vinhomes.vn</a>
+                      </div>
+                    </li>
+                    <li className="clearfix item ng-scope" >
+                      <div className="label ng-binding">Facebook</div>
+                      <div className="text">
+                        <a className="ng-binding ng-scope" href="https://www.facebook.com/vinhomesriverside">www.facebook.com/vinhomesriverside</a>
+                      </div>
+                    </li>
+                    <li className="clearfix item ng-scope" >
+                      <div className="label ng-binding">YouTube</div>
+                      <div className="text">
+                        <a  className="ng-binding ng-scope" href="https://www.youtube.com/theHarmonyVCRiverside">www.youtube.com/theHarmonyVCRiverside</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <form className="footer-contact-form ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email"   autoComplete="false">
+
+                  <div className="row">
+                    <div className="col-xs-6">
+                      <input type="text" placeholder="Họ & tên *" required autoComplete="false" name="name"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
+                    </div>
+                    <div className="col-xs-6">
+                      <input type="email" placeholder="Email *" required autoComplete="false" name="email"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-email" />
+
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-xs-12">
+                      <textarea placeholder="Nội dung *" rows={3} required name="content" className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" defaultValue={""} />
+
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-xs-12 text-right"><button className="btn-send" type="submit">Gửi </button></div>
+
+                  </div>
+                </form>
+              </div>
+              <div className="col-md-6">
+                <div className="footer-contact-info">
+                  <h4>Các đơn vị phân phối chính thức</h4>
+                  <div className="agency-list">
+                    <div className="agency">
+                      <div className="a-name">CÔNG TY CỔ PHẦN KINH DOANH VÀ PHÁT TRIỂN ĐỊA ỐC VIETSTARLAND</div>
+                      <div className="a-fone">0964 668 888</div>
+                    </div>
+                    <div className="agency">
+                      <div className="a-name">Công ty Cổ phần đầu tư phát triển thương mại Tân Thời Đại</div>
+                      <div className="a-fone">0982 334 488</div>
+                    </div>
+                    <div className="agency">
+                      <div className="a-name">Công ty TNHH Phát triển Thương mại Bất Động Sản NEWSTARLAND</div>
+                      <div className="a-fone">0917 032 888</div>
+                    </div>
+                    <div className="agency">
+                      <div className="a-name">Công ty CPTM và Dịch Vụ Bất Động Sản Queen Land</div>
+                      <div className="a-fone">0967 87 69 69</div>
+                    </div>
+                    <div className="agency">
+                      <div className="a-name">CÔNG TY CỔ PHẦN ĐẦU TƯ ĐỊA ỐC BIGHOMES</div>
+                      <div className="a-fone">1800 0018</div>
+                    </div>
+                    <div className="agency">
+                      <div className="a-name">Công ty Cổ phần Dịch vụ Bất động sản V-Land</div>
+                      <div className="a-fone">0169 866 5555</div>
+                    </div>
+                    <div className="agency">
+                      <div className="a-name">Công ty cổ phần bất động sản Phúc Lộc</div>
+                      <div className="a-fone">0888 236 888</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
-
+      </div>
     )
   }
 }
