@@ -18,7 +18,7 @@ class Home extends React.Component {
               <div className="col-lg-9 col-sm-8 content-row shadow bg-white" style={{paddingTop: 15}}>
                 <div className="row">
                   <div className="col-sm-4">
-                    <img src={canho.coverUrl} alt={canho.title} />
+                    <img height="auto" width="100%" src={canho.coverUrl} alt={canho.title} />
                   </div>
                   <div className="col-sm-8" style={{textAlign: 'center', fontSize: 20}}>
                     <div style={{marginTop: 20}}>

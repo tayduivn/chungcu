@@ -11440,7 +11440,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: 'col-sm-4' },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: canho.coverUrl, alt: canho.title })
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { height: 'auto', width: '100%', src: canho.coverUrl, alt: canho.title })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
