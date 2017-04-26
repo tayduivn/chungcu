@@ -19,49 +19,24 @@ import {
 import GraphQLJSON from 'graphql-type-json';
 
 export default new GraphQLObjectType({
-  name: 'Apartment',
-  description: 'Apartment object',
+  name: 'Category',
+  description: 'Category object',
   fields: () => ({
     _id: {
       type: new GraphQLNonNull(GraphQLID)
-    },
-
-    title: {
-      type: new GraphQLNonNull(GraphQLString)
     },
 
     slug: {
       type: new GraphQLNonNull(GraphQLString)
     },
 
-    categories: {
-      type: new GraphQLList(GraphQLString)
-    },
-
     coverUrl: {
       type: new GraphQLNonNull(GraphQLString)
     },
 
-    price: {
-      type: new GraphQLNonNull(GraphQLInt)
-    },
-
-    priceOff: {
-      type: new GraphQLNonNull(GraphQLInt)
-    },
-
-    description: {
+    title: {
       type: new GraphQLNonNull(GraphQLString)
     },
-
-    body: {
-      type: new GraphQLNonNull(GraphQLString)
-    },
-
-    view: {
-      type: new GraphQLNonNull(GraphQLInt)
-    },
-
     created_at: {
       type: new GraphQLNonNull(GraphQLDateTime)
     },

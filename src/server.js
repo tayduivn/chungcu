@@ -114,7 +114,7 @@ app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
   let isAdmin = (routeUrl.slice(0,6) === '/admin')
   if(isAdmin){
     if(!req.user || !req.user.isAdmin){
-      return res.redirect('/login')
+      // return res.redirect('/login')
     }
   }
   try {
@@ -125,26 +125,15 @@ app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
           needUpdate: true,
           value: {}
         },
-        foodNews: {
+        posts: {
           needUpdate: true,
           value: {}
         },
-        news: {
-          needUpdate: true,
-          value: {}
-        },
-        newsInCategory: {
-          needUpdate: true,
-          value: {}
-        },
-        product: {
-          needUpdate: true,
-          value: {}
-        },
-        products: {
+        newApartments: {
           needUpdate: true,
           value: []
-        }
+        },
+
       },
       user: req.user || null,
     }, {
@@ -183,6 +172,7 @@ app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
       res.redirect(route.status || 302, route.redirect);
       return;
     }
+
 
     const data = { ...route };
 

@@ -11,7 +11,6 @@ import React, { PropTypes } from 'react';
 import UniversalRouter from 'universal-router'
 import history from '../../../core/history'
 import Link from '../../../components/Link'
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Button, DatePicker, Table, Icon} from 'antd';
 
 class ListNews extends React.Component {
@@ -20,10 +19,9 @@ class ListNews extends React.Component {
     this.state = {
       loading: true,
       page: 1,
-      totalPage: 1,
       data: []
     }
-    this.getPosts(1)
+    this.getFoodNews(1)
   }
   render() {
     return (
@@ -32,8 +30,7 @@ class ListNews extends React.Component {
         </div>
     );
   }
-  async getPosts(page) {
-
+  async getFoodNews(page) {
     const resp = await fetch('/graphql', {
       method: 'post',
       headers: {
@@ -41,20 +38,16 @@ class ListNews extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{getPosts(page:'+ page +' ){page,totalPage,data{coverUrl, slug, public, title, description, body, view, tags, created_at}}}',
+        query: '{getApartments{categories, coverUrl, slug, title, body, created_at}}',
       }),
       credentials: 'include',
-    });
-
+    })
     const {data} = await resp.json();
-    // console.log(data.getPosts)
     this.setState(prev => {
       return {
         ...prev,
         loading: false,
-        page: data.getPosts.page,
-        totalPage: data.getPosts.totalPage,
-        data: data.getPosts.data
+        data: data.getApartments
       }
     })
   }
@@ -65,16 +58,12 @@ const columns = [{
   dataIndex: 'title',
   key: 'title',
   render: text => <span>{text.length > 53 ? (text.slice(0, 50) + '...') : (text)}</span>,
-}, {
-  title: 'Lượt xem',
-  dataIndex: 'view',
-  key: 'view',
-}, {
+},{
   title: 'Action',
   key: 'action',
   render: (text, record) => (
     <span>
-      <Link to={"/admin/news?v=edit&slug=" + record.slug }>Sửa</Link>
+      <Link to={"/admin/apartment?v=edit&slug=" + record.slug }>Sửa</Link>
     </span>
   ),
 }];

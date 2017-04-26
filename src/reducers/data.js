@@ -10,25 +10,13 @@ export default function data(state = {}, action) {
           ...state.post,
           value: data.getOnePost || {}
         },
-        news: {
-          ...state.news,
-          value: data.getNews || state.news.value
+        posts: {
+          ...state.posts,
+          value: data.getPosts || state.posts.value
         },
-        foodNews: {
-          ...state.news,
-          value: data.getFoodNews || state.foodNews.value
-        },
-        newsInCategory: {
-          ...state.newsInCategory,
-          value: data.getNewsInCategory || state.news.value
-        },
-        product: {
-          ...state.product,
-          value : data.getOneProduct || {}
-        },
-        products: {
-          ...state.products,
-          value : data.getProducts || []
+        newApartments: {
+          ...state.newApartments,
+          value: data.getNewApartments || state.newApartments.value
         }
       };
     default:

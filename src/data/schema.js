@@ -21,6 +21,8 @@ import userQueries from './models/user/queries'
 import settingQueries from './models/setting/queries'
 import orderQueries from './models/order/queries'
 import seoQueries from './models/seo/queries'
+import apartmentQueries from './models/apartment/queries'
+import categoryQueries from './models/category/queries'
 
 // mutation
 import settingMutation from './models/setting/mutations'
@@ -31,9 +33,11 @@ let {listImage} = imageQueries
 let { users } = userQueries
 let { setting } = settingQueries
 let { getOrders } = orderQueries
-let { getNews, getOneNews, getFoodNews, getOnePost, getNewsInCategory} = postQueries
+let { getPosts, getOnePost} = postQueries
 let { getOneProduct, getProducts } = productQueries
 let { seo, allSeo } = seoQueries
+let { getApartments, getOneApartment, getNewApartments } = apartmentQueries
+let { getCategories, getOneCategory } = categoryQueries
 
 const schema = new Schema({
   query: new ObjectType({
@@ -43,16 +47,18 @@ const schema = new Schema({
       news,
       listImage,
       users,
-      getNews,
-      getOneNews,
-      getFoodNews,
+      getPosts,
       getOnePost,
-      getNewsInCategory,
       getOneProduct,
       getProducts,
       getOrders,
       seo,
-      allSeo
+      allSeo,
+      getApartments,
+      getOneApartment,
+      getNewApartments,
+      getCategories,
+      getOneCategory
     },
   }),
   mutation: new ObjectType({

@@ -8,18 +8,22 @@
  */
 
 import React, { PropTypes } from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './style.css';
 import {Modal, Input, Button, Switch, Select, Row, Col, Card, Tabs, message, Affix} from 'antd';
 import axios from 'axios';
 import history from '../../../core/history'
 import CustomTag from '../Components/Tags'
 import ImageUpload from '../Components/ImageUpload'
 import ImageSelect from '../Components/ImageSelect'
+import TreeSelect from '../Components/TreeSelect'
 import fetch from '../../../core/fetch';
 const TabPane = Tabs.TabPane;
 import CKEditor from '../Components/CKEditor'
 const Option = Select.Option;
+
+const children = [];
+for (let i = 10; i < 36; i++) {
+  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i + ' value'}</Option>);
+}
 
 class EditNewsComponent extends React.Component {
   constructor(props) {
@@ -30,10 +34,15 @@ class EditNewsComponent extends React.Component {
       showModalSelectImage: false,
       data: {
         description: '',
-        tags: []
-      }
+        categories: []
+      },
+      categories: null
     }
-    if(this.props.isEdit) this.init(this.props.slug)
+    if(this.props.isEdit) {
+      this.init(this.props.slug)
+    } else {
+      this.init2()
+    }
   }
 
   async init (slug) {
@@ -44,7 +53,7 @@ class EditNewsComponent extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{ getOnePost(slug: "'+ slug +'"){ coverUrl, slug, public, title, description, body, view, tags, created_at} }',
+        query: '{ getCategories{title, slug, coverUrl, created_at},getOneApartment(slug: "'+ slug +'"){categories, coverUrl, slug, title, body, created_at} }',
       }),
       credentials: 'include',
     })
@@ -53,7 +62,30 @@ class EditNewsComponent extends React.Component {
       return {
         ...prev,
         loading: false,
-        data: data.getOnePost
+        data: data.getOneApartment,
+        categories: data.getCategories
+      }
+    })
+  }
+
+  async init2 (slug) {
+    const resp = await fetch('/graphql', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: '{ getCategories{title, slug, coverUrl, created_at} }',
+      }),
+      credentials: 'include',
+    })
+    const {data} = await resp.json();
+    this.setState(prev => {
+      return {
+        ...prev,
+        loading: false,
+        categories: data.getCategories
       }
     })
   }
@@ -79,7 +111,6 @@ class EditNewsComponent extends React.Component {
     });
   }
   handleOk = (e) => {
-    console.log(e);
     this.setState({
       modalSelectImage: false,
     });
@@ -89,6 +120,7 @@ class EditNewsComponent extends React.Component {
       modalSelectImage: false,
     });
   }
+
   handleSelectImage(img){
     if(this.state.selectImageType === 'cover') {
       this.setState(prevState => {
@@ -113,11 +145,10 @@ class EditNewsComponent extends React.Component {
   }
 
   addNews(post){
-    axios.post('/api/post/new', post)
+    axios.post('/api/apartment/new', post)
       .then(res => {
-        message.success('Thêm mới thành công!')
         history.push({
-          pathname: '/admin/news',
+          pathname: '/admin/apartment',
           search: '?v=edit&slug=' + res.data.slug
         })
       })
@@ -127,7 +158,7 @@ class EditNewsComponent extends React.Component {
   }
 
   updateNews(post){
-    axios.post('/api/post/update', post)
+    axios.post('/api/apartment/update', post)
       .then(res => {
         message.success('Cập nhập thành công!')
       })
@@ -146,14 +177,16 @@ class EditNewsComponent extends React.Component {
           <Affix
             offsetTop={10}
           >
-            {this.props.isEdit && <Button type="primary" style={{float: 'right'}}
-                                          size="large"
+            {this.props.isEdit && <Button
+              size="large"
+              type="primary" style={{float: 'right'}}
               onClick={() => {
                 this.updateNews(this.state.data)
               }}
             >Cập nhập</Button>}
-            {!this.props.isEdit && <Button type="primary" style={{float: 'right'}}
-                                           size="large"
+            {!this.props.isEdit && <Button
+              size="large"
+              type="primary" style={{float: 'right'}}
               onClick={() => {
                 this.addNews(this.state.data)
               }}
@@ -165,6 +198,30 @@ class EditNewsComponent extends React.Component {
             <TabPane tab="Thông tin bài viết" key="1">
               <Row>
                 <Col sm={12} className="padding-5" >
+                  <label><b>Danh mục:</b></label>
+                  {this.state.categories && <Select
+                    mode="multiple"
+                    style={{width: '100%'}}
+                    placeholder="Please select"
+                    defaultValue={this.state.data.categories}
+                    onChange={value => {
+                      this.setState(prev => {
+                        return {
+                          ...prev,
+                          data: {
+                            ...prev.data,
+                            categories: value
+                          }
+                        }
+                      })
+                    }}
+                  >
+                    {this.state.categories.map((el, index) => {
+                       return <Option key={el.slug}>{el.title}</Option>
+                    })}
+                  </Select>}
+                </Col>
+                <Col sm={12} className="padding-5">
                   <div style={{ marginBottom: 16 }}>
                     <label><b>Tựa đề:</b></label>
                     <Input
@@ -214,43 +271,6 @@ class EditNewsComponent extends React.Component {
                     />
                   </div>
                   <div style={{ marginBottom: 16 }}>
-                    <label><b>Tags:</b></label>
-                    <CustomTag defaultValue={this.state.data.tags}
-                               handleChange={(tags) => {
-                                 this.setState(prev => {
-                                   return {
-                                     ...prev,
-                                     data: {
-                                       ...prev.data,
-                                       tags: tags
-                                     }
-                                   }
-                                 })
-                               }}
-                    />
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>Mô tả ( {(this.state.data.description.length >= 140 && this.state.data.description.length <= 150) ? <span style={{color: 'blue'}}>{this.state.data.description.length}</span> : <span style={{color: 'red'}}>{this.state.data.description.length}</span>} /150) :</b></label>
-                    <Input type="textarea"
-                           autosize={{ minRows: 2, maxRows: 10 }}
-                           defaultValue={this.state.data.description}
-                           onChange={(e) => {
-                             let value = e.target.value
-                             this.setState(prev => {
-                               return {
-                                 ...prev,
-                                 data: {
-                                   ...prev.data,
-                                   description: value
-                                 }
-                               }
-                             })
-                           }}
-                    />
-                  </div>
-                </Col>
-                <Col sm={12} className="padding-5">
-                  <div style={{ marginBottom: 16 }}>
                     <label><b>Ảnh đại diện:</b></label>
                     {!this.state.data.coverUrl && <ImageUpload
                       isMultiple={false}
@@ -262,8 +282,9 @@ class EditNewsComponent extends React.Component {
                       <img src={this.state.data.coverUrl} />
                     </Card>}
                   </div>
-                  <Button style={{marginRight: 10}}
-                          onClick={() => this.showModalSelectImage('cover')}
+                  <Button
+                    style={{marginRight: 10}}
+                    onClick={() => this.showModalSelectImage('cover')}
                   >Chọn ảnh từ thư viện</Button>
                   {this.state.data.coverUrl && <Button
                     onClick={() => {
@@ -279,6 +300,9 @@ class EditNewsComponent extends React.Component {
                     }
                     }
                   >Xóa ảnh </Button>}
+
+                  <br/>
+
                 </Col>
               </Row>
             </TabPane>
@@ -309,6 +333,7 @@ class EditNewsComponent extends React.Component {
             </TabPane>
           </Tabs>
         </Row>
+
         <Modal
           style={{top: 30}}
           width="90%"
@@ -352,4 +377,4 @@ function slugify(str)
   return str;
 }
 
-export default withStyles(s)(EditNewsComponent)
+export default EditNewsComponent

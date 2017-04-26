@@ -7,22 +7,21 @@ class Aside extends React.Component {
 
   render(){
     return (
-      <aside className="col-lg-3 col-sm-4 sidebar">
+      <aside className="col-sm-3 sidebar">
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
           <div className="newsletter">
-            <h4 style={{textAlign: 'center', background: '#001f3f', color: 'white', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
-              CHUYÊN VIÊN TƯ VẤN
+            <h4 style={{textAlign: 'center', background: '#228dcb', color: 'white', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
+              PHÙNG ĐẠI QUANG
             </h4>
-            <div className="row" style={{textAlign: 'center', color: '#FF4136', fontWeight: 'bold', marginTop: 10}}>PHÙNG ĐẠI QUANG</div>
-            <div className="row" style={{padding: '10px 5px !important'}}>
-              <div className="col-sm-12">
-                <div style={{borderRadius: '100%', padding: '0 20px 20px 20px'}}>
+            <div className="row" style={{padding: '20px 5px !important'}}>
+              <div className="col-sm-6">
+                <div style={{borderRadius: '100%'}}>
                   <img src="/imgs/avatar.jpg" alt="Anh dai dien" style={{width: '100%', height: 'auto', borderRadius: '100%'}} />
                 </div>
               </div>
-              <div className="col-sm-12" style={{paddingTop: 0}}>
-                <div style={{textAlign: 'center'}}><b style={{color: '#FF4136', fontSize: 13}}>0968 146 839</b></div>
-                <div style={{fontSize: 12, textAlign: 'center'}}>quanganh268.vud@gmail.com</div>
+              <div className="col-sm-6" style={{paddingTop: 10}}>
+                <div><b style={{color: '#FF4136', fontSize: 13}}>0968 146 839</b></div>
+                <div style={{fontSize: 12}}>email@gmail.com</div>
               </div>
             </div>
           </div>

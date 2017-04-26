@@ -60,6 +60,7 @@
     "react": "^15.5.3",
     "react-apollo": "^1.0.1",
     "react-avatar-editor": "^9.1.1",
+    "react-burger-menu": "^2.0.0",
     "react-codemirror": "^0.3.0",
     "react-color": "^2.11.4",
     "react-copy-to-clipboard": "^4.2.3",

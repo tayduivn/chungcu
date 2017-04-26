@@ -2,7 +2,7 @@ let mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var schema = new mongoose.Schema({
-  category: String,
+  category: {type: String, default: 'su-kien'},
   slug: { type:String, required:true, unique: true, index: true},
   title: String,
   public: {type: Boolean, default: false},
@@ -20,7 +20,7 @@ module.exports = model;
 
 // get ( news )
 
-module.exports.getNews = (root, {page}) => {
+module.exports.getPosts = (root, {page}) => {
   let listCategoryInNews = [
     'su-kien',
     'tin-tuc-tong-hop'
@@ -28,11 +28,9 @@ module.exports.getNews = (root, {page}) => {
 
   return new Promise((resolve, reject) => {
 
-    model.count({category: {$in: listCategoryInNews}}).exec((err, count) => {
+    model.count({}).exec((err, count) => {
       if(err) return reject(err)
-      model.find({category: {
-        $in: listCategoryInNews
-      }}).sort({created_at: -1}).skip((page-1)*16).limit(16).exec((err, res) => {
+      model.find({}).sort({created_at: -1}).skip((page-1)*16).limit(16).exec((err, res) => {
         err ? reject(err) : resolve({
           page: page,
           totalPage: Math.floor(count/16) + 1,

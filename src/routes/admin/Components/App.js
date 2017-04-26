@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+  import React, { PropTypes } from 'react'
 import { Layout, Menu, Breadcrumb, Icon, LocaleProvider, Button } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -56,6 +56,7 @@ class App extends React.Component {
                   </span>
                 </Link>
               </Menu.Item>
+
               <Menu.Item key="Seo">
                 <Link to="/admin/seo/">
                   <span>
@@ -67,25 +68,25 @@ class App extends React.Component {
 
               <SubMenu
                 key="sub0"
-                title={<span><Icon type="idcard" /><span className="nav-text">Sản phẩm</span></span>}
+                title={<span><Icon type="idcard" /><span className="nav-text">Danh mục</span></span>}
               >
-                <Menu.Item key="product1">
-                  <Link to="/admin/product?v=list" >Danh sách</Link>
+                <Menu.Item key="category1">
+                  <Link to="/admin/category?v=list" >Danh sách</Link>
                 </Menu.Item>
-                <Menu.Item key="product2">
-                  <Link to="/admin/product?v=add" >Thêm mới</Link>
+                <Menu.Item key="category2">
+                  <Link to="/admin/category?v=add" >Thêm mới</Link>
                 </Menu.Item>
               </SubMenu>
 
               <SubMenu
                 key="sub1"
-                title={<span><Icon type="idcard" /><span className="nav-text">Món ngon</span></span>}
+                title={<span><Icon type="idcard" /><span className="nav-text">Căn hộ</span></span>}
               >
-                <Menu.Item key="monngon1">
-                  <Link to="/admin/monngon?v=list" >Danh sách</Link>
+                <Menu.Item key="apartment1">
+                  <Link to="/admin/apartment?v=list" >Danh sách</Link>
                 </Menu.Item>
-                <Menu.Item key="monngon2">
-                  <Link to="/admin/monngon?v=add" >Thêm mới</Link>
+                <Menu.Item key="apartment2">
+                  <Link to="/admin/apartment?v=add" >Thêm mới</Link>
                 </Menu.Item>
               </SubMenu>
 

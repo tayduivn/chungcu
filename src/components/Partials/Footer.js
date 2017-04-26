@@ -8,6 +8,12 @@ class Footer extends React.Component {
   render () {
     return (
       <div className="footer">
+        <div className="a-left" >
+          <img src="/imgs/leaf.png" alt=""/>
+        </div>
+        <div className="a-right" >
+          <img src="/imgs/leaf.png" alt=""/>
+        </div>
         <div className="footer-body">
           <div className="container">
             <div className="row">
@@ -16,9 +22,9 @@ class Footer extends React.Component {
                   <h4>thông tin liên hệ</h4>
                   <ul className="contact-items ng-scope" >
                     <li className="clearfix item ng-scope">
-                      <div className="label ng-binding">Hotline</div>
+                      <div className="label ng-binding">Tư vấn</div>
                       <div className="text">
-                        <a  className="ng-binding ng-scope" href="tel://18001221">1800 1221</a>
+                        <b>0906.234.912 - 0972.564.695</b>
                       </div>
                     </li>
                     <li className="clearfix item ng-scope" >
@@ -36,7 +42,7 @@ class Footer extends React.Component {
                     <li className="clearfix item ng-scope" >
                       <div className="label ng-binding">Email</div>
                       <div className="text">
-                        <a className="ng-binding ng-scope" href="mailto://info-vhrtheharmony@vinhomes.vn">info-vhrtheharmony@vinhomes.vn</a>
+                        <a className="ng-binding ng-scope" href="mailto://quanganh268.vud@gmail.com">quanganh268.vud@gmail.com</a>
                       </div>
                     </li>
                     <li className="clearfix item ng-scope" >

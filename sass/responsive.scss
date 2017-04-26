@@ -1,0 +1,17 @@
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar-header {
+    float: none !important;
+    text-align: center;
+    a {
+      margin: 0 auto;
+    }
+    img {
+      float: none;
+      margin: 0 auto;
+    }
+  }
+}

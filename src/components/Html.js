@@ -101,6 +101,7 @@ class Html extends React.Component {
                 + `.js("/assets/revolution/js/jquery.themepunch.tools.min.js")`
                 + `.js("/assets/revolution/js/jquery.themepunch.revolution.min.js")`
                 + `.js("/assets/js/init.js")`
+                + `.js("https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js")`
                 +  `.js("${scripts[0]}?v=${v}")`
                 +  `.js("${scripts[1]}?v=${v}")`}}
           >

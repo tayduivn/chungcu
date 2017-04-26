@@ -11,6 +11,7 @@ export default {
   async action({ store, path }) {
     // process.env.BROWSER
     let seo = {}
+
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())) {
       store.dispatch(showLoading())
       const resp = await fetch('/graphql', {
@@ -20,7 +21,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at}, getNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}}, getFoodNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}} }',
+          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getNewApartments{categories, coverUrl, slug, title, body, created_at} }',
         }),
         credentials: 'include',
       });

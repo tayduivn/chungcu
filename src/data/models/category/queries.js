@@ -18,21 +18,17 @@ import type from './type'
 import model from './schema'
 
 export default {
-  getOneApartment: {
+  getOneCategory: {
     type: type,
     args: {
       slug: {
         type: GraphQLString
       }
     },
-    resolve: model.getOneApartment
+    resolve: model.getOneCategory
   },
-  getApartments: {
+  getCategories: {
     type: new GraphQLList(type),
-    resolve: model.getApartments
-  },
-  getNewApartments: {
-    type: new GraphQLList(type),
-    resolve: model.getNewApartments
+    resolve: model.getCategories
   },
 };

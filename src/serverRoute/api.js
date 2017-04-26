@@ -4,7 +4,9 @@ const mongoose = require('mongoose')
 const Post = mongoose.model('Post')
 const Setting = mongoose.model('Setting')
 const Product = mongoose.model('Product')
+const Category = mongoose.model('Category')
 const Order = mongoose.model('Order')
+const Apartment = mongoose.model('Apartment')
 const Seo = mongoose.model('Seo')
 let bodyParser = require('body-parser')
 let Mailer = require('./services/mailgun');
@@ -45,6 +47,34 @@ router.post('/product/new', bodyParser.json() ,(req, res) => {
 router.post('/product/update', bodyParser.json() ,(req, res) => {
   console.log(req.body)
   Product.findOneAndUpdate({slug: req.body.slug}, { $set: req.body}, { new: true }, function (err, resData) {
+    if (err) return res.statusCode(400).send(err);
+    res.send(resData);
+  });
+})
+
+router.post('/category/new', bodyParser.json() ,(req, res) => {
+  Category.create(req.body, (err, resData) => {
+    if(err) res.sendStatus(400)
+    res.send(resData)
+  })
+})
+
+router.post('/category/update', bodyParser.json() ,(req, res) => {
+  Category.findOneAndUpdate({slug: req.body.slug}, { $set: req.body}, { new: true }, function (err, resData) {
+    if (err) return res.statusCode(400).send(err);
+    res.send(resData);
+  });
+})
+
+router.post('/apartment/new', bodyParser.json() ,(req, res) => {
+  Apartment.create(req.body, (err, resData) => {
+    if(err) res.sendStatus(400)
+    res.send(resData)
+  })
+})
+
+router.post('/apartment/update', bodyParser.json() ,(req, res) => {
+  Apartment.findOneAndUpdate({slug: req.body.slug}, { $set: req.body}, { new: true }, function (err, resData) {
     if (err) return res.statusCode(400).send(err);
     res.send(resData);
   });

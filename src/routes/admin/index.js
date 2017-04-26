@@ -20,6 +20,8 @@ export default {
     require('./dashboard').default,
     require('./library').default,
     require('./setting').default,
+    require('./apartment').default,
+    require('./category').default,
     // require('./editor').default,
     require('./news').default,
     require('./monngon').default,
@@ -28,6 +30,7 @@ export default {
   ],
   async action({store, next}) {
     let user = store.getState().user
+
     const route = await next();
     // Provide default values for title, description etc.
     route.title = `${route.title || 'Amdmin Page'}`;

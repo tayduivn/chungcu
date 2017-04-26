@@ -18,7 +18,7 @@ import type from './type'
 import model from './schema'
 
 export default {
-  getNews: {
+  getPosts: {
     type: new GraphQLObjectType({
         name: 'getNews',
         description: 'getNews object',
@@ -39,39 +39,7 @@ export default {
           type: GraphQLInt
         }
       },
-      resolve: model.getNews
-  },
-  getFoodNews: {
-    type: new GraphQLObjectType({
-      name: 'getFoodNews',
-      description: 'getFoodNews object',
-      fields: () => ({
-        page: {
-          type: GraphQLInt
-        },
-        totalPage: {
-          type: GraphQLInt
-        },
-        data: {
-          type: new GraphQLList(type)
-        }
-      })
-    }),
-    args: {
-      page: {
-        type: GraphQLInt
-      }
-    },
-    resolve: model.getFoodNews
-  },
-  getOneNews: {
-    type: type,
-    args: {
-      slug: {
-        type: GraphQLString
-      }
-    },
-    resolve: model.getOnePost
+      resolve: model.getPosts
   },
   getOnePost: {
     type: type,
@@ -82,30 +50,4 @@ export default {
     },
     resolve: model.getOnePost
   },
-  getNewsInCategory: {
-    type: new GraphQLObjectType({
-      name: 'getNewsInCategory',
-      description: 'getNewsInCategory object',
-      fields: () => ({
-        page: {
-          type: GraphQLInt
-        },
-        totalPage: {
-          type: GraphQLInt
-        },
-        data: {
-          type: new GraphQLList(type)
-        }
-      })
-    }),
-    args: {
-      page: {
-        type: GraphQLInt
-      },
-      slug: {
-        type: GraphQLString
-      }
-    },
-    resolve: model.getNewsInCategory
-  }
 };
