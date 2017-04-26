@@ -1,4 +1,4 @@
-  import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { Layout, Menu, Breadcrumb, Icon, LocaleProvider, Button } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -68,19 +68,19 @@ class App extends React.Component {
 
               <SubMenu
                 key="sub0"
-                title={<span><Icon type="idcard" /><span className="nav-text">Danh mục</span></span>}
+                title={<span><Icon type="idcard" /><span className="nav-text">CHO THUÊ</span></span>}
               >
                 <Menu.Item key="category1">
-                  <Link to="/admin/category?v=list" >Danh sách</Link>
+                  <Link to="/admin/apartment2?v=list" >Danh sách</Link>
                 </Menu.Item>
                 <Menu.Item key="category2">
-                  <Link to="/admin/category?v=add" >Thêm mới</Link>
+                  <Link to="/admin/apartment2?v=add" >Thêm mới</Link>
                 </Menu.Item>
               </SubMenu>
 
               <SubMenu
                 key="sub1"
-                title={<span><Icon type="idcard" /><span className="nav-text">Căn hộ</span></span>}
+                title={<span><Icon type="idcard" /><span className="nav-text">MB & CN</span></span>}
               >
                 <Menu.Item key="apartment1">
                   <Link to="/admin/apartment?v=list" >Danh sách</Link>
@@ -92,7 +92,7 @@ class App extends React.Component {
 
               <SubMenu
                 key="sub2"
-                title={<span><Icon type="idcard" /><span className="nav-text">Tin tức</span></span>}
+                title={<span><Icon type="idcard" /><span className="nav-text">Thủ tục pháp lý</span></span>}
               >
                 <Menu.Item key="tintuc1">
                   <Link to="/admin/news?v=list" >Danh sách</Link>

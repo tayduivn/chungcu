@@ -51,7 +51,7 @@ class ListNews extends React.Component {
                       </span>
                     </Td>
                     <Td>
-                      <span><Link to={"/admin/apartment?v=edit&slug=" + el.slug }>Sửa</Link></span>
+                      <span><Link to={"/admin/apartment2?v=edit&slug=" + el.slug }>Sửa</Link></span>
                     </Td>
                   </Tr>
                 )
@@ -72,7 +72,7 @@ class ListNews extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{getApartments(type:"mbcn"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at}}',
+        query: '{getApartments(type:"cho-thue"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at}}',
       }),
       credentials: 'include',
     })

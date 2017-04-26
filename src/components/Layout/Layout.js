@@ -38,56 +38,6 @@ class Layout extends React.Component {
           <Header />
           {this.props.children}
 
-
-          <section id="testimonial">
-            <div className="container">
-              <h3 className="head">
-                Đánh Giá Về Chúng Tôi
-              </h3>
-              <div className="row">
-                <div className="col-md-4 testimonialWr">
-                  <div className="row clearfix headWr">
-                    <div className="avatarWr">
-                      <img src="/imgs/avatar.png" alt=""/>
-                    </div>
-                    <div className="name">
-                      Họ tên A
-                    </div>
-                  </div>
-                  <div className="row danhgia">
-                    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="row clearfix headWr">
-                    <div className="avatarWr">
-                      <img src="/imgs/avatar.png" alt=""/>
-                    </div>
-                    <div className="name">
-                      Họ tên A
-                    </div>
-                  </div>
-                  <div className="row danhgia">
-                    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="row clearfix headWr">
-                    <div className="avatarWr">
-                      <img src="/imgs/avatar.png" alt=""/>
-                    </div>
-                    <div className="name">
-                      Họ tên A
-                    </div>
-                  </div>
-                  <div className="row danhgia">
-                    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <Footer />
 
           <Modal />

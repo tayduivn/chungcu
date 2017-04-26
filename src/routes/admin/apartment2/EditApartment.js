@@ -34,7 +34,7 @@ class EditNewsComponent extends React.Component {
       showModalSelectImage: false,
       data: {
         description: '',
-        category: 'khu-t'
+        category: 'cho-thue'
       },
     }
     if(this.props.isEdit) {
@@ -122,7 +122,7 @@ class EditNewsComponent extends React.Component {
     axios.post('/api/apartment/new', post)
       .then(res => {
         history.push({
-          pathname: '/admin/apartment',
+          pathname: '/admin/apartment2',
           search: '?v=edit&slug=' + res.data.slug
         })
       })
@@ -219,27 +219,6 @@ class EditNewsComponent extends React.Component {
                         })
                       }}
                     />
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>Danh mục:</b></label>
-                    <Select
-                      defaultValue={this.state.data.category || 'khu-t'}
-                      style={{ width: '100%' }}
-                      onChange={(value) => {
-                        this.setState(prev => {
-                          return {
-                            ...prev,
-                            data: {
-                              ...prev.data,
-                              category: value
-                            }
-                          }
-                        })
-                      }}
-                    >
-                      <Option value="khu-t">Khu T</Option>
-                      <Option value="khu-park-hill">Khu Park Hill</Option>
-                    </Select>
                   </div>
                   <div style={{ marginBottom: 16 }}>
                     <label><b>Giá gốc:</b></label>

@@ -9,39 +9,39 @@
 
 import React from 'react';
 
-const title = 'Căn Hộ Mua Bán & Chuyển Nhượng ';
+const title = 'Căn Hộ Cho Thuê';
 
 export default {
 
-  path: '/apartment',
+  path: '/apartment2',
 
   async action({query}) {
     if(!query.v){
-      return { redirect: '/admin/apartment?v=list' };
+      return { redirect: '/admin/apartment2?v=list' };
     }
-    const {App, EditApartment , ListApartment } = await require('../AdminRequire')
+    const {App, EditApartment2 , ListApartment2 } = await require('../AdminRequire')
     let component = {}
 
     if(query.v === 'list'){
       component = <App
           name={title}
         >
-          <ListApartment title={title} />
+          <ListApartment2 title={title} />
         </App>
     } else if(query.v === 'add'){
       component = <App
         name={title}
       >
-        <EditApartment mode="add" isEdit={false} />
+        <EditApartment2 mode="add" isEdit={false} />
       </App>
     } else if(query.slug && query.v === 'edit'){
       component = <App
         name={title}
       >
-        <EditApartment mode="edit" isEdit={true} slug={query.slug} />
+        <EditApartment2 mode="edit" isEdit={true} slug={query.slug} />
       </App>
     } else if (query.v !== 'list') {
-      return { redirect: '/admin/apartment?v=list' };
+      return { redirect: '/admin/apartment2?v=list' };
     }
 
     return {

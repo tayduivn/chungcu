@@ -13,6 +13,9 @@ var AdminRequire =  require.ensure([], require => {
       EditApartment: require('./apartment/EditApartment').default,
       ListApartment: require('./apartment/ListApartment').default,
 
+      EditApartment2: require('./apartment2/EditApartment').default,
+      ListApartment2: require('./apartment2/ListApartment').default,
+
       EditCategory: require('./category/EditCategory').default,
       ListCategories: require('./category/ListCategories').default,
 

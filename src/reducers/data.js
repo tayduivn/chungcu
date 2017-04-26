@@ -14,9 +14,25 @@ export default function data(state = {}, action) {
           ...state.posts,
           value: data.getPosts || state.posts.value
         },
-        newApartments: {
-          ...state.newApartments,
-          value: data.getNewApartments || state.newApartments.value
+        chothue: {
+          ...state.chothue,
+          value: data.chothue || state.chothue.value
+        },
+        muabankhut: {
+          ...state.muabankhut,
+          value: data.muabankhut || state.muabankhut.value
+        },
+        muabanparkhill: {
+          ...state.muabanparkhill,
+          value: data.muabanparkhill || state.muabanparkhill.value
+        },
+        danhsachcanho: {
+          ...state.danhsachcanho,
+          value: data.danhsachcanho || state.danhsachcanho.value
+        },
+        canho: {
+          ...state.canho,
+          value: data.canho || state.canho.value
         }
       };
     default:

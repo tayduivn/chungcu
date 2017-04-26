@@ -20,7 +20,7 @@ class Header extends React.Component {
                 </div>
                 <div className="navbar2">
                   <div className="navbar2-top">TỰ HÀO LÀ ĐƠN VỊ CHO THUÊ - CHUYỂN NHƯỢNG SỐ 1 TIME CITY</div>
-                  <div className="navbar2-bottom">Chuyên viên tư vấn: <b>0906.234.912 - 0972.564.695</b></div>
+                  <div className="navbar2-bottom">Chuyên viên tư vấn: <b style={{color: '#FF4136'}}>0906.234.912 - 0972.564.695</b></div>
                 </div>
               </nav>
             </div>

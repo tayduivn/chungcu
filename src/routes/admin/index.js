@@ -21,6 +21,7 @@ export default {
     require('./library').default,
     require('./setting').default,
     require('./apartment').default,
+    require('./apartment2').default,
     require('./category').default,
     // require('./editor').default,
     require('./news').default,

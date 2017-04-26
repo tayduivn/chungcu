@@ -36,7 +36,7 @@ let { getOrders } = orderQueries
 let { getPosts, getOnePost} = postQueries
 let { getOneProduct, getProducts } = productQueries
 let { seo, allSeo } = seoQueries
-let { getApartments, getOneApartment, getNewApartments } = apartmentQueries
+let { getApartments, getOneApartment, getApartmentsByCategory } = apartmentQueries
 let { getCategories, getOneCategory } = categoryQueries
 
 const schema = new Schema({
@@ -56,9 +56,9 @@ const schema = new Schema({
       allSeo,
       getApartments,
       getOneApartment,
-      getNewApartments,
       getCategories,
-      getOneCategory
+      getOneCategory,
+      getApartmentsByCategory
     },
   }),
   mutation: new ObjectType({

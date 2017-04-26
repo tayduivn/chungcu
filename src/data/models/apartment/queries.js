@@ -29,10 +29,20 @@ export default {
   },
   getApartments: {
     type: new GraphQLList(type),
+    args: {
+      type: {
+        type: GraphQLString
+      }
+    },
     resolve: model.getApartments
   },
-  getNewApartments: {
+  getApartmentsByCategory: {
     type: new GraphQLList(type),
-    resolve: model.getNewApartments
+    args: {
+      category: {
+        type: GraphQLString
+      }
+    },
+    resolve: model.getApartmentsByCategory
   },
 };

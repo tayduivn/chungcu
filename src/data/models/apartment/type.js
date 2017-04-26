@@ -34,24 +34,28 @@ export default new GraphQLObjectType({
       type: new GraphQLNonNull(GraphQLString)
     },
 
-    categories: {
-      type: new GraphQLList(GraphQLString)
+    category: {
+      type: new GraphQLNonNull(GraphQLString)
     },
 
     coverUrl: {
       type: new GraphQLNonNull(GraphQLString)
     },
 
-    price: {
+    price1: {
       type: new GraphQLNonNull(GraphQLInt)
     },
 
-    priceOff: {
+    price2: {
       type: new GraphQLNonNull(GraphQLInt)
     },
 
-    description: {
-      type: new GraphQLNonNull(GraphQLString)
+    rating: {
+      type: new GraphQLNonNull(GraphQLInt)
+    },
+
+    numRate: {
+      type: new GraphQLNonNull(GraphQLInt)
     },
 
     body: {

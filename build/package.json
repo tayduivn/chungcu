@@ -74,6 +74,7 @@
     "react-slick": "^0.14.11",
     "react-sticky": "^5.0.5",
     "react-sticky-el": "^1.0.3",
+    "react-super-responsive-table": "^0.1.8",
     "react-trix": "^0.2.1",
     "react-visibility-sensor": "^3.9.0",
     "react-waypoint": "^5.2.1",

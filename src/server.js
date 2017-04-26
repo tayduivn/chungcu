@@ -129,11 +129,26 @@ app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
           needUpdate: true,
           value: {}
         },
-        newApartments: {
+        muabankhut: {
           needUpdate: true,
           value: []
         },
-
+        muabanparkhill: {
+          needUpdate: true,
+          value: []
+        },
+        chothue: {
+          needUpdate: true,
+          value: []
+        },
+        danhsachcanho: {
+          needUpdate: true,
+          value: []
+        },
+        canho: {
+          needUpdate: true,
+          value: []
+        },
       },
       user: req.user || null,
     }, {

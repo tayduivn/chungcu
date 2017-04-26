@@ -7,8 +7,8 @@ import { setData } from '../../actions/data';
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 export default {
-  path: '/',
-  async action({ store, path }) {
+  path: '/danhsach/:slug',
+  async action({ store, params, path }) {
     // process.env.BROWSER
     let seo = {}
 
@@ -21,13 +21,12 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},chothue:getApartmentsByCategory(category:"cho-thue"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},muabankhut:getApartmentsByCategory(category:"khu-t"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},muabanparkhill:getApartmentsByCategory(category:"khu-park-hill"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at} }',
+          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},danhsachcanho:getApartmentsByCategory(category:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at} }',
         }),
         credentials: 'include',
       });
 
       const {data} = await resp.json();
-      console.log(data)
       seo = data.seo || {}
       if (!data) throw new Error('Failed to load the news feed.');
       store.dispatch(setData(data))
@@ -38,8 +37,18 @@ export default {
       title: seo.title || 'Trang chủ',
       description: seo.description || '',
       seo: seo,
-      component: <Layout><View data={store.getState().data} /></Layout>,
+      component: <Layout><View data={store.getState().data} headerName={mapSlugToName(params.slug)} /></Layout>,
     };
   },
 
 };
+
+function mapSlugToName(slug){
+  if(slug === 'khu-t'){
+    return "Mua bán & chuyển nhượng ( Căn hộ khu T )"
+  } else if( slug === 'khu-park-hill'){
+    return "Mua bán & chuyển nhượng ( Căn hộ khu Park Hill )"
+  } else {
+    return "Căn Hộ Cho Thuê"
+  }
+}
