@@ -287,8 +287,8 @@ body {
   display: block;
   text-align: center;
   border-bottom: 1px solid #ddd;
-  height: 30px;
-  line-height: 30px;
+  height: 50px;
+  line-height: 50px;
   font-weight: bold;
   color: white; }
   #menuMobile > a:hover {
@@ -929,4 +929,8 @@ hr {
   #menu2 {
     display: none; }
   .menu-icon {
-    display: block; } }
+    display: block; }
+  header h2 {
+    font-size: 14px !important; }
+  .inner-page header, .mar-top header {
+    top: -10px; } }

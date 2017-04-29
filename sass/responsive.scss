@@ -40,4 +40,10 @@
   .menu-icon {
     display: block;
   }
+  header h2 {
+    font-size: 14px !important;
+  }
+  .inner-page header, .mar-top header {
+    top: -10px;
+  }
 }
