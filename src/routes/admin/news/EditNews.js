@@ -214,22 +214,6 @@ class EditNewsComponent extends React.Component {
                     />
                   </div>
                   <div style={{ marginBottom: 16 }}>
-                    <label><b>Tags:</b></label>
-                    <CustomTag defaultValue={this.state.data.tags}
-                               handleChange={(tags) => {
-                                 this.setState(prev => {
-                                   return {
-                                     ...prev,
-                                     data: {
-                                       ...prev.data,
-                                       tags: tags
-                                     }
-                                   }
-                                 })
-                               }}
-                    />
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
                     <label><b>Mô tả ( {(this.state.data.description.length >= 140 && this.state.data.description.length <= 150) ? <span style={{color: 'blue'}}>{this.state.data.description.length}</span> : <span style={{color: 'red'}}>{this.state.data.description.length}</span>} /150) :</b></label>
                     <Input type="textarea"
                            autosize={{ minRows: 2, maxRows: 10 }}

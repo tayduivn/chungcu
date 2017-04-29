@@ -10,6 +10,8 @@ class Home extends React.Component {
     const chothue = this.props.data.chothue.value
     const muabankhut = this.props.data.muabankhut.value
     const muabanparkhill = this.props.data.muabanparkhill.value
+    const thutuctrangchu = this.props.data.thutuctrangchu.value.slice(0, 4)
+    const thutucAside = this.props.data.thutuctrangchu.value
     return (
       <div >
         {/*<MenuMobile />*/}
@@ -196,7 +198,7 @@ class Home extends React.Component {
                 </div>
 
               </div>
-              <Aside />
+              <Aside thutuc={thutucAside} />
             </div>
           </div>
         </section>
@@ -213,122 +215,79 @@ class Home extends React.Component {
             </div>
             {/* /row */}
             <div className="row m-top-10">
-              <div className="col-lg-3 col-sm-4">
-                <div className="card">
-                  <div className="card-image">
-                    <img className="img-responsive" src="/assets/images/home-2.jpg" alt />
-                  </div>
-                  <div className="card-content">
-                    <div className="listingInfo">
-                      <div className="vcard">
-                        <h2><a href="#" className="name">10250 W. Sunset Blvd | Holmby Hills 50 E 28th</a></h2>
-                        <p className="listingLocation save"><i className="fa fa-map-o" />245 E 40th St, New York, NY 10016</p>
+              {thutuctrangchu.map((el, index) => {
+                return (
+                  <div key={index} className="col-lg-3 col-sm-4">
+                    <div className="card">
+                      <div className="card-image">
+                        <Link to={'/thutuc/' + el.slug}>
+                          <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                        </Link>
+                      </div>
+                      <div className="card-content">
+                        <div className="listingInfo">
+                          <div className="vcard">
+                            <h2><Link to={'/thutuc/' + el.slug} className="name">{el.title}</Link></h2>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                    {/* /.card */}
                   </div>
-                </div>
-                {/* /.card */}
-              </div>
-              <div className="col-lg-3 col-sm-4">
-                <div className="card">
-                  <div className="card-image">
-                    <img className="img-responsive" src="/assets/images/home-2.jpg" alt />
-                  </div>
-                  <div className="card-content">
-                    <div className="listingInfo">
-                      <div className="vcard">
-                        <h2><a href="#" className="name">10250 W. Sunset Blvd | Holmby Hills 50 E 28th</a></h2>
-                        <p className="listingLocation save"><i className="fa fa-map-o" />245 E 40th St, New York, NY 10016</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* /.card */}
-              </div>
-              <div className="col-lg-3 col-sm-4">
-                <div className="card">
-                  <div className="card-image">
-                    <img className="img-responsive" src="/assets/images/home-2.jpg" alt />
-                  </div>
-                  <div className="card-content">
-                    <div className="listingInfo">
-                      <div className="vcard">
-                        <h2><a href="#" className="name">10250 W. Sunset Blvd | Holmby Hills 50 E 28th</a></h2>
-                        <p className="listingLocation save"><i className="fa fa-map-o" />245 E 40th St, New York, NY 10016</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* /.card */}
-              </div>
-              <div className="col-lg-3 col-sm-4">
-                <div className="card">
-                  <div className="card-image">
-                    <img className="img-responsive" src="/assets/images/home-2.jpg" alt />
-                  </div>
-                  <div className="card-content">
-                    <div className="listingInfo">
-                      <div className="vcard">
-                        <h2><a href="#" className="name">10250 W. Sunset Blvd | Holmby Hills 50 E 28th</a></h2>
-                        <p className="listingLocation save"><i className="fa fa-map-o" />245 E 40th St, New York, NY 10016</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* /.card */}
-              </div>
+                )
+              })}
             </div>
             {/* /row */}
           </div>
         </div>
-        <section id="testimonial">
-          <div className="container">
-            <h3 className="head">
-              Đánh Giá Về Chúng Tôi
-            </h3>
-            <div className="row">
-              <div className="col-md-4 testimonialWr">
-                <div className="row clearfix headWr">
-                  <div className="avatarWr">
-                    <img src="/imgs/avatar.png" alt=""/>
-                  </div>
-                  <div className="name">
-                    Họ tên A
-                  </div>
-                </div>
-                <div className="row danhgia">
-                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="row clearfix headWr">
-                  <div className="avatarWr">
-                    <img src="/imgs/avatar.png" alt=""/>
-                  </div>
-                  <div className="name">
-                    Họ tên A
-                  </div>
-                </div>
-                <div className="row danhgia">
-                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="row clearfix headWr">
-                  <div className="avatarWr">
-                    <img src="/imgs/avatar.png" alt=""/>
-                  </div>
-                  <div className="name">
-                    Họ tên A
-                  </div>
-                </div>
-                <div className="row danhgia">
-                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/*<section id="testimonial">*/}
+          {/*<div className="container">*/}
+            {/*<h3 className="head">*/}
+              {/*Đánh Giá Về Chúng Tôi*/}
+            {/*</h3>*/}
+            {/*<div className="row">*/}
+              {/*<div className="col-md-4 testimonialWr">*/}
+                {/*<div className="row clearfix headWr">*/}
+                  {/*<div className="avatarWr">*/}
+                    {/*<img src="/imgs/avatar.png" alt=""/>*/}
+                  {/*</div>*/}
+                  {/*<div className="name">*/}
+                    {/*Họ tên A*/}
+                  {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className="row danhgia">*/}
+                  {/*"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."*/}
+                {/*</div>*/}
+              {/*</div>*/}
+              {/*<div className="col-md-4">*/}
+                {/*<div className="row clearfix headWr">*/}
+                  {/*<div className="avatarWr">*/}
+                    {/*<img src="/imgs/avatar.png" alt=""/>*/}
+                  {/*</div>*/}
+                  {/*<div className="name">*/}
+                    {/*Họ tên A*/}
+                  {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className="row danhgia">*/}
+                  {/*"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."*/}
+                {/*</div>*/}
+              {/*</div>*/}
+              {/*<div className="col-md-4">*/}
+                {/*<div className="row clearfix headWr">*/}
+                  {/*<div className="avatarWr">*/}
+                    {/*<img src="/imgs/avatar.png" alt=""/>*/}
+                  {/*</div>*/}
+                  {/*<div className="name">*/}
+                    {/*Họ tên A*/}
+                  {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className="row danhgia">*/}
+                  {/*"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."*/}
+                {/*</div>*/}
+              {/*</div>*/}
+            {/*</div>*/}
+          {/*</div>*/}
+        {/*</section>*/}
       </div>
   );
   }

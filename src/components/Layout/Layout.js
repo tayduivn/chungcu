@@ -12,22 +12,33 @@ import LoadingBar from 'react-redux-loading-bar';
 import Header from '../Partials/Header'
 import Footer from '../Partials/Footer'
 import Modal from '../Partials/Modal'
+import Link from '../Link'
 
 class Layout extends React.Component {
 
   componentDidMount(){
+    let that = this;
     if(process.env.BROWSER) {
       // $('#mapvinhome').modal('show');
       if(process.env.BROWSER) {
-        var slideout = new Slideout({
+        window.slideout = new Slideout({
           'panel': document.getElementById('panel'),
           'menu': document.getElementById('menuMobile'),
           'padding': 256,
           'tolerance': 70
         })
-        // slideout.open();
+        //
+        $('.menu-icon').on('click', function() {
+          window.slideout.toggle()
+          $('.menu-icon').toggleClass('open')
+        })
       }
     }
+  }
+
+  menuClick(){
+    window.slideout.close()
+    $('.menu-icon').removeClass('open')
   }
 
   render() {
@@ -41,17 +52,31 @@ class Layout extends React.Component {
           <Footer />
 
           <Modal />
-
+          <div className="menu-icon">
+            <span />
+          </div>
           <div id="mapvinhome" className="modal fade" role="dialog">
             <div className="map">
               <img src="/imgs/map.jpg" alt="Ban do vinhomes"/>
             </div>
           </div>
         </main>
-        <nav id="menuMobile">
-          <header>
-            <h2>Menu</h2>
-          </header>
+        <nav id="menuMobile" onClick={this.menuClick}>
+          <Link to="/">
+            Trang chủ
+          </Link>
+          <Link to="/danhsach/cho-thue" style={{fontSize: 12}} onClick={this.menuClick}>
+            Căn hộ cho thuê
+          </Link>
+          <Link to="/danhsach/khu-t" style={{fontSize: 12}} onClick={this.menuClick}>
+            Thuê & Chuyển nhượng khu T
+          </Link>
+          <Link to="/danhsach/khu-pack-hill" style={{fontSize: 12}} onClick={this.menuClick}>
+            Thuê & Chuyển nhượng khu Pack Hill
+          </Link>
+          <Link to="/danhsachthutuc" style={{fontSize: 12}} onClick={this.menuClick}>
+            Các thủ tục pháp lý
+          </Link>
         </nav>
       </div>
     );

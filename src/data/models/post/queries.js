@@ -20,8 +20,8 @@ import model from './schema'
 export default {
   getPosts: {
     type: new GraphQLObjectType({
-        name: 'getNews',
-        description: 'getNews object',
+        name: 'getPosts',
+        description: 'getPosts object',
         fields: () => ({
           page: {
             type: GraphQLInt
@@ -49,5 +49,9 @@ export default {
       }
     },
     resolve: model.getOnePost
+  },
+  getAllPosts: {
+    type: new GraphQLList(type),
+    resolve: model.getAllPosts
   },
 };

@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import Slider from './Slider'
 import Aside from '../../components/Partials/Aside'
 // import MenuMobile from '../../components/Partials/MenuMobile'
 import Link from '../../components/Link';
@@ -9,6 +8,7 @@ class Home extends React.Component {
   render() {
     console.log(this.props)
     const danhsachcanho = this.props.data.danhsachcanho.value
+    const thutucAside = this.props.data.danhsachthutuc.value
     return (
       <div >
         {/*<MenuMobile />*/}
@@ -61,7 +61,7 @@ class Home extends React.Component {
 
                 </div>
               </div>
-              <Aside />
+              <Aside thutuc={thutucAside} />
             </div>
           </div>
         </section>

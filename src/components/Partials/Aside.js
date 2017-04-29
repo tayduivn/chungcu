@@ -7,6 +7,7 @@ class Aside extends React.Component {
   }
 
   render(){
+    const thutuc = this.props.thutuc || []
     return (
       <aside className="col-lg-3 col-sm-4 sidebar">
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
@@ -25,21 +26,47 @@ class Aside extends React.Component {
             </div>
           </div>
         </div>
-        <div className="widget shadow">
-          <ul className="accordion">
-            <li className="accordion-header">CHUYÊN MỤC</li>
-            <li className="accordion-item">TRANG CHỦ</li>
-            <li className="accordion-item">
-              <Link to="/danhsach/cho-thue">CĂN HỘ CHO THUÊ</Link>
-            </li>
-            <li className="accordion-item" >MUA BÁN VÀ CHUYỂN NHƯỢNG</li>
-            <li className="accordion-sub-item" >
-              <Link to='/danhsach/khu-t'>Khu T</Link>
-            </li>
-            <li className="accordion-sub-item" >
-              <Link to='/danhsach/khu-t'>Khu Park Hill</Link></li>
-            <li className="accordion-item">THỦ TỤC PHÁP LÝ</li>
-          </ul>
+
+
+        <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
+          <div className="newsletter">
+            <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
+              Bản đồ khu T
+            </h4>
+            <div>
+              <img src="/imgs/bando1.jpg"  height="auto" width="100%" alt=""/>
+            </div>
+          </div>
+        </div>
+
+        <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
+          <div className="newsletter">
+            <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
+              Bản đồ khu Park Hill
+            </h4>
+            <div>
+              <img src="/imgs/bando2.jpg" height="auto" width="100%" alt=""/>
+            </div>
+          </div>
+        </div>
+
+        <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
+          <div className="newsletter">
+            <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
+              Thủ tục pháp lý
+            </h4>
+            <div>
+              <ul id="thutuc-aside">
+                {thutuc.map((el,index) => {
+                  return (
+                  <li key={index}>
+                    <Link to={'/thutuc/' + el.slug}>{el.title}</Link>
+                  </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
 
       </aside>

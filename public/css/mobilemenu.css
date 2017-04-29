@@ -36,11 +36,23 @@ body {
   display: block; }
 
 #menuMobile {
-  background: white;
-  border-right: 2px solid #333; }
+  background: #001f3f;
+  border-right: 2px solid rgba(255, 177, 0, 0.8); }
 
 @media screen and (min-width: 768px) {
   #menuMobile {
     display: none; }
   #panel {
     transform: none !important; } }
+
+#menuMobile > a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: white; }
+  #menuMobile > a:hover {
+    background: orange; }

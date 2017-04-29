@@ -67,6 +67,13 @@ module.exports.getOnePost = (root, {slug}) => {
     });
   });
 };
+module.exports.getAllPosts = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.find({}).sort({created_at: -1}).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
 
 // get ( food )
 

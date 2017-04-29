@@ -33,7 +33,7 @@ let {listImage} = imageQueries
 let { users } = userQueries
 let { setting } = settingQueries
 let { getOrders } = orderQueries
-let { getPosts, getOnePost} = postQueries
+let { getPosts, getOnePost, getAllPosts} = postQueries
 let { getOneProduct, getProducts } = productQueries
 let { seo, allSeo } = seoQueries
 let { getApartments, getOneApartment, getApartmentsByCategory } = apartmentQueries
@@ -58,7 +58,8 @@ const schema = new Schema({
       getOneApartment,
       getCategories,
       getOneCategory,
-      getApartmentsByCategory
+      getApartmentsByCategory,
+      getAllPosts
     },
   }),
   mutation: new ObjectType({

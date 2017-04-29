@@ -33,6 +33,18 @@ export default function data(state = {}, action) {
         canho: {
           ...state.canho,
           value: data.canho || state.canho.value
+        },
+        thutuctrangchu: {
+          ...state.thutuctrangchu,
+          value: data.thutuctrangchu || state.thutuctrangchu.value
+        },
+        danhsachthutuc: {
+          ...state.danhsachthutuc,
+          value: data.danhsachthutuc || state.danhsachthutuc.value
+        },
+        thutuc: {
+          ...state.thutuc,
+          value: data.thutuc || state.thutuc.value
         }
       };
     default:

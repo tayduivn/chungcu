@@ -21,13 +21,12 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},chothue:getApartmentsByCategory(category:"cho-thue"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},muabankhut:getApartmentsByCategory(category:"khu-t"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},muabanparkhill:getApartmentsByCategory(category:"khu-park-hill"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at} }',
+          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},chothue:getApartmentsByCategory(category:"cho-thue"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},muabankhut:getApartmentsByCategory(category:"khu-t"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},muabanparkhill:getApartmentsByCategory(category:"khu-park-hill"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},thutuctrangchu:getAllPosts{title, coverUrl, slug, public, view, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }',
         }),
         credentials: 'include',
       });
 
       const {data} = await resp.json();
-      console.log(data)
       seo = data.seo || {}
       if (!data) throw new Error('Failed to load the news feed.');
       store.dispatch(setData(data))

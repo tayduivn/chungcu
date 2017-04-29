@@ -10,7 +10,7 @@ var schema = new mongoose.Schema({
   price2: {type: Number, default: 0},
   body: String,
   rating: {type: Number, default: 5},
-  numRate: {type: Number, default: 0},
+  numRate: {type: Number, default: 1},
   view: {type: Number, default: 0},
   created_at: {type: Date, default: Date.now},
 });

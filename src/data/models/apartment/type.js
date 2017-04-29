@@ -3,6 +3,7 @@ import {
   GraphQLSchema,
   GraphQLString,
   GraphQLInt,
+  GraphQLFloat,
   GraphQLNonNull,
   GraphQLList,
   GraphQLID,
@@ -51,7 +52,7 @@ export default new GraphQLObjectType({
     },
 
     rating: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: new GraphQLNonNull(GraphQLFloat)
     },
 
     numRate: {

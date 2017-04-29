@@ -114,4 +114,21 @@ router.post('/seo/update', bodyParser.json() ,(req, res) => {
   });
 })
 
+router.post('/rating', bodyParser.json(), (req, res) => {
+  Apartment.findOne({slug: req.body.slug}, (err, oneApartment) => {
+    if(err) return res.sendStatus(400)
+    Apartment.findOneAndUpdate({slug: req.body.slug}, {
+      $set:
+        {
+          rating: parseFloat((oneApartment.rating*oneApartment.numRate + req.body.rate)/(oneApartment.numRate + 1)).toFixed(1) ,
+          numRate: oneApartment.numRate + 1
+        }
+    }, {new: true}).exec((err, newApartment) => {
+      if(err) return res.sendStatus(400)
+      res.send(newApartment)
+    } )
+  })
+})
+
+
 module.exports = router;

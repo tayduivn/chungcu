@@ -18,7 +18,9 @@ export default {
   children: [
     require('./home').default,
     require('./danhsachcanho').default,
+    require('./danhsachthutuc').default,
     require('./canho').default,
+    require('./thutuc').default,
     require('./login').default,
     require('./admin').default,
 

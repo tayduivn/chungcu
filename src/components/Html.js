@@ -43,8 +43,8 @@ class Html extends React.Component {
             <title>{title}</title>
             <meta name="description" content={description} />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="apple-touch-icon" href="/ico.png" />
-            <link rel="icon" type="image/png" href="ico.png" />
+            <link rel="apple-touch-icon" href="/favicon.gif" />
+            <link rel="icon" type="image/png" href="favicon.gif" />
             {/*Og tag*/}
             <meta property="og:locale" content="vi_VN" />
             <meta property="og:type" content="website" />

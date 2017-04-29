@@ -1,10 +1,19 @@
-@media screen and (min-width: 768px) {
-
+@media screen and (max-width: 1200px) {
+  nav li a {
+    font-size: 18px !important;
+  }
 }
 
 @media screen and (max-width: 1000px) {
+  nav li a {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .navbar-header {
     float: none !important;
+    height: 75px;
     text-align: center;
     a {
       margin: 0 auto;
@@ -16,5 +25,19 @@
   }
   .navbar-brand{
     float: none !important;
+  }
+
+  .navbar2-top {
+    line-height: 24px !important;
+    font-size: 18px;
+  }
+  .navbar2-bottom {
+    font-size: 13px;
+  }
+  #menu2 {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
   }
 }
