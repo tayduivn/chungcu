@@ -396,7 +396,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
                     { to: '/' },
-                    'Trang ch\u1EE7'
+                    'TRANG CH\u1EE6'
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -405,7 +405,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
                     { to: '/danhsach/cho-thue' },
-                    'C\u0103n h\u1ED9 cho thu\xEA'
+                    'C\u0102N H\u1ED8 CHO THU\xCA'
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -414,7 +414,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
                     { to: '/danhsach/khu-t' },
-                    'Thu\xEA & chuy\u1EC3n nh\u01B0\u1EE3ng khu T'
+                    'CHUY\u1EC2N NH\u01AF\u1EE2NG KHU T'
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -423,7 +423,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
                     { to: '/danhsach/khu-pack-hill' },
-                    'Thu\xEA & chuy\u1EC3n nh\u01B0\u1EE3ng khu Park Hill'
+                    'CHUY\u1EC2N NH\u01AF\u1EE2NG KHU PARK HILL'
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -432,7 +432,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
                     { to: '/danhsachthutuc' },
-                    'Th\u1EE7 t\u1EE5c ph\xE1p l\xFD'
+                    'TH\u1EE6 T\u1EE4C PH\xC1P L\xDD '
                   )
                 )
               )
@@ -463,27 +463,27 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
           { to: '/' },
-          'Trang ch\u1EE7'
+          'TRANG CH\u1EE6'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
           { to: '/danhsach/cho-thue', style: { fontSize: 12 }, onClick: this.menuClick },
-          'C\u0103n h\u1ED9 cho thu\xEA'
+          'C\u0102N H\u1ED8 CHO THU\xCA'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
           { to: '/danhsach/khu-t', style: { fontSize: 12 }, onClick: this.menuClick },
-          'Thu\xEA & Chuy\u1EC3n nh\u01B0\u1EE3ng khu T'
+          'CHUY\u1EC2N NH\u01AF\u1EE2NG KHU T'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
           { to: '/danhsach/khu-pack-hill', style: { fontSize: 12 }, onClick: this.menuClick },
-          'Thu\xEA & Chuy\u1EC3n nh\u01B0\u1EE3ng khu Pack Hill'
+          'CHUY\u1EC2N NH\u01AF\u1EE2NG KHU PARK HILL'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5__Link__["a" /* default */],
           { to: '/danhsachthutuc', style: { fontSize: 12 }, onClick: this.menuClick },
-          'C\xE1c th\u1EE7 t\u1EE5c ph\xE1p l\xFD'
+          'TH\u1EE6 T\u1EE4C PH\xC1P L\xDD'
         )
       )
     );
@@ -3276,7 +3276,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: 'navbar2-top letterpress' },
-                  'T\u1EF0 H\xC0O L\xC0 \u0110\u01A0N V\u1ECA CHO THU\xCA - CHUY\u1EC2N NH\u01AF\u1EE2NG S\u1ED0 1 TIME CITY'
+                  'T\u1EF0 H\xC0O L\xC0 \u0110\u01A0N V\u1ECA CHO THU\xCA - CHUY\u1EC2N NH\u01AF\u1EE2NG S\u1ED0 1 TIMES CITY'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
@@ -11968,11 +11968,11 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function mapSlugToName(slug) {
   if (slug === 'khu-t') {
-    return "Mua bán & chuyển nhượng ( Căn hộ khu T )";
+    return "CHUYỂN NHƯỢNG CĂN HỘ KHU T";
   } else if (slug === 'khu-park-hill') {
-    return "Mua bán & chuyển nhượng ( Căn hộ khu Park Hill )";
+    return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL";
   } else {
-    return "Căn Hộ Cho Thuê";
+    return "CĂN HỘ CHO THUÊ";
   }
 }
 
@@ -12673,7 +12673,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'h2',
                       null,
-                      'CHUY\u1EC2N NH\u01AF\u1EE2NG & THU\xCA C\u0102N H\u1ED8 (KHU T)'
+                      'CHUY\u1EC2N NH\u01AF\u1EE2NG C\u0102N H\u1ED8 KHU T'
                     )
                   )
                 )
@@ -12772,7 +12772,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'h2',
                       null,
-                      'CHUY\u1EC2N NH\u01AF\u1EE2NG & THU\xCA C\u0102N H\u1ED8 (KHU PARK HILL)'
+                      'CHUY\u1EC2N NH\u01AF\u1EE2NG C\u0102N H\u1ED8 KHU PARK HILL'
                     )
                   )
                 )

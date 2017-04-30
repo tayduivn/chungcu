@@ -45,10 +45,10 @@ export default {
 
 function mapSlugToName(slug){
   if(slug === 'khu-t'){
-    return "Mua bán & chuyển nhượng ( Căn hộ khu T )"
+    return "CHUYỂN NHƯỢNG CĂN HỘ KHU T"
   } else if( slug === 'khu-park-hill'){
-    return "Mua bán & chuyển nhượng ( Căn hộ khu Park Hill )"
+    return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL"
   } else {
-    return "Căn Hộ Cho Thuê"
+    return "CĂN HỘ CHO THUÊ"
   }
 }

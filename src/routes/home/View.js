@@ -121,7 +121,7 @@ class Home extends React.Component {
                 <div className="row">
                   <div className="headerWr" >
                     <header>
-                      <h2>CHUYỂN NHƯỢNG & THUÊ CĂN HỘ (KHU T)</h2>
+                      <h2>CHUYỂN NHƯỢNG CĂN HỘ KHU T</h2>
                     </header>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ class Home extends React.Component {
                 <div className="row">
                   <div className="headerWr" >
                     <header>
-                      <h2>CHUYỂN NHƯỢNG & THUÊ CĂN HỘ (KHU PARK HILL)</h2>
+                      <h2>CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL</h2>
                     </header>
                   </div>
                 </div>

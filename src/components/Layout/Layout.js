@@ -53,12 +53,12 @@ class Layout extends React.Component {
             <div id="container">
               <nav>
                 <ul>
-                  <li><Link to="/">Trang chủ</Link></li>
-                  <li><Link to="/danhsach/cho-thue">Căn hộ cho thuê</Link>
+                  <li><Link to="/">TRANG CHỦ</Link></li>
+                  <li><Link to="/danhsach/cho-thue">CĂN HỘ CHO THUÊ</Link>
                   </li>
-                  <li><Link to="/danhsach/khu-t">Thuê & chuyển nhượng khu T</Link></li>
-                  <li><Link to="/danhsach/khu-pack-hill">Thuê & chuyển nhượng khu Park Hill</Link></li>
-                  <li><Link to="/danhsachthutuc">Thủ tục pháp lý</Link></li>
+                  <li><Link to="/danhsach/khu-t">CHUYỂN NHƯỢNG KHU T</Link></li>
+                  <li><Link to="/danhsach/khu-pack-hill">CHUYỂN NHƯỢNG KHU PARK HILL</Link></li>
+                  <li><Link to="/danhsachthutuc">THỦ TỤC PHÁP LÝ </Link></li>
                 </ul>
               </nav>
             </div>
@@ -78,19 +78,19 @@ class Layout extends React.Component {
         </main>
         <nav id="menuMobile" onClick={this.menuClick}>
           <Link to="/">
-            Trang chủ
+            TRANG CHỦ
           </Link>
           <Link to="/danhsach/cho-thue" style={{fontSize: 12}} onClick={this.menuClick}>
-            Căn hộ cho thuê
+            CĂN HỘ CHO THUÊ
           </Link>
           <Link to="/danhsach/khu-t" style={{fontSize: 12}} onClick={this.menuClick}>
-            Thuê & Chuyển nhượng khu T
+            CHUYỂN NHƯỢNG KHU T
           </Link>
           <Link to="/danhsach/khu-pack-hill" style={{fontSize: 12}} onClick={this.menuClick}>
-            Thuê & Chuyển nhượng khu Pack Hill
+            CHUYỂN NHƯỢNG KHU PARK HILL
           </Link>
           <Link to="/danhsachthutuc" style={{fontSize: 12}} onClick={this.menuClick}>
-            Các thủ tục pháp lý
+            THỦ TỤC PHÁP LÝ
           </Link>
         </nav>
       </div>
