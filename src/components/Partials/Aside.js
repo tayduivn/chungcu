@@ -27,22 +27,10 @@ class Aside extends React.Component {
           </div>
         </div>
 
-
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
           <div className="newsletter">
             <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
-              Bản đồ khu T
-            </h4>
-            <div>
-              <img src="/imgs/bando1.jpg"  height="auto" width="100%" alt=""/>
-            </div>
-          </div>
-        </div>
-
-        <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
-          <div className="newsletter">
-            <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
-              Bản đồ khu Park Hill
+              Bản đồ
             </h4>
             <div>
               <img src="/imgs/bando2.jpg" height="auto" width="100%" alt=""/>

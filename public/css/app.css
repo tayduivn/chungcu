@@ -891,6 +891,8 @@ hr {
 
 .letterpress {
   text-shadow: 1px 2px 3px rgba(255, 255, 255, 0.6), 0 0 0 rgba(100, 100, 100, 0.1), -1px 1px 0 rgba(100, 100, 100, 0.3), 1px 1px 0 rgba(100, 100, 100, 0.1); }
+  .letterpress b {
+    text-shadow: none; }
 
 #thutuc-aside a {
   padding: 5px;

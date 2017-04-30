@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import Slider from './Slider'
 import Aside from '../../components/Partials/Aside'
 // import MenuMobile from '../../components/Partials/MenuMobile'
 import Link from '../../components/Link';
@@ -15,43 +14,53 @@ class Home extends React.Component {
     return (
       <div >
         {/*<MenuMobile />*/}
-        <Slider />
-
         <div className="row" style={{marginTop: 30}}>
           <div className="container tongquan shadow bg-white">
             <div className="col-md-12">
               <h2 className="divider gradient" >Tổng quan dự án</h2>
             </div>
-            <div className="col-md-8 padding-20" style={{paddingTop: '0 !important'}}>
+            <div className="col-md-7 padding-20" style={{paddingTop: '0 !important'}}>
                 <div className="square">
                   <div className="square-content">
-                    <img src="http://vinhomesluxury.net.vn/wp-content/uploads/2017/02/vinhomes-green-bay-cat.jpg" width="100%" height="100%" alt=""/>
+                    <img src="/imgs/bando.jpg" width="100%" height="100%" alt=""/>
                   </div>
                 </div>
             </div>
-            <div className="rol-md-4 padding-20" style={{fontWeight: 'bold'}}>
+            <div className="col-md-5 padding-20" style={{fontWeight: 'bold'}}>
               <div className="noidung">
-                <div className="wpb_wrapper">
-                  <ul>
-                    <li><strong>Tên dự án:&nbsp;</strong><span style={{color: '#003333'}}><strong style={{color: '#003333'}}><a style={{color: '#003333'}} href="http://vinhomesluxury.net.vn/">Vinhomes Green Bay – The Residenc</a>e</strong></span></li>
-                    <li><strong>Vị trí:</strong>&nbsp;<span style={{color: '#003333'}}>Số 7 Đại lộ Thăng Long – Nam Từ Liêm – Hà Nội</span></li>
-                    <li><strong>Chủ đầu tư:</strong>&nbsp;<span style={{color: '#003333'}}>Tập đoàn <strong>Vingroup</strong></span></li>
-                    <li><strong>Quy mô dự án:</strong>&nbsp;<span style={{color: '#003333'}}>31,8 ha</span></li>
-                  </ul>
-                  <p><span style={{color: '#003333'}}>+&nbsp;Diện tích khuôn viên cây xanh: 26.429m2;</span><br />
-                    <span style={{color: '#003333'}}>+ Diện tích&nbsp;hồ điều hòa: 80.028m2;</span><br />
-                    <span style={{color: '#003333'}}>+ Đất trường mầm non: 4.365m2;</span><br />
-                    <span style={{color: '#003333'}}>+ Diện trường tiểu học,trung học: 5.901m2;</span><br />
-                    <span style={{color: '#003333'}}>+ Diện tích đất: 69.170m2;</span><br />
-                    <span style={{color: '#003333'}}>+&nbsp;Diện tích nhà cao tầng: 16.413 m2;</span><br />
-                    <span style={{color: '#003333'}}>+ Đất bãi đỗ xe: 1.900m2;</span></p>
-                  <ul>
-                    <li><strong>Sản phẩm:</strong><br />
-                      <span style={{color: '#003333'}}>+ 180 lô liền kề, biệt thự.</span><br />
-                      <span style={{color: '#003333'}}>+ 3 tòa căn hộ <strong>G1,G2,G3</strong> hơn 2000 căn hộ chung cư</span></li>
-                    <li><strong>3 Phân khu:</strong> <span style={{color: '#003333'}}>Mộc Lan, Hoàng Lan, Thạch Thảo</span></li>
-                    <li><strong>Thời điểm dự kiến bàn giao:</strong>&nbsp;<span style={{color: '#003333'}}>IV/ 2018</span></li>
-                  </ul>
+                <div className="wpb_wrapper"><div className="cms-heading-wrapper heading-default ">
+                  <div className="cms-heading-inner">
+                    <div className="cms-heading-content">
+                      <span className="subtitle" style={{color: '#000000'}}>DỰ ÁN VINHOMES TIMES CITY PARK HILL</span>
+                      <h3 className="title" style={{color: '#000000'}}>TỔNG QUAN DỰ ÁN<span>.</span></h3>
+                    </div>
+                  </div>
+                </div>
+                  <div className="wpb_text_column wpb_content_element ">
+                    <div className="wpb_wrapper">
+                      <ul>
+                        <li><span style={{color: '#000000'}}><strong>Tên dự án:&nbsp;</strong><strong style={{color: '#003333'}}><a style={{color: '#000000'}} href="http://vinhomesluxury.net.vn/">Vinhomes&nbsp;</a>Times City Park Hill</strong></span></li>
+                        <li><span style={{color: '#000000'}}><strong>Vị trí:</strong>&nbsp;Số 458 Minh Khai&nbsp;– Hai Bà Trưng – Hà Nội</span></li>
+                        <li><span style={{color: '#000000'}}><strong>Chủ đầu tư:</strong>&nbsp;Tập đoàn <strong>Vingroup</strong></span></li>
+                        <li><span style={{color: '#000000'}}><strong>Quy mô dự án:</strong>&nbsp;36 ha</span></li>
+                      </ul>
+                      <p><span style={{color: '#000000'}}>&nbsp;Diện tích khuôn viên cây xanh: 100.000m2</span></p>
+                      <ul>
+                        <li><span style={{color: '#000000'}}><strong>Sản phẩm:</strong></span><br />
+                          <span style={{color: '#000000'}}>+ 10 lô liền kề, biệt thự.</span><br />
+                          <span style={{color: '#000000'}}>+ 23 tòa với&nbsp;hơn 12000 căn hộ chung cư</span></li>
+                        <li><span style={{color: '#000000'}}><strong>3 Phân khu:</strong>&nbsp;Times City, Park Hill, Park Hill Premium</span></li>
+                      </ul>
+                      <h4><span style={{color: '#000000'}}><strong>TIỆN ÍCH SỐNG:</strong></span></h4>
+                      <ul>
+                        <li><span style={{color: '#000000'}}>Khu cảnh quan nước và các khu vườn</span></li>
+                        <li><span style={{color: '#000000'}}>Khu&nbsp;quảng trường trung tâm</span></li>
+                        <li><span style={{color: '#000000'}}>Khu hoạt động BBQ, picnic và bể bơi</span></li>
+                        <li><span style={{color: '#000000'}}>Khu&nbsp;thể thao và vườn sinh thái</span></li>
+                        <li><span style={{color: '#000000'}}>Phố đi dạo và mua sắm…</span></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
               </div>

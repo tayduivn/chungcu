@@ -13,6 +13,7 @@ import Header from '../Partials/Header'
 import Footer from '../Partials/Footer'
 import Modal from '../Partials/Modal'
 import Link from '../Link'
+import Slider from '../Partials/Slider'
 
 class Layout extends React.Component {
 
@@ -47,8 +48,22 @@ class Layout extends React.Component {
         <LoadingBar showFastActions  maxProgress={80} progressIncrease={40} style={{ backgroundColor: 'red', zIndex: 1000, height: '2px' }} />
         <main id="panel">
           <Header />
+          <Slider />
+          <div id="menu2">
+            <div id="container">
+              <nav>
+                <ul>
+                  <li><Link to="/">Trang chủ</Link></li>
+                  <li><Link to="/danhsach/cho-thue">Căn hộ cho thuê</Link>
+                  </li>
+                  <li><Link to="/danhsach/khu-t">Thuê & chuyển nhượng khu T</Link></li>
+                  <li><Link to="/danhsach/khu-pack-hill">Thuê & chuyển nhượng khu Park Hill</Link></li>
+                  <li><Link to="/danhsachthutuc">Thủ tục pháp lý</Link></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
           {this.props.children}
-
           <Footer />
 
           <Modal />

@@ -26,22 +26,6 @@ class Header extends React.Component {
           </div>
         </div>
       </div>
-      <div id="menu2">
-
-        <div id="container">
-          <nav>
-            <ul>
-              <li><Link to="/">Trang chủ</Link></li>
-              <li><Link to="/danhsach/cho-thue">Căn hộ cho thuê</Link>
-              </li>
-              <li><Link to="/danhsach/khu-t">Thuê & chuyển nhượng khu T</Link></li>
-              <li><Link to="/danhsach/khu-pack-hill">Thuê & chuyển nhượng khu Park Hill</Link></li>
-              <li><Link to="/danhsachthutuc">Thủ tục pháp lý</Link></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
     </header>
     )
   }
