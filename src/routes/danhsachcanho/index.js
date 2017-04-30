@@ -49,6 +49,6 @@ function mapSlugToName(slug){
   } else if( slug === 'khu-park-hill'){
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL"
   } else {
-    return "CĂN HỘ CHO THUÊ"
+    return "CĂN HỘ CHO THUÊ "
   }
 }

@@ -16,12 +16,11 @@ class Aside extends React.Component {
               CHUYÊN VIÊN TƯ VẤN
             </h4>
             <div className="row" style={{textAlign: 'center', fontWeight: 'bold', marginTop: 10, fontSize: 14}}>
-              PHÙNG ĐẠI QUANG
+              Nguyễn Văn Chung
             </div>
             <div className="row" style={{padding: '5px 5px !important'}}>
               <div className="col-sm-12" style={{paddingTop: 0}}>
                 <div style={{textAlign: 'center'}}><b style={{color: '#FF4136', fontSize: 24}}>0968 146 839</b></div>
-                <div style={{fontSize: 13, textAlign: 'center'}}>quanganh268.vud@gmail.com</div>
               </div>
             </div>
           </div>

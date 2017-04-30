@@ -28,33 +28,15 @@ class Footer extends React.Component {
                       </div>
                     </li>
                     <li className="clearfix item ng-scope" >
-                      <div className="label ng-binding">Địa chỉ dự án</div>
-                      <div className="text">
-                       <span  className="ng-binding ng-scope">Phường Phúc Đồng và phường Việt Hưng, Quận Long Biên, Hà Nội</span>
-                      </div>
-                    </li>
-                    <li className="clearfix item ng-scope" >
                       <div className="label ng-binding">Địa chỉ giao dịch</div>
                       <div className="text">
-                        <span className="ng-binding ng-scope">Sàn Giao dịch Bất động sản Vinhomes, tầng 1, Vincom Plaza Long Biên, KĐT Sinh thái Vinhomes Riverside, Việt Hưng, Long Biên, Hà Nội</span>
+                        <span className="ng-binding ng-scope">Sàn BĐS Vinhomes Times City Park Hill số 458 Minh Khai - Hai Bà Trưng - Hà Nội</span>
                       </div>
                     </li>
                     <li className="clearfix item ng-scope" >
                       <div className="label ng-binding">Email</div>
                       <div className="text">
                         <a className="ng-binding ng-scope" href="mailto://quanganh268.vud@gmail.com">quanganh268.vud@gmail.com</a>
-                      </div>
-                    </li>
-                    <li className="clearfix item ng-scope" >
-                      <div className="label ng-binding">Facebook</div>
-                      <div className="text">
-                        <a className="ng-binding ng-scope" href="https://www.facebook.com/vinhomesriverside">www.facebook.com/vinhomesriverside</a>
-                      </div>
-                    </li>
-                    <li className="clearfix item ng-scope" >
-                      <div className="label ng-binding">YouTube</div>
-                      <div className="text">
-                        <a  className="ng-binding ng-scope" href="https://www.youtube.com/theHarmonyVCRiverside">www.youtube.com/theHarmonyVCRiverside</a>
                       </div>
                     </li>
                   </ul>

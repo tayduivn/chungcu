@@ -903,6 +903,13 @@ hr {
   display: inline-block;
   width: 100%; }
 
+.apartment-title .name {
+  font-size: 12px; }
+
+#menu2 a {
+  height: 50px;
+  line-height: 50px !important; }
+
 @media screen and (max-width: 1200px) {
   nav li a {
     font-size: 18px !important; } }

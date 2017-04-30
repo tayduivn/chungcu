@@ -19,19 +19,14 @@ class Home extends React.Component {
             <div className="col-md-12">
               <h2 className="divider gradient" >Tổng quan dự án</h2>
             </div>
-            <div className="col-md-7 padding-20" style={{paddingTop: '0 !important'}}>
-                <div className="square">
-                  <div className="square-content">
-                    <img src="/imgs/bando.jpg" width="100%" height="100%" alt=""/>
-                  </div>
-                </div>
+            <div className="col-md-12 padding-20">
+                <img src="/imgs/bando.jpg" width="100%" height="auto" alt=""/>
             </div>
-            <div className="col-md-5 padding-20" style={{fontWeight: 'bold'}}>
+            <div className="col-md-5 padding-20" style={{fontWeight: 'bold', paddingTop: '0 !important'}}>
               <div className="noidung">
                 <div className="wpb_wrapper"><div className="cms-heading-wrapper heading-default ">
                   <div className="cms-heading-inner">
                     <div className="cms-heading-content">
-                      <span className="subtitle" style={{color: '#000000'}}>DỰ ÁN VINHOMES TIMES CITY PARK HILL</span>
                       <h3 className="title" style={{color: '#000000'}}>TỔNG QUAN DỰ ÁN<span>.</span></h3>
                     </div>
                   </div>
@@ -63,6 +58,13 @@ class Home extends React.Component {
                   </div>
                 </div>
 
+              </div>
+            </div>
+            <div className="col-md-7 padding-20" style={{}}>
+              <div className="square">
+                <div className="square-content">
+                  <img src="/imgs/phoicanh.jpg" width="100%" height="100%" alt=""/>
+                </div>
               </div>
             </div>
           </div>

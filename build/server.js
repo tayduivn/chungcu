@@ -987,7 +987,7 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'row', style: { textAlign: 'center', fontWeight: 'bold', marginTop: 10, fontSize: 14 } },
-            'PH\xD9NG \u0110\u1EA0I QUANG'
+            'Nguy\u1EC5n V\u0103n Chung'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
@@ -1003,11 +1003,6 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   { style: { color: '#FF4136', fontSize: 24 } },
                   '0968 146 839'
                 )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { style: { fontSize: 13, textAlign: 'center' } },
-                'quanganh268.vud@gmail.com'
               )
             )
           )
@@ -2426,7 +2421,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 4;
+      let version = 5;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
@@ -2977,24 +2972,6 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       "div",
                       { className: "label ng-binding" },
-                      "\u0110\u1ECBa ch\u1EC9 d\u1EF1 \xE1n"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "text" },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "span",
-                        { className: "ng-binding ng-scope" },
-                        "Ph\u01B0\u1EDDng Ph\xFAc \u0110\u1ED3ng v\xE0 ph\u01B0\u1EDDng Vi\u1EC7t H\u01B0ng, Qu\u1EADn Long Bi\xEAn, H\xE0 N\u1ED9i"
-                      )
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "li",
-                    { className: "clearfix item ng-scope" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "label ng-binding" },
                       "\u0110\u1ECBa ch\u1EC9 giao d\u1ECBch"
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -3003,7 +2980,7 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "span",
                         { className: "ng-binding ng-scope" },
-                        "S\xE0n Giao d\u1ECBch B\u1EA5t \u0111\u1ED9ng s\u1EA3n Vinhomes, t\u1EA7ng 1, Vincom Plaza Long Bi\xEAn, K\u0110T Sinh th\xE1i Vinhomes Riverside, Vi\u1EC7t H\u01B0ng, Long Bi\xEAn, H\xE0 N\u1ED9i"
+                        "S\xE0n B\u0110S Vinhomes Times City Park Hill s\u1ED1 458 Minh Khai - Hai B\xE0 Tr\u01B0ng - H\xE0 N\u1ED9i"
                       )
                     )
                   ),
@@ -3022,42 +2999,6 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                         "a",
                         { className: "ng-binding ng-scope", href: "mailto://quanganh268.vud@gmail.com" },
                         "quanganh268.vud@gmail.com"
-                      )
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "li",
-                    { className: "clearfix item ng-scope" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "label ng-binding" },
-                      "Facebook"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "text" },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "a",
-                        { className: "ng-binding ng-scope", href: "https://www.facebook.com/vinhomesriverside" },
-                        "www.facebook.com/vinhomesriverside"
-                      )
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "li",
-                    { className: "clearfix item ng-scope" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "label ng-binding" },
-                      "YouTube"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "text" },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "a",
-                        { className: "ng-binding ng-scope", href: "https://www.youtube.com/theHarmonyVCRiverside" },
-                        "www.youtube.com/theHarmonyVCRiverside"
                       )
                     )
                   )
@@ -11972,7 +11913,7 @@ function mapSlugToName(slug) {
   } else if (slug === 'khu-park-hill') {
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL";
   } else {
-    return "CĂN HỘ CHO THUÊ";
+    return "CĂN HỘ CHO THUÊ ";
   }
 }
 
@@ -12302,20 +12243,12 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'col-md-7 padding-20', style: { paddingTop: '0 !important' } },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'square' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'square-content' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/bando.jpg', width: '100%', height: '100%', alt: '' })
-              )
-            )
+            { className: 'col-md-12 padding-20' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/bando.jpg', width: '100%', height: 'auto', alt: '' })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'col-md-5 padding-20', style: { fontWeight: 'bold' } },
+            { className: 'col-md-5 padding-20', style: { fontWeight: 'bold', paddingTop: '0 !important' } },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'noidung' },
@@ -12331,11 +12264,6 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'div',
                       { className: 'cms-heading-content' },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'span',
-                        { className: 'subtitle', style: { color: '#000000' } },
-                        'D\u1EF0 \xC1N VINHOMES TIMES CITY PARK HILL'
-                      ),
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h3',
                         { className: 'title', style: { color: '#000000' } },
@@ -12545,6 +12473,19 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     )
                   )
                 )
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col-md-7 padding-20', style: {} },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'square' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'square-content' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/phoicanh.jpg', width: '100%', height: '100%', alt: '' })
               )
             )
           )
