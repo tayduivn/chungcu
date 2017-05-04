@@ -101,7 +101,9 @@ class Home extends React.Component {
                                 </Link>
                               </figure>
                               <div className="propertyStats">
-                                <p className="priceText">{el.price1 || el.price2 || 'Liên hệ'} {el.price1 + el.price2 > 0 ? "VNĐ" : ""}</p>
+                                {!el.price2 && !el.price1 && <span className="lienhe">Liên hệ</span>}
+                                {(!el.price2 && el.price1) ? (<span className="curPrice"><b>{el.price1.toLocaleString()} VNĐ</b></span>) : ''}
+                                {(el.price2 && el.price1) ? (<span className="curPrice"><span className="oldprice" style={{textDecoration: 'line-through'}} >{el.price1.toLocaleString()}</span> <b>{el.price2.toLocaleString()} VNĐ</b></span>) : ""}
                               </div>
                               <div className="vcard">
                                 <h2><Link to={'/can-ho/' + el.slug} className="name align-center">{el.title}</Link></h2>
@@ -146,7 +148,9 @@ class Home extends React.Component {
                                 </Link>
                               </figure>
                               <div className="propertyStats">
-                                <p className="priceText">{el.price1 || el.price2 || 'Liên hệ'} {el.price1 + el.price2 > 0 ? "VNĐ" : ""}</p>
+                                {!el.price2 && !el.price1 && <span className="lienhe">Liên hệ</span>}
+                                {(!el.price2 && el.price1) ? (<span className="curPrice"><b>{el.price1.toLocaleString()} VNĐ</b></span>) : ''}
+                                {(el.price2 && el.price1) ? (<span className="curPrice"><span className="oldprice" style={{textDecoration: 'line-through'}} >{el.price1.toLocaleString()}</span> <b>{el.price2.toLocaleString()} VNĐ</b></span>) : ""}
                               </div>
                               <div className="vcard">
                                 <h2><Link to={'/can-ho/' + el.slug} className="name align-center">{el.title}</Link></h2>
@@ -190,7 +194,9 @@ class Home extends React.Component {
                                 </Link>
                               </figure>
                               <div className="propertyStats">
-                                <p className="priceText">{el.price1 || el.price2 || 'Liên hệ'} {el.price1 + el.price2 > 0 ? "VNĐ" : ""}</p>
+                                {!el.price2 && !el.price1 && <span className="lienhe">Liên hệ</span>}
+                                {(!el.price2 && el.price1) ? (<span className="curPrice"><b>{el.price1.toLocaleString()} VNĐ</b></span>) : ''}
+                                {(el.price2 && el.price1) ? (<span className="curPrice"><span className="oldprice" style={{textDecoration: 'line-through'}} >{el.price1.toLocaleString()}</span> <b>{el.price2.toLocaleString()} VNĐ</b></span>) : ""}
                               </div>
                               <div className="vcard">
                                 <h2><Link to={'/can-ho/' + el.slug} className="name align-center">{el.title}</Link></h2>

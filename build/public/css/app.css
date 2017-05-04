@@ -426,15 +426,25 @@ body {
   background: #f3f3f3 !important; }
 
 #mapvinhome {
-  height: 100%;
+  position: fixed;
+  height: auto !important;
+  overflow: auto;
   width: 100%; }
   #mapvinhome .map {
-    width: 80%;
+    width: 100%;
     height: auto;
     margin: 30px auto 0 auto;
-    text-align: center; }
+    text-align: center;
+    overflow: auto; }
     #mapvinhome .map img {
       width: 100%; }
+
+.modal .modal-dialog {
+  width: 80% !important; }
+
+.modal .modal-body {
+  max-height: 100vh;
+  overflow-y: auto; }
 
 .modal-backdrop {
   z-index: 9; }
@@ -909,6 +919,19 @@ hr {
 #menu2 a {
   height: 50px;
   line-height: 50px !important; }
+
+.lienhe, .curPrice b {
+  color: #FF4136;
+  font-weight: bold; }
+
+.vcard h2, .propertyStats {
+  text-align: center !important; }
+
+.modal-backdrop.in {
+  display: none; }
+
+#mapvinhome img {
+  border: 1px solid rgba(255, 177, 0, 0.8); }
 
 @media screen and (max-width: 1200px) {
   nav li a {

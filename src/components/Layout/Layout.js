@@ -11,7 +11,7 @@ import React from 'react';
 import LoadingBar from 'react-redux-loading-bar';
 import Header from '../Partials/Header'
 import Footer from '../Partials/Footer'
-import Modal from '../Partials/Modal'
+// import Modal from '../Partials/Modal'
 import Link from '../Link'
 import Slider from '../Partials/Slider'
 
@@ -66,13 +66,18 @@ class Layout extends React.Component {
           {this.props.children}
           <Footer />
 
-          <Modal />
           <div className="menu-icon">
             <span />
           </div>
           <div id="mapvinhome" className="modal fade" role="dialog">
-            <div className="map">
-              <img src="/imgs/map.jpg" alt="Ban do vinhomes"/>
+            <div className="modal-dialog" role="document">
+              <div className="modal-content">
+                <div className="modal-body">
+                  <div className="map">
+                    <img src="/imgs/map.jpg" alt="Ban do vinhomes"/>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </main>
