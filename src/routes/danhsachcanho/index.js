@@ -46,9 +46,9 @@ export default {
 function mapSlugToName(slug){
   if(slug === 'khu-t'){
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU T"
-  } else if( slug === 'khu-park-hill'){
+  } else if( slug === 'khu-pack-hill'){
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL"
   } else {
-    return "CĂN HỘ CHO THUÊ "
+    return "CĂN HỘ CHO THUÊ"
   }
 }

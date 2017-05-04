@@ -30,9 +30,6 @@ class Aside extends React.Component {
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important', cursor: 'pointer'}}
         >
           <div className="newsletter">
-            <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
-              Giới thiệu dự án
-            </h4>
             <div>
               <YouTube
                 videoId="-yylfXD4maM"

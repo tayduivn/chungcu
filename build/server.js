@@ -1029,11 +1029,6 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           'div',
           { className: 'newsletter' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h4',
-            { style: { textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10 } },
-            'Gi\u1EDBi thi\u1EC7u d\u1EF1 \xE1n'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_youtube___default.a, {
@@ -2437,7 +2432,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 7;
+      let version = 9;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
@@ -3043,8 +3038,17 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                       { className: "row" },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
-                        { className: "col-xs-6" },
+                        { className: "col-xs-12" },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", placeholder: "H\u1ECD & t\xEAn *", required: true, autoComplete: "false", name: "name", className: "ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" })
+                      )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      "div",
+                      { className: "row" },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "col-xs-6" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", placeholder: "S\u1ED1 \u0111i\u1EC7n tho\u1EA1i*", required: true, autoComplete: "false", name: "name", className: "ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" })
                       ),
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
@@ -11000,13 +11004,38 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   { className: 'col-sm-8', style: { textAlign: 'center', fontSize: 20 } },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { style: { marginTop: 20 } },
-                    'Gi\xE1 b\xE1n: ',
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'b',
-                      { style: { color: '#FF4136' } },
-                      canho.price2 || canho.price2 || 'Liên hệ  '
-                    )
+                    { className: 'propertyStats' },
+                    !canho.price2 && !canho.price1 && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'span',
+                      { className: 'lienhe' },
+                      'Li\xEAn h\u1EC7'
+                    ),
+                    !canho.price2 && canho.price1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'span',
+                      { className: 'curPrice' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'b',
+                        null,
+                        canho.price1.toLocaleString(),
+                        ' VN\u0110'
+                      )
+                    ) : '',
+                    canho.price2 && canho.price1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'span',
+                      { className: 'curPrice' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        { className: 'oldprice', style: { textDecoration: 'line-through' } },
+                        canho.price1.toLocaleString()
+                      ),
+                      ' ',
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'b',
+                        null,
+                        canho.price2.toLocaleString(),
+                        ' VN\u0110'
+                      )
+                    ) : ""
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
@@ -11170,7 +11199,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
   render() {
-    console.log(this.props);
     const danhsachcanho = this.props.data.danhsachcanho.value;
     const thutucAside = this.props.data.danhsachthutuc.value;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -11393,10 +11421,10 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 function mapSlugToName(slug) {
   if (slug === 'khu-t') {
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU T";
-  } else if (slug === 'khu-park-hill') {
+  } else if (slug === 'khu-pack-hill') {
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL";
   } else {
-    return "CĂN HỘ CHO THUÊ ";
+    return "CĂN HỘ CHO THUÊ";
   }
 }
 

@@ -48,12 +48,16 @@ class Footer extends React.Component {
                   <div className="agency-list">
                     <form className="footer-contact-form ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email"   autoComplete="false">
                       <div className="row">
-                        <div className="col-xs-6">
+                        <div className="col-xs-12">
                           <input type="text" placeholder="Họ & tên *" required autoComplete="false" name="name"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-xs-6">
+                          <input type="text" placeholder="Số điện thoại*" required autoComplete="false" name="name"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
                         </div>
                         <div className="col-xs-6">
                           <input type="email" placeholder="Email *" required autoComplete="false" name="email"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-email" />
-
                         </div>
                       </div>
                       <div className="row">

@@ -6,7 +6,6 @@ import Link from '../../components/Link';
 class Home extends React.Component {
 
   render() {
-    console.log(this.props)
     const danhsachcanho = this.props.data.danhsachcanho.value
     const thutucAside = this.props.data.danhsachthutuc.value
     return (

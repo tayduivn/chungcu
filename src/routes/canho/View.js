@@ -58,8 +58,10 @@ class Home extends React.Component {
                     <img height="auto" width="100%" src={canho.coverUrl} alt={canho.title} />
                   </div>
                   <div className="col-sm-8" style={{textAlign: 'center', fontSize: 20}}>
-                    <div style={{marginTop: 20}}>
-                      Giá bán: <b style={{color: '#FF4136'}}>{canho.price2 || canho.price2 || 'Liên hệ  '}</b>
+                    <div className="propertyStats">
+                      {!canho.price2 && !canho.price1 && <span className="lienhe">Liên hệ</span>}
+                      {(!canho.price2 && canho.price1) ? (<span className="curPrice"><b>{canho.price1.toLocaleString()} VNĐ</b></span>) : ''}
+                      {(canho.price2 && canho.price1) ? (<span className="curPrice"><span className="oldprice" style={{textDecoration: 'line-through'}} >{canho.price1.toLocaleString()}</span> <b>{canho.price2.toLocaleString()} VNĐ</b></span>) : ""}
                     </div>
                     <div style={{marginTop: 20}}>
                       Đang được đánh giá: {this.state.currentRate || canho.rating} <i style={{color: 'yellow'}} className="fa fa-star" />
