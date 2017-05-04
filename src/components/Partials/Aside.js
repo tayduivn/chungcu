@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from '../Link'
+import YouTube from 'react-youtube'
 
 class Aside extends React.Component {
   constructor(props){
@@ -27,17 +28,15 @@ class Aside extends React.Component {
         </div>
 
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important', cursor: 'pointer'}}
-          onClick={() => {
-            $('#mapvinhome').modal('show');
-            $(window).scrollTop(0);
-          }}
         >
           <div className="newsletter">
             <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
-              Bản đồ
+              Giới thiệu dự án
             </h4>
             <div>
-              <img src="/imgs/bando2.jpg" height="auto" width="100%" alt=""/>
+              <YouTube
+                videoId="-yylfXD4maM"
+              />
             </div>
           </div>
         </div>
