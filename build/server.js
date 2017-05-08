@@ -1071,6 +1071,16 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'widget widget-subscribe panel media pad-all', style: { padding: '0 !important' } },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/aside2.jpg', alt: 'aside1', style: { width: '100%', height: 'auto' } })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'widget widget-subscribe panel media pad-all', style: { padding: '0 !important' } },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/aside1.jpg', alt: 'aside1', style: { width: '100%', height: 'auto' } })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'widget widget-subscribe panel media pad-all', style: { padding: '0 !important' } },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'newsletter' },
@@ -2467,7 +2477,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 14;
+      let version = 15;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
@@ -11460,23 +11470,13 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_4__components_Layout__["a" /* default */],
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__View__["a" /* default */], { data: store.getState().data, headerName: mapSlugToName(params.slug) })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__View__["a" /* default */], { data: store.getState().data })
         )
       };
     })();
   }
 
 });
-
-function mapSlugToName(slug) {
-  if (slug === 'khu-t') {
-    return "CHUYỂN NHƯỢNG CĂN HỘ KHU T";
-  } else if (slug === 'khu-park-hill') {
-    return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL";
-  } else {
-    return "CĂN HỘ CHO THUÊ";
-  }
-}
 
 /***/ }),
 /* 132 */

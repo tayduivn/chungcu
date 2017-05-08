@@ -39,6 +39,14 @@ class Aside extends React.Component {
         </div>
 
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
+          <img src="/imgs/aside2.jpg" alt="aside1" style={{width: '100%', height: 'auto'}} />
+        </div>
+
+        <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
+          <img src="/imgs/aside1.jpg" alt="aside1" style={{width: '100%', height: 'auto'}} />
+        </div>
+
+        <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
           <div className="newsletter">
             <h4 style={{textAlign: 'center', background: '#00303a', color: 'white', fontWeight: 'bold', margin: '0 !important', padding: '5px 0', marginBottom: 10}}>
               Thủ tục pháp lý

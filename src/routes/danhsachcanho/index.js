@@ -37,18 +37,8 @@ export default {
       title: seo.title || 'Trang chủ',
       description: seo.description || '',
       seo: seo,
-      component: <Layout><View data={store.getState().data} headerName={mapSlugToName(params.slug)}  /></Layout>,
+      component: <Layout><View data={store.getState().data}  /></Layout>,
     };
   },
 
 };
-
-function mapSlugToName(slug){
-  if(slug === 'khu-t'){
-    return "CHUYỂN NHƯỢNG CĂN HỘ KHU T"
-  } else if( slug === 'khu-park-hill'){
-    return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL"
-  } else {
-    return "CĂN HỘ CHO THUÊ"
-  }
-}
