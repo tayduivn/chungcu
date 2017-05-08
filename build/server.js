@@ -500,32 +500,36 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         'div',
         { id: 'phoneMobile' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          null,
+          'a',
+          { href: 'tel://0972564695' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'phonering-alo-phone phonering-alo-green phonering-alo-show hidden-xs visible-sm visible-md visible-lg', id: 'phonering-alo-phoneIcon', style: { left: '-40px', top: 470, display: 'block' } },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle-fill' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+            null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'phonering-alo-ph-img-circle' },
+              { className: 'phonering-alo-phone phonering-alo-green phonering-alo-show hidden-xs visible-sm visible-md visible-lg', id: 'phonering-alo-phoneIcon', style: { left: '-40px', top: 470, display: 'block' } },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle-fill' }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695', className: 'pps-btn-img ', title: 'Li\xEAn h\u1EC7' })
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'phonering-alo-phone phonering-alo-green phonering-alo-show visible-xs hidden-sm hidden-md hidden-lg', id: 'phonering-alo-phoneIcon', style: { right: '-40px', top: 70, display: 'block' } },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle-fill' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'phonering-alo-ph-img-circle' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695', className: 'pps-btn-img ', title: 'Li\xEAn h\u1EC7' })
+              )
+            ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'phonering-alo-ph-img-circle' },
+              { className: 'phonering-alo-phone phonering-alo-green phonering-alo-show visible-xs hidden-sm hidden-md hidden-lg', id: 'phonering-alo-phoneIcon', style: { right: '-40px', top: 70, display: 'block' } },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle-fill' }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695', className: 'pps-btn-img ', title: 'Li\xEAn h\u1EC7' })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'phonering-alo-ph-img-circle' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695', className: 'pps-btn-img ', title: 'Li\xEAn h\u1EC7' })
+              )
             )
           )
         )
@@ -2470,7 +2474,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 9;
+      let version = 10;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
