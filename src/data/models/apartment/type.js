@@ -44,11 +44,11 @@ export default new GraphQLObjectType({
     },
 
     price1: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: new GraphQLNonNull(GraphQLFloat)
     },
 
     price2: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: new GraphQLNonNull(GraphQLFloat)
     },
 
     rating: {
