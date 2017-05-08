@@ -99,7 +99,7 @@ class CKEditor extends React.Component {
   componentDidMount() {
     let configuration = {
       // removePlugins : 'magicline',
-      extraPlugins : 'autogrow,image2,sharedspace,colorbutton',
+      extraPlugins : 'autogrow,image2,sharedspace,colorbutton,justify,font',
       uploadUrl: '/upload/imageCKEditor',
       disallowedContent : 'img{width,height}',
       sharedSpaces: {

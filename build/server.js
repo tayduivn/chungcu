@@ -1261,7 +1261,7 @@ class CKEditor extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   componentDidMount() {
     let configuration = {
       // removePlugins : 'magicline',
-      extraPlugins: 'autogrow,image2,sharedspace,colorbutton',
+      extraPlugins: 'autogrow,image2,sharedspace,colorbutton,justify,font',
       uploadUrl: '/upload/imageCKEditor',
       disallowedContent: 'img{width,height}',
       sharedSpaces: {
@@ -2467,7 +2467,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 13;
+      let version = 14;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
