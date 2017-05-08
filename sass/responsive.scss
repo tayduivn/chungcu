@@ -10,8 +10,9 @@
   }
 }
 @media screen and (max-width: 500px) {
-  #phoneMobile {
+  #phoneMobileIcon {
     display: block;
+    background: red;
   }
 }
 @media screen and (max-width: 768px) {

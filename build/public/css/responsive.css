@@ -7,8 +7,9 @@
     font-size: 14px !important; } }
 
 @media screen and (max-width: 500px) {
-  #phoneMobile {
-    display: block; } }
+  #phoneMobileIcon {
+    display: block;
+    background: red; } }
 
 @media screen and (max-width: 768px) {
   .navbar-header {

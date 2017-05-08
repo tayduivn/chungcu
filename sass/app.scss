@@ -677,12 +677,13 @@ hr {
   border: 1px solid rgba(255, 177, 0, 0.8);
 }
 
-#phoneMobile {
-  display: none;
+#phoneMobileIcon {
   position: fixed;
+  display: none;
   bottom: 200px;
   left: 20px;
-  z-index: 10001;
+  z-index: 10010;
+
   .phonering-alo-phone.phonering-alo-static {
     opacity:.6
   }
