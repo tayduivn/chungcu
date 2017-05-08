@@ -3,7 +3,7 @@ var domain = 'edu.anabim.com';
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 
-const from = 'Thông báo đơn hàng <admin@comhoavang.com>'
+const from = 'Thông báo Đăng ký tư vấn <admin@chungcu-timescityparkhill.com>'
 
 const RegisterMail = function(email, name) {
   return {
@@ -34,6 +34,15 @@ const NewOrderMail = function(email, name, phone) {
   }
 }
 
+const TuVan = function(email, data) {
+  return {
+    from: from,
+    to: email,
+    subject: `Đăng ký tư vấn từ ${data.name}, SĐT: ${data.sdt}, Email: ${data.email}`,
+    text: `Nội dung: ${data.noidung}`
+  }
+}
+
 
 let Mailer = {}
 
@@ -52,6 +61,12 @@ Mailer.sendActiveMail = function (email, name, activeUrl) {
 Mailer.sendNewOrderMail = function (email, name, phone) {
   mailgun.messages().send(NewOrderMail(email, name, phone), function (error, body) {
     console.log(body);
+  });
+}
+
+Mailer.sendToAdmin = function(email, data) {
+  mailgun.messages().send(TuVan(email, data), function (error, body) {
+    // console.log(body);
   });
 }
 

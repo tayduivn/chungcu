@@ -45,6 +45,10 @@ export default function data(state = {}, action) {
         thutuc: {
           ...state.thutuc,
           value: data.thutuc || state.thutuc.value
+        },
+        gioithieu: {
+          ...state.gioithieu,
+          value: data.gioithieu || state.gioithieu.value
         }
       };
     default:

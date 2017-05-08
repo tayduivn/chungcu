@@ -100,6 +100,13 @@ router.post('/order/new', bodyParser.json() ,async (req, res) => {
   })
 })
 
+router.post('/tuvan', bodyParser.json(), async (req, res) => {
+  let setting = await Setting.findOne({})
+  let emailAdmin = setting.emailAdmin
+  Mailer.sendToAdmin(emailAdmin, req.body)
+  return res.send('ok')
+})
+
 router.post('/seo/new', bodyParser.json() ,(req, res) => {
   Seo.create(req.body, (err, resData) => {
     if(err) return res.sendStatus(400)

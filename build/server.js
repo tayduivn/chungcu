@@ -421,7 +421,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   null,
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_4__Link__["a" /* default */],
-                    { to: '/danhsach/khu-pack-hill' },
+                    { to: '/danhsach/khu-park-hill' },
                     'CHUY\u1EC2N NH\u01AF\u1EE2NG KHU PARK HILL'
                   )
                 ),
@@ -487,13 +487,47 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_4__Link__["a" /* default */],
-          { to: '/danhsach/khu-pack-hill', style: { fontSize: 12 }, onClick: this.menuClick },
+          { to: '/danhsach/khu-park-hill', style: { fontSize: 12 }, onClick: this.menuClick },
           'CHUY\u1EC2N NH\u01AF\u1EE2NG KHU PARK HILL'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_4__Link__["a" /* default */],
           { to: '/danhsachthutuc', style: { fontSize: 12 }, onClick: this.menuClick },
           'TH\u1EE6 T\u1EE4C PH\xC1P L\xDD'
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { id: 'phoneMobile' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'phonering-alo-phone phonering-alo-green phonering-alo-show hidden-xs visible-sm visible-md visible-lg', id: 'phonering-alo-phoneIcon', style: { left: '-40px', top: 470, display: 'block' } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle-fill' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'phonering-alo-ph-img-circle' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695', className: 'pps-btn-img ', title: 'Li\xEAn h\u1EC7' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'phonering-alo-phone phonering-alo-green phonering-alo-show visible-xs hidden-sm hidden-md hidden-lg', id: 'phonering-alo-phoneIcon', style: { right: '-40px', top: 70, display: 'block' } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'phonering-alo-ph-circle-fill' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'phonering-alo-ph-img-circle' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: 'tel:0972564695', className: 'pps-btn-img ', title: 'Li\xEAn h\u1EC7' })
+            )
+          )
         )
       )
     );
@@ -2371,6 +2405,10 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
           thutuc: {
             needUpdate: true,
             value: {}
+          },
+          gioithieu: {
+            needUpdate: true,
+            value: {}
           }
         },
         user: req.user || null
@@ -2914,102 +2952,115 @@ Html.defaultProps = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Footer; });
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
 
 
 class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      form: {
+        name: '',
+        sdt: '',
+        email: '',
+        noidung: ''
+      }
+    };
   }
 
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
-      { className: "footer" },
+      'div',
+      { className: 'footer' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { className: "a-left" },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/imgs/leaf.png", alt: "" })
+        'div',
+        { className: 'a-left' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/leaf.png', alt: '' })
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { className: "a-right" },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/imgs/leaf.png", alt: "" })
+        'div',
+        { className: 'a-right' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/leaf.png', alt: '' })
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { className: "footer-body" },
+        'div',
+        { className: 'footer-body' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "div",
-          { className: "container" },
+          'div',
+          { className: 'container' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "div",
-            { className: "row" },
+            'div',
+            { className: 'row' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "div",
-              { className: "col-md-6" },
+              'div',
+              { className: 'col-md-6' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "footer-contact-info" },
+                'div',
+                { className: 'footer-contact-info' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "h4",
+                  'h4',
                   { style: { textAlign: 'center', marginBottom: 20 } },
-                  "th\xF4ng tin li\xEAn h\u1EC7"
+                  'th\xF4ng tin li\xEAn h\u1EC7'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "ul",
-                  { className: "contact-items ng-scope" },
+                  'ul',
+                  { className: 'contact-items ng-scope' },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "li",
-                    { className: "clearfix item ng-scope" },
+                    'li',
+                    { className: 'clearfix item ng-scope' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "label ng-binding" },
-                      "T\u01B0 v\u1EA5n"
+                      'div',
+                      { className: 'label ng-binding' },
+                      'T\u01B0 v\u1EA5n'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "text" },
+                      'div',
+                      { className: 'text' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "b",
+                        'b',
                         null,
-                        "0906.234.912 - 0972.564.695"
+                        '0906.234.912 - 0972.564.695'
                       )
                     )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "li",
-                    { className: "clearfix item ng-scope" },
+                    'li',
+                    { className: 'clearfix item ng-scope' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "label ng-binding" },
-                      "\u0110\u1ECBa ch\u1EC9 giao d\u1ECBch"
+                      'div',
+                      { className: 'label ng-binding' },
+                      '\u0110\u1ECBa ch\u1EC9 giao d\u1ECBch'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "text" },
+                      'div',
+                      { className: 'text' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "span",
-                        { className: "ng-binding ng-scope" },
-                        "S\xE0n B\u0110S Vinhomes Times City Park Hill s\u1ED1 458 Minh Khai - Hai B\xE0 Tr\u01B0ng - H\xE0 N\u1ED9i"
+                        'span',
+                        { className: 'ng-binding ng-scope' },
+                        'S\xE0n B\u0110S Vinhomes Times City Park Hill s\u1ED1 458 Minh Khai - Hai B\xE0 Tr\u01B0ng - H\xE0 N\u1ED9i'
                       )
                     )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "li",
-                    { className: "clearfix item ng-scope" },
+                    'li',
+                    { className: 'clearfix item ng-scope' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "label ng-binding" },
-                      "Email"
+                      'div',
+                      { className: 'label ng-binding' },
+                      'Email'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "text" },
+                      'div',
+                      { className: 'text' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "a",
-                        { className: "ng-binding ng-scope", href: "mailto://quanganh268.vud@gmail.com" },
-                        "quanganh268.vud@gmail.com"
+                        'a',
+                        { className: 'ng-binding ng-scope', href: 'mailto://quanganh268.vud@gmail.com' },
+                        'quanganh268.vud@gmail.com'
                       )
                     )
                   )
@@ -3017,64 +3068,131 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "div",
-              { className: "col-md-6" },
+              'div',
+              { className: 'col-md-6' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "footer-contact-info" },
+                'div',
+                { className: 'footer-contact-info' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "h4",
+                  'h4',
                   { style: { textAlign: 'center', marginBottom: 20 } },
-                  "\u0110\u0103ng k\xFD t\u01B0 v\u1EA5n mi\u1EC5n ph\xED"
+                  '\u0110\u0103ng k\xFD t\u01B0 v\u1EA5n mi\u1EC5n ph\xED'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "div",
-                  { className: "agency-list" },
+                  'div',
+                  { className: 'agency-list' },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "form",
-                    { className: "footer-contact-form ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email", autoComplete: "false" },
+                    'div',
+                    { className: 'footer-contact-form ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email', autoComplete: 'false' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "row" },
+                      'div',
+                      { className: 'row' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "col-xs-12" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", placeholder: "H\u1ECD & t\xEAn *", required: true, autoComplete: "false", name: "name", className: "ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" })
+                        'div',
+                        { className: 'col-xs-12' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { defaultValue: this.state.form.name,
+                          onChange: e => {
+                            let value = e.target.value;
+                            this.setState(prev => {
+                              return _extends({}, prev, {
+                                form: _extends({}, prev.form, {
+                                  name: value
+                                })
+                              });
+                            });
+                          },
+                          type: 'text', placeholder: 'H\u1ECD & t\xEAn *', required: true, autoComplete: 'false', name: 'name', className: 'ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required' })
                       )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "row" },
+                      'div',
+                      { className: 'row' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "col-xs-6" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", placeholder: "S\u1ED1 \u0111i\u1EC7n tho\u1EA1i*", required: true, autoComplete: "false", name: "name", className: "ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" })
+                        'div',
+                        { className: 'col-xs-6' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text',
+                          defaultValue: this.state.form.sdt,
+                          onChange: e => {
+                            let value = e.target.value;
+                            this.setState(prev => {
+                              return _extends({}, prev, {
+                                form: _extends({}, prev.form, {
+                                  sdt: value
+                                })
+                              });
+                            });
+                          },
+                          placeholder: 'S\u1ED1 \u0111i\u1EC7n tho\u1EA1i*', required: true, autoComplete: 'false', name: 'name', className: 'ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required' })
                       ),
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "col-xs-6" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "email", placeholder: "Email *", required: true, autoComplete: "false", name: "email", className: "ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-email" })
+                        'div',
+                        { className: 'col-xs-6' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'email',
+                          defaultValue: this.state.form.email,
+                          onChange: e => {
+                            let value = e.target.value;
+                            this.setState(prev => {
+                              return _extends({}, prev, {
+                                form: _extends({}, prev.form, {
+                                  email: value
+                                })
+                              });
+                            });
+                          },
+                          placeholder: 'Email *', required: true, autoComplete: 'false', name: 'email', className: 'ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-email' })
                       )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "row" },
+                      'div',
+                      { className: 'row' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "col-xs-12" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", { placeholder: "N\u1ED9i dung *", rows: 3, required: true, name: "content", className: "ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required", defaultValue: "" })
+                        'div',
+                        { className: 'col-xs-12' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { placeholder: 'N\u1ED9i dung *',
+                          defaultValue: this.state.form.noidung,
+                          onChange: e => {
+                            let value = e.target.value;
+                            this.setState(prev => {
+                              return _extends({}, prev, {
+                                form: _extends({}, prev.form, {
+                                  noidung: value
+                                })
+                              });
+                            });
+                            console.log(this.state.form);
+                          },
+                          rows: 3, required: true, name: 'content', className: 'ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required', defaultValue: "" })
                       )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      "div",
-                      { className: "row" },
+                      'div',
+                      { className: 'row' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "col-xs-12 text-right" },
+                        'div',
+                        { className: 'col-xs-12 text-right' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                          "button",
-                          { className: "btn-send", type: "submit" },
-                          "G\u1EEDi "
+                          'span',
+                          { className: 'btn-send', style: { cursor: 'pointer' },
+                            onClick: () => {
+                              let that = this;
+                              __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/tuvan', this.state.form).then(res => {
+                                alert('Đã đăng ký tư vấn thành công, chúng tôi sẽ sớm liên lạc lại với bạn!');
+                                that.setState(prev => {
+                                  return {
+                                    form: {
+                                      name: '',
+                                      sdt: '',
+                                      email: '',
+                                      noidung: ''
+                                    }
+                                  };
+                                });
+                              }).catch(err => {
+                                console.log(err);
+                              });
+                            }
+                          },
+                          'G\u1EEDi '
                         )
                       )
                     )
@@ -3810,8 +3928,7 @@ let mongoose = __webpack_require__(5),
 
 var schema = new mongoose.Schema({
   slug: { type: String, required: true, unique: true, index: true },
-  title: String,
-  coverUrl: String,
+  body: { type: String, default: '' },
   created_at: { type: Date, default: Date.now }
 });
 
@@ -3868,12 +3985,8 @@ module.exports.getCategories = (root, {}) => {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
     },
 
-    coverUrl: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
-    },
-
-    title: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+    body: {
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     created_at: {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_1_graphql_iso_date__["GraphQLDateTime"])
@@ -4889,6 +5002,9 @@ function data(state = {}, action) {
         }),
         thutuc: _extends({}, state.thutuc, {
           value: data.thutuc || state.thutuc.value
+        }),
+        gioithieu: _extends({}, state.gioithieu, {
+          value: data.gioithieu || state.gioithieu.value
         })
       });
     default:
@@ -5060,7 +5176,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             { theme: 'dark',
               mode: this.state.mode,
               selectedKeys: [this.props.name],
-              defaultOpenKeys: ['sub0', 'sub1', 'sub2']
+              defaultOpenKeys: ['sub0', 'sub1', 'sub2', 'sub3']
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
@@ -5197,6 +5313,49 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
                   { to: '/admin/news?v=add' },
                   'Th\xEAm m\u1EDBi'
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              SubMenu,
+              {
+                key: 'sub3',
+                title: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'span',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], { type: 'idcard' }),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'nav-text' },
+                    'Gi\u1EDBi thi\u1EC7u'
+                  )
+                )
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
+                { key: 'sub3-1' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                  { to: '/admin/category?v=edit&slug=cho-thue' },
+                  'C\u0103n h\u1ED9 cho thu\xEA'
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
+                { key: 'sub3-2' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                  { to: '/admin/category?v=edit&slug=khu-t' },
+                  'Khu T'
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
+                { key: 'sub3-3' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                  { to: '/admin/category?v=edit&slug=khu-park-hill' },
+                  'Khu Park Hill'
                 )
               )
             ),
@@ -7321,7 +7480,7 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          query: '{ getOneCategory(slug: "' + slug + '"){title, slug, coverUrl, created_at} }'
+          query: '{ getOneCategory(slug: "' + slug + '"){slug, body, created_at} }'
         }),
         credentials: 'include'
       });
@@ -7432,132 +7591,25 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
         __WEBPACK_IMPORTED_MODULE_1_antd__["Row"],
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_antd__["Tabs"],
-          { type: 'card' },
+          'div',
+          { style: { maxWidth: 800, padding: 5, border: '1px solid #ddd', margin: '0 auto' } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            TabPane,
-            { tab: 'Th\xF4ng tin b\xE0i vi\u1EBFt', key: '1' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_antd__["Row"],
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_antd__["Col"],
-                { sm: 12, className: 'padding-5' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { style: { marginBottom: 16 } },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'label',
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'b',
-                      null,
-                      'T\u1EF1a \u0111\u1EC1:'
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Input"], {
-                    placeholder: 'T\u1EF1a \u0111\u1EC1',
-                    defaultValue: this.state.data.title,
-                    onChange: e => {
-                      let that = this;
-                      let value = e.target.value;
-                      let newSlug = function () {
-                        if (that.props.isEdit) return that.state.data.slug;else {
-                          return slugify(value);
-                        }
-                      };
-                      this.setState(prev => {
-                        return _extends({}, prev, {
-                          data: _extends({}, prev.data, {
-                            title: value,
-                            slug: newSlug()
-                          })
-                        });
-                      });
-                    }
-                  })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { style: { marginBottom: 16 } },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'label',
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'b',
-                      null,
-                      'slug:'
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Input"], {
-                    placeholder: 'Slug',
-                    disabled: this.props.isEdit,
-                    value: this.state.data.slug,
-                    onChange: e => {
-                      let value = e.target.value;
-                      this.setState(prev => {
-                        return _extends({}, prev, {
-                          data: _extends({}, prev.data, {
-                            slug: value
-                          })
-                        });
-                      });
-                    }
-                  })
-                )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_antd__["Col"],
-                { sm: 12, className: 'padding-5' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { style: { marginBottom: 16 } },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'label',
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'b',
-                      null,
-                      '\u1EA2nh \u0111\u1EA1i di\u1EC7n:'
-                    )
-                  ),
-                  !this.state.data.coverUrl && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Components_ImageUpload__["a" /* default */], {
-                    isMultiple: false,
-                    handleUpload: img => this.handleCoverUpload(img)
-                  }),
-                  this.state.data.coverUrl && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1_antd__["Card"],
-                    { bordered: false, className: 'imgWr',
-                      onClick: () => this.showModalSelectImage('cover')
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: this.state.data.coverUrl })
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_1_antd__["Button"],
-                  {
-                    style: { marginRight: 10 },
-                    onClick: () => this.showModalSelectImage('cover')
-                  },
-                  'Ch\u1ECDn \u1EA3nh t\u1EEB th\u01B0 vi\u1EC7n'
-                ),
-                this.state.data.coverUrl && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_1_antd__["Button"],
-                  {
-                    onClick: () => {
-                      this.setState(prevState => {
-                        return _extends({}, prevState, {
-                          data: _extends({}, prevState.data, {
-                            coverUrl: null
-                          })
-                        });
-                      });
-                    }
-                  },
-                  'X\xF3a \u1EA3nh '
-                )
-              )
-            )
+            __WEBPACK_IMPORTED_MODULE_1_antd__["Col"],
+            { className: 'padding-5' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__Components_CKEditor__["a" /* default */], {
+              id: 1,
+              value: this.state.data.body || '',
+              onChange: value => {
+                console.log(value);
+                this.setState(prev => {
+                  return _extends({}, prev, {
+                    data: _extends({}, prev.data, {
+                      body: value
+                    })
+                  });
+                });
+              }
+            })
           )
         )
       ),
@@ -11216,9 +11268,10 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'col-lg-9 col-sm-8 content-row shadow bg-white', style: { paddingTop: 15 } },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'row', style: { marginBottom: 15, padding: 15 }, dangerouslySetInnerHTML: { __html: this.props.data.gioithieu.value.body || '' } }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'row', style: { marginBottom: '15px 0' } },
+                { className: 'row', style: { marginBottom: 15 } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: 'headerWr' },
@@ -11228,7 +11281,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'h2',
                       null,
-                      this.props.headerName
+                      'Danh s\xE1ch c\xE1c c\u0103n h\u1ED9'
                     )
                   )
                 )
@@ -11391,7 +11444,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},danhsachcanho:getApartmentsByCategory(category:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }'
+            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},danhsachcanho:getApartmentsByCategory(category:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at}, gioithieu:getOneCategory(slug: "' + params.slug + '"){slug, body, created_at} }'
           }),
           credentials: 'include'
         });
@@ -11421,7 +11474,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 function mapSlugToName(slug) {
   if (slug === 'khu-t') {
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU T";
-  } else if (slug === 'khu-pack-hill') {
+  } else if (slug === 'khu-park-hill') {
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL";
   } else {
     return "CĂN HỘ CHO THUÊ";
@@ -13118,6 +13171,19 @@ router.post('/order/new', bodyParser.json(), (() => {
   };
 })());
 
+router.post('/tuvan', bodyParser.json(), (() => {
+  var _ref2 = _asyncToGenerator(function* (req, res) {
+    let setting = yield Setting.findOne({});
+    let emailAdmin = setting.emailAdmin;
+    Mailer.sendToAdmin(emailAdmin, req.body);
+    return res.send('ok');
+  });
+
+  return function (_x3, _x4) {
+    return _ref2.apply(this, arguments);
+  };
+})());
+
 router.post('/seo/new', bodyParser.json(), (req, res) => {
   Seo.create(req.body, (err, resData) => {
     if (err) return res.sendStatus(400);
@@ -13400,7 +13466,7 @@ var api_key = 'key-4639e67edf2df3a4c479a605e8376b9b';
 var domain = 'edu.anabim.com';
 var mailgun = __webpack_require__(180)({ apiKey: api_key, domain: domain });
 
-const from = 'Thông báo đơn hàng <admin@comhoavang.com>';
+const from = 'Thông báo Đăng ký tư vấn <admin@chungcu-timescityparkhill.com>';
 
 const RegisterMail = function (email, name) {
   return {
@@ -13431,6 +13497,15 @@ const NewOrderMail = function (email, name, phone) {
   };
 };
 
+const TuVan = function (email, data) {
+  return {
+    from: from,
+    to: email,
+    subject: `Đăng ký tư vấn từ ${data.name}, SĐT: ${data.sdt}, Email: ${data.email}`,
+    text: `Nội dung: ${data.noidung}`
+  };
+};
+
 let Mailer = {};
 
 Mailer.sendRegister = function (email, name) {
@@ -13448,6 +13523,12 @@ Mailer.sendActiveMail = function (email, name, activeUrl) {
 Mailer.sendNewOrderMail = function (email, name, phone) {
   mailgun.messages().send(NewOrderMail(email, name, phone), function (error, body) {
     console.log(body);
+  });
+};
+
+Mailer.sendToAdmin = function (email, data) {
+  mailgun.messages().send(TuVan(email, data), function (error, body) {
+    // console.log(body);
   });
 };
 

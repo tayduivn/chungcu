@@ -6,6 +6,10 @@
   nav li a {
     font-size: 14px !important; } }
 
+@media screen and (max-width: 500px) {
+  #phoneMobile {
+    display: block; } }
+
 @media screen and (max-width: 768px) {
   .navbar-header {
     float: none !important;

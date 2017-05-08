@@ -15,10 +15,11 @@ class Home extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-9 col-sm-8 content-row shadow bg-white" style={{paddingTop: 15}}>
-                <div className="row" style={{marginBottom: '15px 0'}}>
+                <div className="row" style={{marginBottom: 15, padding: 15}} dangerouslySetInnerHTML={{ __html: this.props.data.gioithieu.value.body || '' }} />
+                <div className="row" style={{marginBottom: 15}}>
                   <div className="headerWr" >
                     <header>
-                      <h2>{this.props.headerName}</h2>
+                      <h2>Danh sách các căn hộ</h2>
                     </header>
                   </div>
                 </div>

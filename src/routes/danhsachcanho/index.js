@@ -21,7 +21,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},danhsachcanho:getApartmentsByCategory(category:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }',
+          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},danhsachcanho:getApartmentsByCategory(category:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at}, gioithieu:getOneCategory(slug: "'+ params.slug +'"){slug, body, created_at} }',
         }),
         credentials: 'include',
       });
@@ -37,7 +37,7 @@ export default {
       title: seo.title || 'Trang chủ',
       description: seo.description || '',
       seo: seo,
-      component: <Layout><View data={store.getState().data} headerName={mapSlugToName(params.slug)} /></Layout>,
+      component: <Layout><View data={store.getState().data} headerName={mapSlugToName(params.slug)}  /></Layout>,
     };
   },
 
@@ -46,7 +46,7 @@ export default {
 function mapSlugToName(slug){
   if(slug === 'khu-t'){
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU T"
-  } else if( slug === 'khu-pack-hill'){
+  } else if( slug === 'khu-park-hill'){
     return "CHUYỂN NHƯỢNG CĂN HỘ KHU PARK HILL"
   } else {
     return "CĂN HỘ CHO THUÊ"

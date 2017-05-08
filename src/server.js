@@ -163,6 +163,10 @@ app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
         thutuc: {
           needUpdate: true,
           value: {}
+        },
+        gioithieu: {
+          needUpdate: true,
+          value: {}
         }
       },
       user: req.user || null,

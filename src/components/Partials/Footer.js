@@ -1,8 +1,17 @@
 import React from 'react'
+import axios from 'axios'
 
 class Footer extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      form: {
+        name: '',
+        sdt: '',
+        email: '',
+        noidung: ''
+      }
+    }
   }
 
   render () {
@@ -46,31 +55,109 @@ class Footer extends React.Component {
                 <div className="footer-contact-info">
                   <h4 style={{textAlign: 'center', marginBottom: 20}}>Đăng ký tư vấn miễn phí</h4>
                   <div className="agency-list">
-                    <form className="footer-contact-form ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email"   autoComplete="false">
+                    <div className="footer-contact-form ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email"   autoComplete="false">
                       <div className="row">
                         <div className="col-xs-12">
-                          <input type="text" placeholder="Họ & tên *" required autoComplete="false" name="name"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
+                          <input defaultValue={this.state.form.name}
+                                 onChange={(e) => {
+                                   let value = e.target.value
+                                   this.setState(prev => {
+                                     return {
+                                       ...prev,
+                                       form: {
+                                         ...prev.form,
+                                         name: value
+                                       }
+                                     }
+                                   })
+                                 }}
+                                 type="text" placeholder="Họ & tên *" required autoComplete="false" name="name"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
                         </div>
                       </div>
                       <div className="row">
                         <div className="col-xs-6">
-                          <input type="text" placeholder="Số điện thoại*" required autoComplete="false" name="name"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
+                          <input type="text"
+                                 defaultValue={this.state.form.sdt}
+                                 onChange={(e) => {
+                                   let value = e.target.value
+                                   this.setState(prev => {
+                                     return {
+                                       ...prev,
+                                       form: {
+                                         ...prev.form,
+                                         sdt: value
+                                       }
+                                     }
+                                   })
+                                 }}
+                                 placeholder="Số điện thoại*" required autoComplete="false" name="name"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
                         </div>
                         <div className="col-xs-6">
-                          <input type="email" placeholder="Email *" required autoComplete="false" name="email"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-email" />
+                          <input type="email"
+                                 defaultValue={this.state.form.email}
+                                 onChange={(e) => {
+                                   let value = e.target.value
+                                   this.setState(prev => {
+                                     return {
+                                       ...prev,
+                                       form: {
+                                         ...prev.form,
+                                         email: value
+                                       }
+                                     }
+                                   })
+                                 }}
+                                 placeholder="Email *" required autoComplete="false" name="email"  className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-email" />
                         </div>
                       </div>
                       <div className="row">
                         <div className="col-xs-12">
-                          <textarea placeholder="Nội dung *" rows={3} required name="content" className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" defaultValue={""} />
+                          <textarea placeholder="Nội dung *"
+                                    defaultValue={this.state.form.noidung}
+                                    onChange={(e) => {
+                                      let value = e.target.value
+                                      this.setState(prev => {
+                                        return {
+                                          ...prev,
+                                          form: {
+                                            ...prev.form,
+                                            noidung: value
+                                          }
+                                        }
+                                      })
+                                      console.log(this.state.form)
+                                    }}
+                                    rows={3} required name="content" className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" defaultValue={""} />
 
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-xs-12 text-right"><button className="btn-send" type="submit">Gửi </button></div>
-
+                        <div className="col-xs-12 text-right">
+                          <span className="btn-send" style={{cursor: 'pointer'}}
+                            onClick={() => {
+                              let that = this;
+                              axios.post('/api/tuvan', this.state.form)
+                                .then(res => {
+                                  alert('Đã đăng ký tư vấn thành công, chúng tôi sẽ sớm liên lạc lại với bạn!')
+                                  that.setState(prev => {
+                                    return {
+                                      form: {
+                                        name: '',
+                                        sdt: '',
+                                        email: '',
+                                        noidung: ''
+                                      }
+                                    }
+                                  })
+                                })
+                                .catch(err => {
+                                  console.log(err)
+                                })
+                            }}
+                          >Gửi </span>
+                        </div>
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -30,12 +30,8 @@ export default new GraphQLObjectType({
       type: new GraphQLNonNull(GraphQLString)
     },
 
-    coverUrl: {
-      type: new GraphQLNonNull(GraphQLString)
-    },
-
-    title: {
-      type: new GraphQLNonNull(GraphQLString)
+    body: {
+      type: GraphQLString
     },
     created_at: {
       type: new GraphQLNonNull(GraphQLDateTime)

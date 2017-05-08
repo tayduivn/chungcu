@@ -57,7 +57,7 @@ class Layout extends React.Component {
                   <li><Link to="/danhsach/cho-thue">CĂN HỘ CHO THUÊ</Link>
                   </li>
                   <li><Link to="/danhsach/khu-t">CHUYỂN NHƯỢNG KHU T</Link></li>
-                  <li><Link to="/danhsach/khu-pack-hill">CHUYỂN NHƯỢNG KHU PARK HILL</Link></li>
+                  <li><Link to="/danhsach/khu-park-hill">CHUYỂN NHƯỢNG KHU PARK HILL</Link></li>
                   <li><Link to="/danhsachthutuc">THỦ TỤC PHÁP LÝ </Link></li>
                 </ul>
               </nav>
@@ -91,13 +91,38 @@ class Layout extends React.Component {
           <Link to="/danhsach/khu-t" style={{fontSize: 12}} onClick={this.menuClick}>
             CHUYỂN NHƯỢNG KHU T
           </Link>
-          <Link to="/danhsach/khu-pack-hill" style={{fontSize: 12}} onClick={this.menuClick}>
+          <Link to="/danhsach/khu-park-hill" style={{fontSize: 12}} onClick={this.menuClick}>
             CHUYỂN NHƯỢNG KHU PARK HILL
           </Link>
           <Link to="/danhsachthutuc" style={{fontSize: 12}} onClick={this.menuClick}>
             THỦ TỤC PHÁP LÝ
           </Link>
         </nav>
+        <div id="phoneMobile">
+          <div>
+            <div className="phonering-alo-phone phonering-alo-green phonering-alo-show hidden-xs visible-sm visible-md visible-lg" id="phonering-alo-phoneIcon" style={{left: '-40px', top: 470, display: 'block'}}>
+              <div className="phonering-alo-ph-circle" />
+              <div className="phonering-alo-ph-circle-fill" />
+              <a href="tel:0972564695" />
+              <div className="phonering-alo-ph-img-circle">
+                <a href="tel:0972564695" />
+                <a href="tel:0972564695" className="pps-btn-img " title="Liên hệ">
+                </a>
+              </div>
+            </div>
+            <div className="phonering-alo-phone phonering-alo-green phonering-alo-show visible-xs hidden-sm hidden-md hidden-lg" id="phonering-alo-phoneIcon" style={{right: '-40px', top: 70, display: 'block'}}>
+              <div className="phonering-alo-ph-circle" />
+              <div className="phonering-alo-ph-circle-fill" />
+              <a href="tel:0972564695" />
+              <div className="phonering-alo-ph-img-circle">
+                <a href="tel:0972564695" />
+                <a href="tel:0972564695" className="pps-btn-img " title="Liên hệ">
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     );
   }

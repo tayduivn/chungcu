@@ -3,8 +3,7 @@ let mongoose = require('mongoose'),
 
 var schema = new mongoose.Schema({
   slug: { type:String, required:true, unique: true, index: true},
-  title: String,
-  coverUrl: String,
+  body: { type: String, default: '' },
   created_at: {type: Date, default: Date.now},
 });
 
