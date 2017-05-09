@@ -95,7 +95,7 @@ class Home extends React.Component {
                   </div>
                 </div>
                 <hr/>
-                <div className="row padding-20">
+                <div className="row padding-20 responsive">
                   <h2>Thôngn tin căn hộ</h2>
                   <div dangerouslySetInnerHTML={{ __html: canho.body}} />
                 </div>

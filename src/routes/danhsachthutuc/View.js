@@ -30,7 +30,7 @@ class Home extends React.Component {
                         <div key={index} className="card card-horizontal">
                           <div className="row">
                             <div className="col-sm-4">
-                              <div className="card-image bg-image">
+                              <div className="card-image bg-image imgWr">
                                 <Link to={'/thutuc/' + el.slug}>
                                   <img src={el.coverUrl} width="100%" height="100%" alt=""/>
                                 </Link>

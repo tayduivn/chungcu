@@ -80,6 +80,13 @@ router.post('/apartment/update', bodyParser.json() ,(req, res) => {
   });
 })
 
+router.post('/apartment/delete', bodyParser.json() ,(req, res) => {
+  Apartment.remove({slug: req.body.slug}, function (err, resData) {
+    if (err) return res.statusCode(400).send(err);
+    res.send(resData);
+  });
+})
+
 router.post('/order/new', bodyParser.json() ,async (req, res) => {
   let setting = await Setting.findOne({})
   let adminId = setting.adminId

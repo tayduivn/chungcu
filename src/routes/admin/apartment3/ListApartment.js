@@ -11,9 +11,10 @@ import React, { PropTypes } from 'react';
 import UniversalRouter from 'universal-router'
 import history from '../../../core/history'
 import Link from '../../../components/Link'
-import { Button, DatePicker, Icon, Row, Col} from 'antd';
+import { Button, DatePicker, Icon, Row, Col, Popconfirm} from 'antd';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 import moment from 'moment'
+import axios from 'axios'
 
 class ListNews extends React.Component {
   constructor(props){
@@ -51,7 +52,30 @@ class ListNews extends React.Component {
                       </span>
                     </Td>
                     <Td>
-                      <span><Link to={"/admin/apartment?v=edit&slug=" + el.slug }>Sửa</Link></span>
+                      <span>
+                        <Link to={"/admin/apartment?v=edit&slug=" + el.slug }>
+                          <Button type="danger">
+                          Sửa
+                          </Button>
+                        </Link>
+                        <Popconfirm placement="right"
+                                    onConfirm={() => {
+                                      let that = this;
+                                      axios.post('/api/apartment/delete', {slug: el.slug})
+                                        .then(res => {
+                                          that.getApartments()
+                                          console.log('Đã xóa')
+                                        })
+                                        .catch(err => {
+                                          message.error('Có lỗi')
+                                        })
+                                    }}
+                                    okText="Chắc chắn xóa" cancelText="Hủy">
+                        <Button
+                          type="primary"
+                        >Xóa</Button>
+                      </Popconfirm>
+                      </span>
                     </Td>
                   </Tr>
                 )

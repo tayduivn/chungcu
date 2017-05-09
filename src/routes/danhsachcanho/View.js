@@ -31,12 +31,12 @@ class Home extends React.Component {
                         <div key={index} className="col-sm-6 col-lg-4">
                           <div className="card">
                             <Link to={'/can-ho/' + el.slug}>
-                              <div className="card-image">
+                              <div className="card-image imgWr">
                                 <img className="img-responsive" src={el.coverUrl} alt={el.title} />
                               </div>
                             </Link>
                             <div className="card-content">
-                              <div className="listingInfo">
+                              <div className="listingInfo imgWr">
                                 <figure className="listerName">
                                   <Link to={'/can-ho/' + el.slug} className="agent-wrapper">
                                     <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />

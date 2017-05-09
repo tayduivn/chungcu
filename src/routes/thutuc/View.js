@@ -22,7 +22,7 @@ class Home extends React.Component {
                   </div>
                 </div>
                 <hr/>
-                <div className="row">
+                <div className="row responsive">
                   <div style={{padding: 15}}
                     dangerouslySetInnerHTML={{__html: thutuc.body}} />
                 </div>
