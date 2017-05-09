@@ -28,47 +28,47 @@ export default new GraphQLObjectType({
     },
 
     title: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
 
     slug: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
 
     category: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
 
     coverUrl: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
 
     price1: {
-      type: new GraphQLNonNull(GraphQLFloat)
+      type: GraphQLFloat
     },
 
     price2: {
-      type: new GraphQLNonNull(GraphQLFloat)
+      type: GraphQLFloat
     },
 
     rating: {
-      type: new GraphQLNonNull(GraphQLFloat)
+      type: GraphQLFloat
     },
 
     numRate: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: GraphQLInt
     },
 
     body: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
 
     view: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: GraphQLInt
     },
 
     created_at: {
-      type: new GraphQLNonNull(GraphQLDateTime)
+      type: GraphQLDateTime
     },
   })
 });

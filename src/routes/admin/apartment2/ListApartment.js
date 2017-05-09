@@ -77,8 +77,6 @@ class ListNews extends React.Component {
       credentials: 'include',
     })
     const {data} = await resp.json();
-    console.log('=========================================')
-    console.log(data)
     this.setState(prev => {
       return {
         ...prev,

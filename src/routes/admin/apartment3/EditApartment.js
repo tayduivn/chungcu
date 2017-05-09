@@ -34,7 +34,7 @@ class EditNewsComponent extends React.Component {
       showModalSelectImage: false,
       data: {
         description: '',
-        category: 'khu-t',
+        category: 'khu-park-hill',
         price1: 0,
         price2: 0,
       },
@@ -222,6 +222,7 @@ class EditNewsComponent extends React.Component {
                       }}
                     />
                   </div>
+
                   <div style={{ marginBottom: 16 }}>
                     <label><b>Giá gốc:</b></label>
                     <br/>

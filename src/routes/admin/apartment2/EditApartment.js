@@ -34,7 +34,9 @@ class EditNewsComponent extends React.Component {
       showModalSelectImage: false,
       data: {
         description: '',
-        category: 'cho-thue'
+        category: 'cho-thue',
+        price1: 0,
+        price2: 0,
       },
     }
     if(this.props.isEdit) {

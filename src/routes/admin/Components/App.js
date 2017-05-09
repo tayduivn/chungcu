@@ -46,7 +46,7 @@ class App extends React.Component {
             <Menu theme="dark"
                   mode={this.state.mode}
                   selectedKeys={[this.props.name]}
-                  defaultOpenKeys={['sub0', 'sub1', 'sub2', 'sub3']}
+                  defaultOpenKeys={['sub0', 'sub11', 'sub12', 'sub2', 'sub3']}
             >
               <Menu.Item key="Dashboard">
                 <Link to="/admin/">
@@ -79,14 +79,26 @@ class App extends React.Component {
               </SubMenu>
 
               <SubMenu
-                key="sub1"
-                title={<span><Icon type="idcard" /><span className="nav-text">MB & CN</span></span>}
+                key="sub11"
+                title={<span><Icon type="idcard" /><span className="nav-text">Khu T</span></span>}
               >
-                <Menu.Item key="apartment1">
+                <Menu.Item key="apartment11">
                   <Link to="/admin/apartment?v=list" >Danh sách</Link>
                 </Menu.Item>
-                <Menu.Item key="apartment2">
+                <Menu.Item key="apartment22">
                   <Link to="/admin/apartment?v=add" >Thêm mới</Link>
+                </Menu.Item>
+              </SubMenu>
+
+              <SubMenu
+                key="sub12"
+                title={<span><Icon type="idcard" /><span className="nav-text">Khu Park Hill</span></span>}
+              >
+                <Menu.Item key="apartment13">
+                  <Link to="/admin/apartment3?v=list" >Danh sách</Link>
+                </Menu.Item>
+                <Menu.Item key="apartment24">
+                  <Link to="/admin/apartment3?v=add" >Thêm mới</Link>
                 </Menu.Item>
               </SubMenu>
 

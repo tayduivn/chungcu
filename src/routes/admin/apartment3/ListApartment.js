@@ -72,7 +72,7 @@ class ListNews extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{getApartments(type:"khu-t"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at}}',
+        query: '{getApartments(type:"khu-park-hill"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at}}',
       }),
       credentials: 'include',
     })

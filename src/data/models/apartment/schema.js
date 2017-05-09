@@ -3,12 +3,12 @@ let mongoose = require('mongoose'),
 
 var schema = new mongoose.Schema({
   slug: { type:String, required:true, unique: true, index: true},
-  title: String,
-  category: {type: String},
-  coverUrl: String,
+  title: {type: String, required: true, default: ''},
+  category: {type: String, required: true, default: 'khu-t'},
+  coverUrl: {type: String, required: true, default: '/'},
   price1: {type: Number, default: 0},
   price2: {type: Number, default: 0},
-  body: String,
+  body: {type: String, required: true, default: ''},
   rating: {type: Number, default: 5},
   numRate: {type: Number, default: 1},
   view: {type: Number, default: 0},
@@ -32,14 +32,8 @@ module.exports.getOneApartment = (root, {slug}) => {
 
 module.exports.getApartments = (root, {type}) => {
   let query = {}
-  if(type === 'cho-thue') {
-    query = {category: 'cho-thue'}
-  }else if(type === 'mbcn'){
-    query = {category: {$in: ['khu-t', 'khu-park-hill']}}
-  } else {
-    query = {}
-  }
-  console.log(query)
+  console.log(type)
+  query = {category: type}
   return new Promise((resolve, reject) => {
     model.find(query).sort({created_at: -1}).exec((err, res) => {
       err ? reject(err) : resolve(res);

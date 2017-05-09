@@ -40,6 +40,11 @@ class EditNewsComponent extends React.Component {
     if(this.props.isEdit) this.init(this.props.slug)
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+    if(nextProps.isEdit) this.init(nextProps.slug)
+  }
+
   async init (slug) {
     const resp = await fetch('/graphql', {
       method: 'post',
@@ -172,7 +177,6 @@ class EditNewsComponent extends React.Component {
                 id={1}
                 value={this.state.data.body || ''}
                 onChange={(value) => {
-                  console.log(value)
                   this.setState(prev => {
                     return {
                       ...prev,
