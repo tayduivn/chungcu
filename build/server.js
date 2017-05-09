@@ -2486,7 +2486,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 20;
+      let version = 21;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
@@ -11971,7 +11971,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'h2',
                   null,
-                  'Th\xF4ngn tin c\u0103n h\u1ED9'
+                  'Th\xF4ng tin c\u0103n h\u1ED9'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { dangerouslySetInnerHTML: { __html: canho.body } })
               )
@@ -12131,7 +12131,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                         { className: 'card-content' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                           'div',
-                          { className: 'listingInfo imgWr' },
+                          { className: 'listingInfo' },
                           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'figure',
                             { className: 'listerName' },
@@ -13165,7 +13165,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                         { className: 'card-content' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                           'div',
-                          { className: 'listingInfo imgWr' },
+                          { className: 'listingInfo' },
                           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'figure',
                             { className: 'listerName' },

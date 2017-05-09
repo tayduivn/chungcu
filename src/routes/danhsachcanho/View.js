@@ -36,7 +36,7 @@ class Home extends React.Component {
                               </div>
                             </Link>
                             <div className="card-content">
-                              <div className="listingInfo imgWr">
+                              <div className="listingInfo">
                                 <figure className="listerName">
                                   <Link to={'/can-ho/' + el.slug} className="agent-wrapper">
                                     <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
