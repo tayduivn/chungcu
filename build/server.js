@@ -2504,7 +2504,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 23;
+      let version = 24;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
@@ -3844,6 +3844,7 @@ module.exports.getApartmentRelative = (root, { slug }) => {
   return new Promise((resolve, reject) => {
     model.findOne({ slug: slug }).exec((err, apartment) => {
       if (err) reject(err);else {
+        let category = apartment ? apartment.category : '';
         if (apartment === null) {
           reject(err);
         }{

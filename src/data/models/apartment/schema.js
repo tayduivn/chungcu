@@ -56,6 +56,7 @@ module.exports.getApartmentRelative = (root, {slug}) => {
       if(err)
         reject(err)
       else {
+        let category = apartment ? apartment.category : ''
         if(apartment === null){
           reject(err)
         } {
