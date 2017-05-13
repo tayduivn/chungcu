@@ -49,7 +49,15 @@ export default function data(state = {}, action) {
         gioithieu: {
           ...state.gioithieu,
           value: data.gioithieu || state.gioithieu.value
-        }
+        },
+        canhotuongtu: {
+          ...state.canho,
+          value: data.canhotuongtu || state.canhotuongtu.value
+        },
+        thutuctuongtu: {
+          ...state.thutuctuongtu,
+          value: data.thutuctuongtu || state.thutuctuongtu.value
+        },
       };
     default:
       return state;

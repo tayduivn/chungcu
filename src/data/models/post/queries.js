@@ -54,4 +54,8 @@ export default {
     type: new GraphQLList(type),
     resolve: model.getAllPosts
   },
+  getPostRelative: {
+    type: new GraphQLList(type),
+    resolve: model.getPostRelative,
+  }
 };

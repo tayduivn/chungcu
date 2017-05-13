@@ -21,7 +21,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }',
+          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at}, thutuctuongtu:getPostRelative{title, coverUrl, description, slug, public, view, created_at} }',
         }),
         credentials: 'include',
       });

@@ -118,3 +118,18 @@ module.exports.newPost = (root, {category, slug, title, coverUrl, description, b
   });
 
 };
+
+module.exports.getPostRelative = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.aggregate([
+      { "$sample" : {
+        size: 6
+      }}
+      ]).exec((err, listPost) => {
+        if (err)
+          reject(err)
+        else
+          resolve(listPost)
+      })
+  })
+}

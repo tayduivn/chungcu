@@ -5,44 +5,53 @@ import {
   GraphQLInt,
   GraphQLNonNull,
   GraphQLList,
-  GraphQLID
+  GraphQLID,
   } from 'graphql';
 
 import {
   GraphQLDate,
   GraphQLTime,
-  GraphQLDateTime
+  GraphQLDateTime,
 } from 'graphql-iso-date';
 
-import type from './type'
-import model from './schema'
+import type from './type';
+import model from './schema';
 
 export default {
   getOneApartment: {
-    type: type,
+    type,
     args: {
       slug: {
-        type: GraphQLString
-      }
+        type: GraphQLString,
+      },
     },
-    resolve: model.getOneApartment
+    resolve: model.getOneApartment,
   },
   getApartments: {
     type: new GraphQLList(type),
     args: {
       type: {
-        type: GraphQLString
-      }
+        type: GraphQLString,
+      },
     },
-    resolve: model.getApartments
+    resolve: model.getApartments,
   },
   getApartmentsByCategory: {
     type: new GraphQLList(type),
     args: {
       category: {
-        type: GraphQLString
-      }
+        type: GraphQLString,
+      },
     },
-    resolve: model.getApartmentsByCategory
+    resolve: model.getApartmentsByCategory,
+  },
+  getApartmentRelative: {
+    type: new GraphQLList(type),
+    args: {
+      slug: {
+        type: GraphQLString,
+      },
+    },
+    resolve: model.getApartmentRelative,
   },
 };

@@ -1261,6 +1261,9 @@ hr {
   max-width: 100% !important;
   height: auto !important; }
 
+.agent-photo {
+  z-index: 10010 !important; }
+
 @media screen and (max-width: 1200px) {
   nav li a {
     font-size: 18px !important; } }

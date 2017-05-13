@@ -1978,6 +1978,16 @@ module.exports.newPost = (root, { category, slug, title, coverUrl, description, 
   });
 };
 
+module.exports.getPostRelative = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.aggregate([{ "$sample": {
+        size: 6
+      } }]).exec((err, listPost) => {
+      if (err) reject(err);else resolve(listPost);
+    });
+  });
+};
+
 /***/ }),
 /* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2425,6 +2435,14 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
           gioithieu: {
             needUpdate: true,
             value: {}
+          },
+          canhotuongtu: {
+            needUpdate: true,
+            value: []
+          },
+          thutuctuongtu: {
+            needUpdate: true,
+            value: []
           }
         },
         user: req.user || null
@@ -3754,6 +3772,15 @@ const UserProfile = __WEBPACK_IMPORTED_MODULE_1__sequelize__["a" /* default */].
       }
     },
     resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getApartmentsByCategory
+  },
+  getApartmentRelative: {
+    type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
+    args: {
+      slug: {
+        type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
+      }
+    },
+    resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getApartmentRelative
   }
 });
 
@@ -3808,6 +3835,27 @@ module.exports.getApartmentsByCategory = (root, { category }) => {
   return new Promise((resolve, reject) => {
     model.find({ category: category }).sort({ created_at: -1 }).exec((err, res) => {
       err ? reject(err) : resolve(res);
+    });
+  });
+};
+
+module.exports.getApartmentRelative = (root, { slug }) => {
+  console.log('get apartment relative');
+  return new Promise((resolve, reject) => {
+    model.findOne({ slug: slug }).exec((err, apartment) => {
+      if (err) reject(err);else {
+        if (!apartment) {
+          reject(err);
+        }{
+          model.aggregate([{ "$match": {
+              category: apartment.category
+            } }, { "$sample": {
+              size: 6
+            } }]).exec((err, listApartment) => {
+            if (err) reject(err);else resolve(listApartment);
+          });
+        }
+      }
     });
   });
 };
@@ -4347,6 +4395,10 @@ module.exports.getOrders = (root, {}) => {
   getAllPosts: {
     type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
     resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getAllPosts
+  },
+  getPostRelative: {
+    type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
+    resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getPostRelative
   }
 });
 
@@ -4889,15 +4941,15 @@ const news = {
 
 
 
-let { listImage } = __WEBPACK_IMPORTED_MODULE_2__models_image_queries__["a" /* default */];
-let { users } = __WEBPACK_IMPORTED_MODULE_5__models_user_queries__["a" /* default */];
-let { setting } = __WEBPACK_IMPORTED_MODULE_6__models_setting_queries__["a" /* default */];
-let { getOrders } = __WEBPACK_IMPORTED_MODULE_7__models_order_queries__["a" /* default */];
-let { getPosts, getOnePost, getAllPosts } = __WEBPACK_IMPORTED_MODULE_3__models_post_queries__["a" /* default */];
-let { getOneProduct, getProducts } = __WEBPACK_IMPORTED_MODULE_4__models_product_queries__["a" /* default */];
-let { seo, allSeo } = __WEBPACK_IMPORTED_MODULE_8__models_seo_queries__["a" /* default */];
-let { getApartments, getOneApartment, getApartmentsByCategory } = __WEBPACK_IMPORTED_MODULE_9__models_apartment_queries__["a" /* default */];
-let { getCategories, getOneCategory } = __WEBPACK_IMPORTED_MODULE_10__models_category_queries__["a" /* default */];
+const { listImage } = __WEBPACK_IMPORTED_MODULE_2__models_image_queries__["a" /* default */];
+const { users } = __WEBPACK_IMPORTED_MODULE_5__models_user_queries__["a" /* default */];
+const { setting } = __WEBPACK_IMPORTED_MODULE_6__models_setting_queries__["a" /* default */];
+const { getOrders } = __WEBPACK_IMPORTED_MODULE_7__models_order_queries__["a" /* default */];
+const { getPosts, getOnePost, getAllPosts, getPostRelative } = __WEBPACK_IMPORTED_MODULE_3__models_post_queries__["a" /* default */];
+const { getOneProduct, getProducts } = __WEBPACK_IMPORTED_MODULE_4__models_product_queries__["a" /* default */];
+const { seo, allSeo } = __WEBPACK_IMPORTED_MODULE_8__models_seo_queries__["a" /* default */];
+const { getApartments, getOneApartment, getApartmentsByCategory, getApartmentRelative } = __WEBPACK_IMPORTED_MODULE_9__models_apartment_queries__["a" /* default */];
+const { getCategories, getOneCategory } = __WEBPACK_IMPORTED_MODULE_10__models_category_queries__["a" /* default */];
 
 const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({
   query: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"]({
@@ -4919,7 +4971,9 @@ const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({
       getCategories,
       getOneCategory,
       getApartmentsByCategory,
-      getAllPosts
+      getAllPosts,
+      getApartmentRelative,
+      getPostRelative
     }
   }),
   mutation: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"]({
@@ -5015,6 +5069,12 @@ function data(state = {}, action) {
         }),
         gioithieu: _extends({}, state.gioithieu, {
           value: data.gioithieu || state.gioithieu.value
+        }),
+        canhotuongtu: _extends({}, state.canho, {
+          value: data.canhotuongtu || state.canhotuongtu.value
+        }),
+        thutuctuongtu: _extends({}, state.thutuctuongtu, {
+          value: data.thutuctuongtu || state.thutuctuongtu.value
         })
       });
     default:
@@ -11848,6 +11908,9 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   render() {
     const canho = this.props.data.canho.value;
     const thutucAside = this.props.data.danhsachthutuc.value;
+    const canhotuongtu = this.props.data.canhotuongtu.value;
+    console.log('============');
+    console.log(canhotuongtu);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
@@ -11974,6 +12037,120 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   'Th\xF4ng tin c\u0103n h\u1ED9'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { dangerouslySetInnerHTML: { __html: canho.body } })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'row padding-20 responsive' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'h2',
+                  null,
+                  'C\u0103n h\u1ED9 t\u01B0\u01A1ng t\u1EF1'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  null,
+                  canhotuongtu.map((el, index) => {
+                    if (el) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { key: index, className: 'col-sm-6 col-lg-6' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'card' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                          { to: '/can-ho/' + el.slug },
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'card-image imgWr' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-responsive', src: el.coverUrl, alt: el.title })
+                          )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          'div',
+                          { className: 'card-content' },
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'listingInfo' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                              'figure',
+                              { className: 'listerName' },
+                              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                                { to: '/can-ho/' + el.slug, className: 'agent-wrapper' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'agent-photo', src: '/imgs/icon_new.gif', width: 29, height: 19, alt: 'new icon' })
+                              )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                              'div',
+                              { className: 'propertyStats' },
+                              !el.price2 && !el.price1 && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'lienhe' },
+                                'Li\xEAn h\u1EC7'
+                              ),
+                              !el.price2 && el.price1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'curPrice' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                  'b',
+                                  null,
+                                  el.price1.toLocaleString(),
+                                  ' VN\u0110'
+                                )
+                              ) : '',
+                              el.price2 && el.price1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'curPrice' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                  'span',
+                                  { className: 'oldprice', style: { textDecoration: 'line-through' } },
+                                  el.price1.toLocaleString()
+                                ),
+                                ' ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                  'b',
+                                  null,
+                                  el.price2.toLocaleString(),
+                                  ' VN\u0110'
+                                )
+                              ) : ""
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                              'div',
+                              { className: 'vcard' },
+                              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h2',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                  __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                                  { to: '/can-ho/' + el.slug, className: 'name align-center' },
+                                  el.title
+                                )
+                              )
+                            )
+                          )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          'div',
+                          { className: 'card-action' },
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'b',
+                            null,
+                            '\u0110\xE1nh gi\xE1 :'
+                          ),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'span',
+                            { style: { margin: '0 5px' } },
+                            el.rating,
+                            ' '
+                          ),
+                          ' ',
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { style: { color: 'yellow' }, className: 'fa fa-star' })
+                        )
+                      )
+                    );
+                  })
+                )
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Partials_Aside__["a" /* default */], { thutuc: thutucAside })
@@ -12027,7 +12204,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},canho:getOneApartment(slug:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }'
+            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},canho:getOneApartment(slug:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at}, canhotuongtu:getApartmentRelative(slug:"' + params.slug + '"){category, coverUrl, slug, title, body, price1, price2, rating, numRate, created_at} }'
           }),
           credentials: 'include'
         });
@@ -12457,7 +12634,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }'
+            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at}, thutuctuongtu:getPostRelative{title, coverUrl, description, slug, public, view, created_at} }'
           }),
           credentials: 'include'
         });
@@ -13741,6 +13918,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   render() {
     const thutuc = this.props.data.thutuc.value;
     const thutucAside = this.props.data.danhsachthutuc.value;
+    const thutuctuongtu = this.props.data.thutuctuongtu.value;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
@@ -13779,6 +13957,72 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 { className: 'row responsive' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { style: { padding: 15 },
                   dangerouslySetInnerHTML: { __html: thutuc.body } })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'row', style: { marginBottom: '15px 0' } },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'headerWr' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'header',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'h2',
+                      null,
+                      'C\xE1c th\u1EE7 t\u1EE5c kh\xE1c'
+                    )
+                  )
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'row responsive' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  null,
+                  thutuctuongtu.map((el, index) => {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { key: index, className: 'col-lg-6 col-sm-6' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'card' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          'div',
+                          { className: 'card-image imgWr' },
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                            { to: '/thutuc/' + el.slug },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-responsive', src: el.coverUrl, alt: el.title })
+                          )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          'div',
+                          { className: 'card-content' },
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'listingInfo' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                              'div',
+                              { className: 'vcard' },
+                              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h2',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                  __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                                  { to: '/thutuc/' + el.slug, className: 'name' },
+                                  el.title
+                                )
+                              )
+                            )
+                          )
+                        )
+                      )
+                    );
+                  })
+                )
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Partials_Aside__["a" /* default */], { thutuc: thutucAside })
@@ -13832,7 +14076,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},thutuc:getOnePost(slug: "' + params.slug + '"){title, coverUrl, body, slug, public, view, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }'
+            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},thutuc:getOnePost(slug: "' + params.slug + '"){title, coverUrl, body, slug, public, view, created_at},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at}, thutuctuongtu:getPostRelative{title, coverUrl, description, slug, public, view, created_at} }'
           }),
           credentials: 'include'
         });

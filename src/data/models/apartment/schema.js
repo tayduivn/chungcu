@@ -48,3 +48,33 @@ module.exports.getApartmentsByCategory = (root, {category}) => {
     });
   });
 };
+
+module.exports.getApartmentRelative = (root, {slug}) => {
+  console.log('get apartment relative');
+  return new Promise((resolve, reject) => {
+    model.findOne({slug: slug}).exec((err, apartment) => {
+      if(err)
+        reject(err)
+      else {
+        if(!apartment){
+          reject(err)
+        } {
+          model.aggregate([
+            { "$match" : {
+              category: apartment.category
+            }},
+            { "$sample" : {
+              size: 6
+            }}
+          ]).exec((err, listApartment) => {
+            if (err)
+              reject(err)
+            else
+              resolve(listApartment)
+          })
+        }
+      }
+    })
+
+  })
+}

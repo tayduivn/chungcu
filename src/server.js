@@ -167,7 +167,15 @@ app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
         gioithieu: {
           needUpdate: true,
           value: {}
-        }
+        },
+        canhotuongtu: {
+          needUpdate: true,
+          value: []
+        },
+        thutuctuongtu: {
+          needUpdate: true,
+          value: []
+        },
       },
       user: req.user || null,
     }, {

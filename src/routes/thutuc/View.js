@@ -7,6 +7,7 @@ class Home extends React.Component {
   render() {
     const thutuc = this.props.data.thutuc.value
     const thutucAside = this.props.data.danhsachthutuc.value
+    const thutuctuongtu = this.props.data.thutuctuongtu.value
     return (
       <div >
         {/*<MenuMobile />*/}
@@ -25,6 +26,40 @@ class Home extends React.Component {
                 <div className="row responsive">
                   <div style={{padding: 15}}
                     dangerouslySetInnerHTML={{__html: thutuc.body}} />
+                </div>
+
+                <div className="row" style={{marginBottom: '15px 0'}}>
+                  <div className="headerWr" >
+                    <header>
+                      <h2>Các thủ tục khác</h2>
+                    </header>
+                  </div>
+                </div>
+                <hr/>
+                <div className="row responsive">
+                  <div>
+                    {thutuctuongtu.map((el, index) => {
+                      return (
+                        <div key={index} className="col-lg-6 col-sm-6">
+                          <div className="card">
+                            <div className="card-image imgWr">
+                              <Link to={'/thutuc/' + el.slug}>
+                                <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                              </Link>
+                            </div>
+                            <div className="card-content">
+                              <div className="listingInfo">
+                                <div className="vcard">
+                                  <h2><Link to={'/thutuc/' + el.slug} className="name">{el.title}</Link></h2>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* /.card */}
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
               <Aside thutuc={thutucAside} />

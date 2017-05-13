@@ -14,30 +14,30 @@ import {
 
 // import me from './queries/me';
 import news from './queries/news';
-import imageQueries from './models/image/queries'
-import postQueries from './models/post/queries'
-import productQueries from './models/product/queries'
-import userQueries from './models/user/queries'
-import settingQueries from './models/setting/queries'
-import orderQueries from './models/order/queries'
-import seoQueries from './models/seo/queries'
-import apartmentQueries from './models/apartment/queries'
-import categoryQueries from './models/category/queries'
+import imageQueries from './models/image/queries';
+import postQueries from './models/post/queries';
+import productQueries from './models/product/queries';
+import userQueries from './models/user/queries';
+import settingQueries from './models/setting/queries';
+import orderQueries from './models/order/queries';
+import seoQueries from './models/seo/queries';
+import apartmentQueries from './models/apartment/queries';
+import categoryQueries from './models/category/queries';
 
 // mutation
-import settingMutation from './models/setting/mutations'
-import postMutation from './models/post/mutations'
+import settingMutation from './models/setting/mutations';
+import postMutation from './models/post/mutations';
 
 
-let {listImage} = imageQueries
-let { users } = userQueries
-let { setting } = settingQueries
-let { getOrders } = orderQueries
-let { getPosts, getOnePost, getAllPosts} = postQueries
-let { getOneProduct, getProducts } = productQueries
-let { seo, allSeo } = seoQueries
-let { getApartments, getOneApartment, getApartmentsByCategory } = apartmentQueries
-let { getCategories, getOneCategory } = categoryQueries
+const { listImage } = imageQueries;
+const { users } = userQueries;
+const { setting } = settingQueries;
+const { getOrders } = orderQueries;
+const { getPosts, getOnePost, getAllPosts, getPostRelative } = postQueries;
+const { getOneProduct, getProducts } = productQueries;
+const { seo, allSeo } = seoQueries;
+const { getApartments, getOneApartment, getApartmentsByCategory, getApartmentRelative } = apartmentQueries;
+const { getCategories, getOneCategory } = categoryQueries;
 
 const schema = new Schema({
   query: new ObjectType({
@@ -59,7 +59,9 @@ const schema = new Schema({
       getCategories,
       getOneCategory,
       getApartmentsByCategory,
-      getAllPosts
+      getAllPosts,
+      getApartmentRelative,
+      getPostRelative
     },
   }),
   mutation: new ObjectType({
@@ -69,7 +71,7 @@ const schema = new Schema({
       // addUser: userMutations.addUser,
       // updateUser: userMutations.updateUser
       updateSetting: settingMutation.update,
-      newPost: postMutation.newPost
+      newPost: postMutation.newPost,
     },
   }),
 });
