@@ -50,13 +50,13 @@ module.exports.getApartmentsByCategory = (root, {category}) => {
 };
 
 module.exports.getApartmentRelative = (root, {slug}) => {
-  console.log('get apartment relative');
+
   return new Promise((resolve, reject) => {
     model.findOne({slug: slug}).exec((err, apartment) => {
       if(err)
         reject(err)
       else {
-        if(!apartment){
+        if(!apartment || apartment === null){
           reject(err)
         } {
           model.aggregate([
