@@ -103,7 +103,13 @@ class Home extends React.Component {
                   <div dangerouslySetInnerHTML={{ __html: canho.body}} />
                 </div>
                 <div className="row padding-20 responsive">
-                  <h2>Căn hộ tương tự</h2>
+                  <div className="row" style={{marginBottom: 15}}>
+                    <div className="headerWr" >
+                      <header>
+                        <h2>Các căn hộ tương tự</h2>
+                      </header>
+                    </div>
+                  </div>
                   <div>
                     {canhotuongtu.map((el, index) => {
                     if(el)

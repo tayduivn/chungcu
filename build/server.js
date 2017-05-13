@@ -2504,7 +2504,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 25;
+      let version = 26;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
@@ -12043,9 +12043,21 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 'div',
                 { className: 'row padding-20 responsive' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'h2',
-                  null,
-                  'C\u0103n h\u1ED9 t\u01B0\u01A1ng t\u1EF1'
+                  'div',
+                  { className: 'row', style: { marginBottom: 15 } },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'headerWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'header',
+                      null,
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h2',
+                        null,
+                        'C\xE1c c\u0103n h\u1ED9 t\u01B0\u01A1ng t\u1EF1'
+                      )
+                    )
+                  )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
@@ -12635,7 +12647,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at}, thutuctuongtu:getPostRelative{title, coverUrl, description, slug, public, view, created_at} }'
+            query: '{seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},danhsachthutuc:getAllPosts{title, coverUrl, description, slug, public, view, created_at} }'
           }),
           credentials: 'include'
         });
