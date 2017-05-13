@@ -62,7 +62,7 @@ module.exports.getApartmentRelative = (root, {slug}) => {
         } {
           model.aggregate([
             { "$match" : {
-              category: apartment.category
+              category: category
             }},
             { "$sample" : {
               size: 6
