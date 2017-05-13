@@ -56,7 +56,7 @@ module.exports.getApartmentRelative = (root, {slug}) => {
       if(err)
         reject(err)
       else {
-        if(!apartment || apartment === null){
+        if(apartment === null){
           reject(err)
         } {
           model.aggregate([
