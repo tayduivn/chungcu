@@ -2504,7 +2504,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 26;
+      let version = 27;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));
@@ -2862,7 +2862,20 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', {
           dangerouslySetInnerHTML: { __html: `head.load("/assets/js/jquery.js")` + `.js("/assets/js/bootstrap.min.js" )` + `.js("/assets/js/scripts.js" )` + `.js("/assets/revolution/js/jquery.themepunch.tools.min.js")` + `.js("/assets/revolution/js/jquery.themepunch.revolution.min.js")` + `.js("/assets/js/init.js")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js")` + `.js("${scripts[0]}?v=${v}")` + `.js("${scripts[1]}?v=${v}")` }
         }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: this.props.scriptBottom } })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: this.props.scriptBottom } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', {
+          dangerouslySetInnerHTML: { __html: `/* <![CDATA[ */` + ` var google_conversion_id = 854972307;` + ` var google_custom_params = window.google_tag_params;` + ` var google_remarketing_only = true;` + ` /* ]]> */` }
+        }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: '//www.googleadservices.com/pagead/conversion.js' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'noscript',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { style: { display: 'inline' } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { height: '1', width: '1', style: { borderStyle: 'none' }, alt: '', src: '//googleads.g.doubleclick.net/pagead/viewthroughconversion/854972307/?guid=ON&script=0' })
+          )
+        )
       )
     );
   }
@@ -3077,24 +3090,6 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                         'span',
                         { className: 'ng-binding ng-scope' },
                         'S\xE0n B\u0110S Vinhomes Times City Park Hill s\u1ED1 458 Minh Khai - Hai B\xE0 Tr\u01B0ng - H\xE0 N\u1ED9i'
-                      )
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'li',
-                    { className: 'clearfix item ng-scope' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: 'label ng-binding' },
-                      'Email'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: 'text' },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'a',
-                        { className: 'ng-binding ng-scope', href: 'mailto://quanganh268.vud@gmail.com' },
-                        'quanganh268.vud@gmail.com'
                       )
                     )
                   )

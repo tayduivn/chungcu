@@ -42,12 +42,12 @@ class Footer extends React.Component {
                         <span className="ng-binding ng-scope">Sàn BĐS Vinhomes Times City Park Hill số 458 Minh Khai - Hai Bà Trưng - Hà Nội</span>
                       </div>
                     </li>
-                    <li className="clearfix item ng-scope" >
+                    {/* <li className="clearfix item ng-scope" >
                       <div className="label ng-binding">Email</div>
                       <div className="text">
                         <a className="ng-binding ng-scope" href="mailto://quanganh268.vud@gmail.com">quanganh268.vud@gmail.com</a>
                       </div>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>

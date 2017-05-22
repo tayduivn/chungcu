@@ -36,45 +36,45 @@ class Html extends React.Component {
     return (
       <html className="no-js" lang="vi">
         <head>
-            {/*<base href="http://comhoavang.com" />*/}
-            {/*<base href="http://localhost:3000" />*/}
-            <meta charSet="utf-8" />
-            <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="apple-touch-icon" href="/favicon.gif" />
-            <link rel="icon" type="image/png" href="favicon.gif" />
-            {/*Og tag*/}
-            <meta property="og:locale" content="vi_VN" />
-            <meta property="og:type" content="website" />
-            {seo && seo.og_title && <meta property="og:title" content={seo.og_title} />}
-            {seo && seo.url && <meta property="og:url" content={seo.url} />}
-            {seo && seo.og_image && <meta property="og:image" content={seo.og_image} />}
-            {/**/}
+          {/*<base href="http://comhoavang.com" />*/}
+          {/*<base href="http://localhost:3000" />*/}
+          <meta charSet="utf-8" />
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="apple-touch-icon" href="/favicon.gif" />
+          <link rel="icon" type="image/png" href="favicon.gif" />
+          {/*Og tag*/}
+          <meta property="og:locale" content="vi_VN" />
+          <meta property="og:type" content="website" />
+          {seo && seo.og_title && <meta property="og:title" content={seo.og_title} />}
+          {seo && seo.url && <meta property="og:url" content={seo.url} />}
+          {seo && seo.og_image && <meta property="og:image" content={seo.og_image} />}
+          {/**/}
 
-            {/*Theme head source*/}
-            <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-            <link href="/assets/css/bootstrap-extra-modal.css" rel="stylesheet" />
-            <link href="/assets/css/plugins.css" rel="stylesheet" />
+          {/*Theme head source*/}
+          <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+          <link href="/assets/css/bootstrap-extra-modal.css" rel="stylesheet" />
+          <link href="/assets/css/plugins.css" rel="stylesheet" />
 
-            <link href="/assets/css/themify-icons.css" rel="stylesheet" />
-            <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
-            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,500,700,900' rel='stylesheet' type='text/css' />
-            <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,300,500,600,700,800,900,200' rel='stylesheet' type='text/css' />
+          <link href="/assets/css/themify-icons.css" rel="stylesheet" />
+          <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+          <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,500,700,900' rel='stylesheet' type='text/css' />
+          <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,300,500,600,700,800,900,200' rel='stylesheet' type='text/css' />
 
 
-            <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css" />
+          <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css" />
 
-            <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css" />
-            <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css" />
-            <link href="/assets/css/style.css" rel="stylesheet" />
-            {/**/}
+          <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css" />
+          <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css" />
+          <link href="/assets/css/style.css" rel="stylesheet" />
+          {/**/}
 
-            <link rel="stylesheet" type="text/css"  href={"/css/app.css?v=" +v }/>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js" />
-            <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
-            <script dangerouslySetInnerHTML={{ __html: this.props.scriptTop }} />
+          <link rel="stylesheet" type="text/css"  href={"/css/app.css?v=" +v }/>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js" />
+          <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+          <script dangerouslySetInnerHTML={{ __html: this.props.scriptTop }} />
         </head>
 
         <body className="clearfix">
@@ -108,7 +108,22 @@ class Html extends React.Component {
           </script>
 
           <script dangerouslySetInnerHTML={{ __html: this.props.scriptBottom }} />
-
+          <script
+            dangerouslySetInnerHTML={{ __html:
+                `/* <![CDATA[ */`
+                  + ` var google_conversion_id = 854972307;`
+                  + ` var google_custom_params = window.google_tag_params;`
+                  + ` var google_remarketing_only = true;`
+                  + ` /* ]]> */`  }}
+          >
+          </script>
+          <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+          </script>
+          <noscript>
+            <div style={{display: 'inline' }}>
+              <img height="1" width="1" style={{borderStyle: 'none'}} alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/854972307/?guid=ON&amp;script=0"/>
+            </div>
+          </noscript>
         </body>
       </html>
     );
