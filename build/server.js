@@ -1323,6 +1323,15 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   { style: { color: '#FF4136', fontSize: 24 } },
                   '0972.564.695'
                 )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { style: { textAlign: 'center' } },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'b',
+                  { style: { color: '#FF4136', fontSize: 24 } },
+                  '0906.234.912'
+                )
               )
             )
           )
@@ -2504,7 +2513,7 @@ app.get('*', routeCache.cacheSeconds(20), (() => {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 27;
+      let version = 28;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));

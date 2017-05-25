@@ -22,6 +22,7 @@ class Aside extends React.Component {
             <div className="row" style={{padding: '5px 5px !important'}}>
               <div className="col-sm-12" style={{paddingTop: 0}}>
                 <div style={{textAlign: 'center'}}><b style={{color: '#FF4136', fontSize: 24}}>0972.564.695</b></div>
+                <div style={{textAlign: 'center'}}><b style={{color: '#FF4136', fontSize: 24}}>0906.234.912</b></div>
               </div>
             </div>
           </div>
