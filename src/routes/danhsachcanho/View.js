@@ -30,7 +30,7 @@ class Home extends React.Component {
                       return (
                         <div key={index} className="col-sm-6 col-lg-4">
                           <div className="card">
-                            <Link to={'/can-ho/' + el.slug}>
+                            <Link to={'/can-ho/' + el.slug + '#menu2'}>
                               <div className="card-image imgWr">
                                 <img className="img-responsive" src={el.coverUrl} alt={el.title} />
                               </div>
@@ -38,7 +38,7 @@ class Home extends React.Component {
                             <div className="card-content">
                               <div className="listingInfo">
                                 <figure className="listerName">
-                                  <Link to={'/can-ho/' + el.slug} className="agent-wrapper">
+                                  <Link to={'/can-ho/' + el.slug + '#menu2'} className="agent-wrapper">
                                     <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
                                   </Link>
                                 </figure>
@@ -48,7 +48,7 @@ class Home extends React.Component {
                                   {(el.price2 && el.price1) ? (<span className="curPrice"><span className="oldprice" style={{textDecoration: 'line-through'}} >{el.price1.toLocaleString()}</span> <b>{el.price2.toLocaleString()} VNĐ</b></span>) : ""}
                                 </div>
                                 <div className="vcard">
-                                  <h2><Link to={'/can-ho/' + el.slug} className="name align-center">{el.title}</Link></h2>
+                                  <h2><Link to={'/can-ho/' + el.slug + '#menu2'} className="name align-center">{el.title}</Link></h2>
                                 </div>
                               </div>
                             </div>

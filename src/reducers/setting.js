@@ -6,6 +6,7 @@ export default function setting(state = {}, action) {
       return {
         ...state,
         ['ssr']: action.payload.value,
+        ['user']: action.payload.user,
       };
     default:
       return state;

@@ -31,7 +31,7 @@ class Home extends React.Component {
                           <div className="row">
                             <div className="col-sm-4">
                               <div className="card-image bg-image imgWr">
-                                <Link to={'/thutuc/' + el.slug}>
+                                <Link to={'/thutuc/' + el.slug + '#menu2'}>
                                   <img src={el.coverUrl} width="100%" height="100%" alt=""/>
                                 </Link>
                               </div>
@@ -41,7 +41,7 @@ class Home extends React.Component {
                               <div className="card-content">
                                 <div className="listingInfo">
                                   <div className="vcard">
-                                    <h2><Link to={'/thutuc/' + el.slug} className="name">{el.title}</Link></h2>
+                                    <h2><Link to={'/thutuc/' + el.slug + '#menu2'} className="name">{el.title}</Link></h2>
                                     <p className="listingLocation"><i className="fa fa-map-o" />
                                       {el.description}
                                     </p>

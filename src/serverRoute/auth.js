@@ -15,7 +15,7 @@ let LocalStrategy = require('passport-local').Strategy
 
 passport.use(new LocalStrategy(
   function(username, password, done){
-    console.log("strategy function starting...");
+    // console.log("strategy function starting...");
     User.getUserByEmail(username, function(err, user){
       if (err) throw err;
       if (user.length < 1){
@@ -33,7 +33,7 @@ passport.use(new LocalStrategy(
       //     return done(null, false, {message: "Invalid password"});
       //   }
       // });
-      if(password === 'luan@123'){
+      if(password === 'admin@123'){
         return done(null, user[0]);
       }  else {
         return done(null, false, {message: "Invalid password"});
@@ -146,21 +146,20 @@ router.get('/google/callback',
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/admin/login');
 });
 
-router.post('/login', passport.authenticate('local', { successRedirect: '/auth/login/ok',
+router.get('/login', passport.authenticate('local', { successRedirect: '/auth/login/ok',
   failureRedirect: '/auth/login/false' }))
 
 
 
 router.get('/login/ok', function(req, res, next) {
-  // Mailer.sendRegister('luanlv2591@gmail.com', 'Luan')
-  res.send(true)
+  res.redirect('/admin')
 });
 
 router.get('/login/false', function(req, res, next) {
-  res.send(false)
+  res.redirect('/admin/login')
 });
 
 module.exports = router

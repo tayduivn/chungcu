@@ -43,14 +43,14 @@ class Home extends React.Component {
                         <div key={index} className="col-lg-6 col-sm-6">
                           <div className="card">
                             <div className="card-image imgWr">
-                              <Link to={'/thutuc/' + el.slug}>
+                              <Link to={'/thutuc/' + el.slug + '#menu2'}>
                                 <img className="img-responsive" src={el.coverUrl} alt={el.title} />
                               </Link>
                             </div>
                             <div className="card-content">
                               <div className="listingInfo">
                                 <div className="vcard">
-                                  <h2><Link to={'/thutuc/' + el.slug} className="name">{el.title}</Link></h2>
+                                  <h2><Link to={'/thutuc/' + el.slug + '#menu2'} className="name">{el.title}</Link></h2>
                                 </div>
                               </div>
                             </div>

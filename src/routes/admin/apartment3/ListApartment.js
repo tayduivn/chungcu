@@ -64,7 +64,6 @@ class ListNews extends React.Component {
                                       axios.post('/api/apartment/delete', {slug: el.slug})
                                         .then(res => {
                                           that.getApartments()
-                                          console.log('Đã xóa')
                                         })
                                         .catch(err => {
                                           message.error('Có lỗi')

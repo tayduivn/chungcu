@@ -33,6 +33,7 @@ import configureStore from './store/configureStore';
 import { setRuntimeVariable } from './actions/runtime';
 import { setSetting } from './actions/setting';
 import { port, auth, mongoDBURL} from './config';
+
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 var routeCache = require('route-cache');
@@ -79,9 +80,10 @@ app.use(session({
   ttl: 7 * 24 * 60 * 60,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
+
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(cookieParser())
+// app.use(cookieParser())
 //
 // Authentication
 // -----------------------------------------------------------------------------
@@ -109,14 +111,14 @@ app.use('/graphql',  expressGraphQL(req => ({
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 
-app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
+app.get('*', routeCache.cacheSeconds(20, function(req, res) {
   let routeUrl = req.originalUrl
   let isAdmin = (routeUrl.slice(0,6) === '/admin')
-  if(isAdmin){
-    if(!req.user || !req.user.isAdmin){
-      // return res.redirect('/login')
-    }
-  }
+  if (isAdmin) { return false }
+  return req.originalUrl
+}), async (req, res, next) => {
+  let routeUrl = req.originalUrl
+  let isAdmin = (routeUrl.slice(0,6) === '/admin')
   try {
     let setting = await Setting.findOne({})
     const store = configureStore({
@@ -177,7 +179,7 @@ app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
           value: []
         },
       },
-      user: req.user || null,
+      user: req.user || null
     }, {
       cookie: req.headers.cookie,
     });
