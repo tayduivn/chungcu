@@ -3114,6 +3114,17 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                       )
                     )
                   )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  null,
+                  'Tags :',
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    { style: { fontSize: 12, display: 'inline' } },
+                    ' C\u0103n h\u1ED9 Vinhomes Times City, Vinhomes Times City, b\xE1n Vinhomes times city park hill, chung c\u01B0 vinhomes times city,  m\u1EB7t b\u1EB1ng Vinhomes times city, b\xE1n C\u0103n h\u1ED9 times city park hill, Vinhomes times city park hill, C\u0103n h\u1ED9 times city, gi\xE1 b\xE1n c\u0103n h\u1ED9 vinhomes times city, n\u1ED9i th\u1EA5t vinhomes times city, ch\xEDnh s\xE1ch b\xE1n h\xE0ng vinhomes times city, Shophouse Vinhomes Times City Park Hill, Gi\xE1 b\xE1n Vinhomes Times City Park Hill, Gi\xE1 b\xE1n Vinhomes Time City, B\u1EA3ng gi\xE1 Vinhomes Times City, Vinhomes Times City Park Hill, Gi\xE1 b\xE1n m\u1EDBi nh\u1EA5t Times City Park Hill, C\u0103n h\u1ED9 Times City Park Hill, Chung c\u01B0 Times City Park Hill'
+                  )
                 )
               )
             ),
