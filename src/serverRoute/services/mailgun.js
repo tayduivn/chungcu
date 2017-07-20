@@ -1,5 +1,5 @@
 var api_key = 'key-4639e67edf2df3a4c479a605e8376b9b';
-var domain = 'edu.anabim.com';
+var domain = 'mg.vnguy.com';
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 
