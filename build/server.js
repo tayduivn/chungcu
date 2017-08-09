@@ -4579,7 +4579,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                       },
                       __self: this
                     },
-                    '0906.234.912 - 0972.564.695'
+                    '0972.564.695 - 0906.234.912'
                   )
                 )
               )
