@@ -52,10 +52,10 @@ class Footer extends React.Component {
 
                   <hr/>
 
-                  <div>
-                    Tags :
-                    <p style={{fontSize: 12, display: 'inline'}}> Căn hộ Vinhomes Times City, Vinhomes Times City, bán Vinhomes times city park hill, chung cư vinhomes times city,  mặt bằng Vinhomes times city, bán Căn hộ times city park hill, Vinhomes times city park hill, Căn hộ times city, giá bán căn hộ vinhomes times city, nội thất vinhomes times city, chính sách bán hàng vinhomes times city, Shophouse Vinhomes Times City Park Hill, Giá bán Vinhomes Times City Park Hill, Giá bán Vinhomes Time City, Bảng giá Vinhomes Times City, Vinhomes Times City Park Hill, Giá bán mới nhất Times City Park Hill, Căn hộ Times City Park Hill, Chung cư Times City Park Hill</p>
-                  </div>
+                  {/*<div>*/}
+                    {/*Tags :*/}
+                    {/*<p style={{fontSize: 12, display: 'inline'}}> Căn hộ Vinhomes Times City, Vinhomes Times City, bán Vinhomes times city park hill, chung cư vinhomes times city,  mặt bằng Vinhomes times city, bán Căn hộ times city park hill, Vinhomes times city park hill, Căn hộ times city, giá bán căn hộ vinhomes times city, nội thất vinhomes times city, chính sách bán hàng vinhomes times city, Shophouse Vinhomes Times City Park Hill, Giá bán Vinhomes Times City Park Hill, Giá bán Vinhomes Time City, Bảng giá Vinhomes Times City, Vinhomes Times City Park Hill, Giá bán mới nhất Times City Park Hill, Căn hộ Times City Park Hill, Chung cư Times City Park Hill</p>*/}
+                  {/*</div>*/}
 
                 </div>
               </div>
