@@ -1340,22 +1340,6 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'widget widget-subscribe panel media pad-all', style: { padding: '0 !important', cursor: 'pointer' }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'newsletter' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_youtube___default.a, {
-              videoId: '-yylfXD4maM'
-            })
-          )
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
         { className: 'widget widget-subscribe panel media pad-all', style: { padding: '0 !important' } },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/imgs/aside2.jpg', alt: 'aside1', style: { width: '100%', height: 'auto' } })
       ),
@@ -2524,7 +2508,7 @@ app.get('*', routeCache.cacheSeconds(20, function (req, res) {
         data.scripts.push(__WEBPACK_IMPORTED_MODULE_18__assets_json___default.a[route.chunk].js);
       }
 
-      let version = 29;
+      let version = 30;
 
       if (isAdmin) {
         const html = __WEBPACK_IMPORTED_MODULE_7_react_dom_server___default.a.renderToStaticMarkup(__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_HtmlAdmin__["a" /* default */], _extends({ v: version }, data, { isAdmin: isAdmin })));

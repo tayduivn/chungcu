@@ -28,16 +28,16 @@ class Aside extends React.Component {
           </div>
         </div>
 
-        <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important', cursor: 'pointer'}}
-        >
-          <div className="newsletter">
-            <div>
-              <YouTube
-                videoId="-yylfXD4maM"
-              />
-            </div>
-          </div>
-        </div>
+        {/*<div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important', cursor: 'pointer'}}*/}
+        {/*>*/}
+          {/*<div className="newsletter">*/}
+            {/*<div>*/}
+              {/*<YouTube*/}
+                {/*videoId="-yylfXD4maM"*/}
+              {/*/>*/}
+            {/*</div>*/}
+          {/*</div>*/}
+        {/*</div>*/}
 
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
           <img src="/imgs/aside2.jpg" alt="aside1" style={{width: '100%', height: 'auto'}} />
