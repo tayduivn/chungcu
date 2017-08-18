@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Aside from '../../components/Partials/Aside'
 // import MenuMobile from '../../components/Partials/MenuMobile'
 import Link from '../../components/Link';
+import LazyLoad from 'react-lazyload';
 
 class Home extends React.Component {
 
@@ -20,7 +21,9 @@ class Home extends React.Component {
               <h2 className="divider gradient" >Tổng quan dự án</h2>
             </div>
             <div className="col-md-12 padding-20">
+              <LazyLoad>
                 <img src="/imgs/bando.jpg" width="100%" height="auto" alt=""/>
+              </LazyLoad>
             </div>
             <div className="col-md-5 padding-20" style={{fontWeight: 'bold', paddingTop: '0 !important'}}>
               <div className="noidung">
@@ -63,7 +66,9 @@ class Home extends React.Component {
             <div className="col-md-7 padding-20" style={{}}>
               <div className="square">
                 <div className="square-content">
-                  <img src="/imgs/phoicanh.jpg" width="100%" height="100%" alt=""/>
+                  <LazyLoad>
+                    <img src="/imgs/phoicanh.jpg" width="100%" height="100%" alt=""/>
+                  </LazyLoad>
                 </div>
               </div>
             </div>
@@ -90,14 +95,18 @@ class Home extends React.Component {
                         <div className="card">
                           <Link to={'/can-ho/' + el.slug + '#menu2'}>
                             <div className="card-image imgWr">
-                              <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                              <LazyLoad>
+                                <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                              </LazyLoad>
                             </div>
                           </Link>
                           <div className="card-content">
                             <div className="listingInfo">
                               <figure className="listerName">
                                 <Link to={'/can-ho/' + el.slug + '#menu2'} className="agent-wrapper">
-                                  <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
+                                  <LazyLoad>
+                                    <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
+                                  </LazyLoad>
                                 </Link>
                               </figure>
                               <div className="propertyStats">
@@ -183,14 +192,18 @@ class Home extends React.Component {
                         <div className="card">
                           <Link to={'/can-ho/' + el.slug + '#menu2'}>
                             <div className="card-image imgWr">
-                              <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                              <LazyLoad>
+                                <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                              </LazyLoad>
                             </div>
                           </Link>
                           <div className="card-content">
                             <div className="listingInfo">
                               <figure className="listerName">
                                 <Link to={'/can-ho/' + el.slug + '#menu2'} className="agent-wrapper">
-                                  <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
+                                  <LazyLoad>
+                                    <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
+                                  </LazyLoad>
                                 </Link>
                               </figure>
                               <div className="propertyStats">
@@ -238,7 +251,9 @@ class Home extends React.Component {
                     <div className="card">
                       <div className="card-image imgWr">
                         <Link to={'/thutuc/' + el.slug + '#menu2'}>
-                          <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                          <LazyLoad>
+                            <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                          </LazyLoad>
                         </Link>
                       </div>
                       <div className="card-content">

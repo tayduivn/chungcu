@@ -67,6 +67,7 @@
     "react-dom": "^15.5.3",
     "react-draft-wysiwyg": "^1.9.1",
     "react-froala-wysiwyg": "^2.5.1",
+    "react-lazyload": "^2.2.7",
     "react-on-screen": "^1.1.0",
     "react-redux": "^5.0.2",
     "react-redux-loading-bar": "^2.8.0",
