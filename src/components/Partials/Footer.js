@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import LazyLoad from 'react-lazyload'
 
 class Footer extends React.Component {
   constructor(props){
@@ -18,10 +19,14 @@ class Footer extends React.Component {
     return (
       <div className="footer">
         <div className="a-left" >
-          <img src="/imgs/leaf.png" alt=""/>
+          <LazyLoad>
+            <img src="/imgs/leaf.png" alt=""/>
+          </LazyLoad>
         </div>
         <div className="a-right" >
-          <img src="/imgs/leaf.png" alt=""/>
+          <LazyLoad>
+            <img src="/imgs/leaf.png" alt=""/>
+          </LazyLoad>
         </div>
         <div className="footer-body">
           <div className="container">
@@ -135,7 +140,7 @@ class Footer extends React.Component {
                                       })
                                       console.log(this.state.form)
                                     }}
-                                    rows={3} required name="content" className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" defaultValue={""} />
+                                    rows={3} required name="content" className="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" />
 
                         </div>
                       </div>

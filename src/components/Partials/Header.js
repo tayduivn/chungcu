@@ -15,7 +15,9 @@ class Header extends React.Component {
             <nav className="navbar navbar-static-top nav-white">
               <div className="navbar-header">
                 <Link className="navbar-brand" to="/">
-                  <img src="/imgs/logo.png" alt="logo" className="img-responsive" />
+                  <LazyLoad>
+                    <img src="/imgs/logo.png" alt="logo" className="img-responsive" />
+                  </LazyLoad>
                 </Link>
               </div>
               <div className="navbar2">

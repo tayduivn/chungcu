@@ -3,6 +3,7 @@ import Aside from '../../components/Partials/Aside'
 // import MenuMobile from '../../components/Partials/MenuMobile'
 import Link from '../../components/Link';
 import axios from 'axios'
+import LazyLoad from 'react-lazyload'
 
 class Home extends React.Component {
   constructor(props){
@@ -56,7 +57,9 @@ class Home extends React.Component {
               <div className="col-lg-9 col-sm-8 content-row shadow bg-white" style={{paddingTop: 15}}>
                 <div className="row">
                   <div className="col-sm-4">
-                    <img height="auto" width="100%" src={canho.coverUrl} alt={canho.title} />
+                    <LazyLoad>
+                      <img height="auto" width="100%" src={canho.coverUrl} alt={canho.title} />
+                    </LazyLoad>
                   </div>
                   <div className="col-sm-8" style={{textAlign: 'center', fontSize: 20}}>
                     <div className="propertyStats">
@@ -116,14 +119,18 @@ class Home extends React.Component {
                           <div className="card">
                             <Link to={'/can-ho/' + el.slug + '#menu2'}>
                               <div className="card-image imgWr">
-                                <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                                <LazyLoad>
+                                  <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                                </LazyLoad>
                               </div>
                             </Link>
                             <div className="card-content">
                               <div className="listingInfo">
                                 <figure className="listerName">
                                   <Link to={'/can-ho/' + el.slug + '#menu2'} className="agent-wrapper">
-                                    <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
+                                    <LazyLoad>
+                                      <img className="agent-photo" src="/imgs/icon_new.gif" width={29} height={19} alt="new icon" />
+                                    </LazyLoad>
                                   </Link>
                                 </figure>
                                 <div className="propertyStats">

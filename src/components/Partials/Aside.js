@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from '../Link'
-import YouTube from 'react-youtube'
+// import YouTube from 'react-youtube'
+import LazyLoad from 'react-lazyload';
 
 class Aside extends React.Component {
   constructor(props){
@@ -40,11 +41,15 @@ class Aside extends React.Component {
         {/*</div>*/}
 
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
-          <img src="/imgs/aside2.jpg" alt="aside1" style={{width: '100%', height: 'auto'}} />
+          <LazyLoad>
+            <img src="/imgs/aside2.jpg" alt="aside1" style={{width: '100%', height: 'auto'}} />
+          </LazyLoad>
         </div>
 
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>
-          <img src="/imgs/aside1.jpg" alt="aside1" style={{width: '100%', height: 'auto'}} />
+          <LazyLoad>
+            <img src="/imgs/aside1.jpg" alt="aside1" style={{width: '100%', height: 'auto'}} />
+          </LazyLoad>
         </div>
 
         <div className="widget widget-subscribe panel media pad-all" style={{padding: '0 !important'}}>

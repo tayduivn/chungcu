@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Aside from '../../components/Partials/Aside'
 import Link from '../../components/Link';
+import LazyLoad from 'react-lazyload'
 
 class Home extends React.Component {
 
@@ -44,7 +45,9 @@ class Home extends React.Component {
                           <div className="card">
                             <div className="card-image imgWr">
                               <Link to={'/thutuc/' + el.slug + '#menu2'}>
-                                <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                                <LazyLoad>
+                                  <img className="img-responsive" src={el.coverUrl} alt={el.title} />
+                                </LazyLoad>
                               </Link>
                             </div>
                             <div className="card-content">
