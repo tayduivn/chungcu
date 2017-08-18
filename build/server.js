@@ -2686,15 +2686,17 @@ const ContextType = {
  */
 class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.PureComponent {
 
-  componentDidMount() {}
+  componentDidMount() {
+    if (true) {
+      if (!window.console) window.console = {};
+    }
+  }
 
   getChildContext() {
     return this.props.context;
   }
 
   render() {
-    // NOTE: If you need to add or modify header, footer etc. of the app,
-    // please do that inside the Layout component.
     return __WEBPACK_IMPORTED_MODULE_0_react__["Children"].only(this.props.children);
   }
 
