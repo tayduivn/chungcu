@@ -13,7 +13,6 @@ import {
 } from 'graphql';
 
 // import me from './queries/me';
-import news from './queries/news';
 import imageQueries from './models/image/queries';
 import postQueries from './models/post/queries';
 import productQueries from './models/product/queries';
@@ -44,7 +43,6 @@ const schema = new Schema({
     name: 'Query',
     fields: {
       setting,
-      news,
       listImage,
       users,
       getPosts,
