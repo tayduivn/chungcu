@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from '../Link'
 
+
 class Header extends React.Component {
   constructor(props){
     super(props)
@@ -15,9 +16,7 @@ class Header extends React.Component {
             <nav className="navbar navbar-static-top nav-white">
               <div className="navbar-header">
                 <Link className="navbar-brand" to="/">
-                  <LazyLoad>
-                    <img src="/imgs/logo.png" alt="logo" className="img-responsive" />
-                  </LazyLoad>
+                  <img src="/imgs/logo.png" alt="logo" className="img-responsive" />
                 </Link>
               </div>
               <div className="navbar2">
