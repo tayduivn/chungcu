@@ -36,6 +36,8 @@ import { port, auth, mongoDBURL} from './config';
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 var routeCache = require('route-cache');
+var sm = require('sitemap');
+import moment from 'moment'
 
 //mongoose
 import mongoose from 'mongoose'
@@ -110,6 +112,25 @@ app.use('/graphql',  expressGraphQL(req => ({
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 
+
+app.get('/sitemap.xml', function(req, res) {
+  var sitemap = sm.createSitemap ({
+    hostname: 'http://chungcu-timescityparkhill.com',
+    // cacheTime: 600000,        // 600 sec - cache purge period
+    urls: [
+      { url: '/',  changefreq: 'daily' },
+    ]
+  });
+
+  sitemap.toXML( function (err, xml) {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send( xml );
+  });
+});
+
 app.get('*', routeCache.cacheSeconds(20, function(req, res) {
   let routeUrl = req.originalUrl
   let isAdmin = (routeUrl.slice(0,6) === '/admin')
@@ -120,6 +141,7 @@ app.get('*', routeCache.cacheSeconds(20, function(req, res) {
   let isAdmin = (routeUrl.slice(0,6) === '/admin')
   try {
     let setting = await Setting.findOne({})
+    if(!setting) setting = {}
     const store = configureStore({
       data: {
         post: {
@@ -183,7 +205,7 @@ app.get('*', routeCache.cacheSeconds(20, function(req, res) {
       cookie: req.headers.cookie,
     });
     store.dispatch(setSetting({
-      value: setting.ssr || true
+      value: true
     }))
     store.dispatch(setRuntimeVariable({
       name: 'initialNow',
@@ -219,7 +241,7 @@ app.get('*', routeCache.cacheSeconds(20, function(req, res) {
 
     const data = { ...route };
 
-    if(data.disableSSR || !store.getState().setting.ssr) {
+    if(data.disableSSR) {
       data.children = '';
     } else {
       data.children = ReactDOM.renderToString(<App context={context}>{route.component}</App>);
@@ -253,6 +275,8 @@ app.get('*', routeCache.cacheSeconds(20, function(req, res) {
     next(err);
   }
 });
+
+
 
 //
 // Error handling
