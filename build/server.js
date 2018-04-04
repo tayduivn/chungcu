@@ -1277,7 +1277,7 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'b',
                   { style: { color: '#FF4136', fontSize: 24 } },
-                  '0906.234.912'
+                  '0913.828.492'
                 )
               )
             )
@@ -3031,7 +3031,7 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'b',
                         null,
-                        '0906.234.912 - 0972.564.695'
+                        '0913.828.492 - 0972.564.695'
                       )
                     )
                   ),
@@ -3256,7 +3256,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'b',
                     { style: { color: '#FF851B' } },
-                    '0972.564.695 - 0906.234.912'
+                    '0972.564.695 - 0913.828.492'
                   )
                 )
               )

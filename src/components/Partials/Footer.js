@@ -38,7 +38,7 @@ class Footer extends React.Component {
                     <li className="clearfix item ng-scope">
                       <div className="label ng-binding">Tư vấn</div>
                       <div className="text">
-                        <b>0906.234.912 - 0972.564.695</b>
+                        <b>0913.828.492 - 0972.564.695</b>
                       </div>
                     </li>
                     <li className="clearfix item ng-scope" >
