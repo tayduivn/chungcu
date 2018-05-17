@@ -33,7 +33,7 @@ passport.use(new LocalStrategy(
       //     return done(null, false, {message: "Invalid password"});
       //   }
       // });
-      if(password === 'admin@123'){
+      if(password === '123456789'){
         return done(null, user[0]);
       }  else {
         return done(null, false, {message: "Invalid password"});
